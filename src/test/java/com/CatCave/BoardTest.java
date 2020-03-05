@@ -34,6 +34,28 @@ public class BoardTest {
         assertThat(board.setOneFlagShip(nav, board.getListToCheckArea())).isFalse();
     }
 
+    @Test
+    @Parameters({"-1, 0", "99,100"})
+    public void shouldReturnFalseForOutOfBoundriesFor2Flag(int nav1, int nav2) {
+
+        //then
+        assertThat(board.setTwoFlagShip(nav1, nav2)).isFalse();
+    }
+
+    @Test
+    @Parameters({"-1,0,1", "98,99,100"})
+    public void shouldReturnFalseForOutOfBoundriesFor3Flag(int nav1, int nav2, int nav3) {
+        //then
+        assertThat(board.setThreeFlagShip(nav1, nav2, nav3)).isFalse();
+    }
+
+    @Test
+    @Parameters({"-1,0,1,2", "97,98,99,100"})
+    public void shouldReturnFalseForOutOfBoundriesFor4Flag(int nav1, int nav2, int nav3, int nav4) {
+        //then
+        assertThat(board.setFourFlagShip(nav1, nav2, nav3, nav4)).isFalse();
+    }
+
 
     @Test
     @Parameters({"0", "11", "48", "99"})
@@ -70,26 +92,26 @@ public class BoardTest {
     }
 
     @Test
-    public void shouldReturnFalseWhenSettingShipToCloseToEachOther() {
+    @Parameters({"0", "10", "99"})
+    public void shouldAllowToPutShipOnEdgesOfBoard(int nav) {
 
-        //given
-        board.setOneFlagShip(21, board.getListToCheckArea());
 
         //when
-        boolean result = board.setOneFlagShip(22, board.getListToCheckArea());
+        boolean result = board.setOneFlagShip(nav, board.getListToCheckArea());
 
         //then
-        assertThat(result).isFalse();
+        assertThat(result).isTrue();
     }
 
     @Test
-    public void shouldAllowToPutShipOnEdgesOfBoard() {
+    @Parameters({"0,1","1,2","2,12","55,44","88,99"})
+    public void shouldReturnFalseWhenSettingShipToCloseToEachOther(int nav1, int nav2) {
 
         //given
-        board.setOneFlagShip(1, board.getListToCheckArea());
+        board.setOneFlagShip(nav1, board.getListToCheckArea());
 
         //when
-        boolean result = board.setOneFlagShip(0, board.getListToCheckArea());
+        boolean result = board.setOneFlagShip(nav2, board.getListToCheckArea());
 
         //then
         assertThat(result).isFalse();
@@ -122,7 +144,7 @@ public class BoardTest {
     }
 
     @Test
-    @Parameters({"0,1,3", "97,98,99", "40,50,60"})
+    @Parameters({"0,1,2", "97,98,99", "40,50,60"})
     public void shouldAllowFor3FlagShipInStraightLine(int nav1, int nav2, int nav3) {
 
         //when
@@ -136,32 +158,89 @@ public class BoardTest {
     }
 
     @Test
-    @Parameters({"0,1,12", "87,98,99", ",49,50,61"})
+    @Parameters({"0,1,12", "97,98,89", "50,61,62"})
     public void shouldReturnFalseFor3FlagShipInDiagonalLine(int nav1, int nav2, int nav3) {
 
         //when
         boolean result = board.setThreeFlagShip(nav1, nav2, nav3);
 
         //then
-        assertThat(result).isTrue();
+        assertThat(result).isFalse();
         assertThat(board.getBoard().get(nav1)).isEqualTo(Mark.EMPTY);
         assertThat(board.getBoard().get(nav2)).isEqualTo(Mark.EMPTY);
         assertThat(board.getBoard().get(nav3)).isEqualTo(Mark.EMPTY);
     }
 
     @Test
-    @Parameters({"0,1,10", "88,98,99", "40,50,51"})
+    @Parameters({"0,1,11", "88,98,99", "40,50,51"})
     public void shouldReturnFalseFor3FlagShipForNotStraightLine(int nav1, int nav2, int nav3) {
 
         //when
         boolean result = board.setThreeFlagShip(nav1, nav2, nav3);
 
         //then
-        assertThat(result).isTrue();
+        assertThat(result).isFalse();
         assertThat(board.getBoard().get(nav1)).isEqualTo(Mark.EMPTY);
         assertThat(board.getBoard().get(nav2)).isEqualTo(Mark.EMPTY);
         assertThat(board.getBoard().get(nav3)).isEqualTo(Mark.EMPTY);
 
+    }
+
+    @Test
+    @Parameters({"0,2", "97,99", "49,51"})
+    public void shouldReturnFalseIfNavPointsAreNotConnected(int nav1, int nav2) {
+
+        //when
+        boolean result = board.setTwoFlagShip(nav1, nav2);
+
+        //then
+        assertThat(result).isFalse();
+        assertThat(board.getBoard().get(nav1)).isEqualTo(Mark.EMPTY);
+        assertThat(board.getBoard().get(nav2)).isEqualTo(Mark.EMPTY);
+    }
+
+    @Test
+    @Parameters({"0,1,3", "97,98,100", "40,50,70"})
+    public void shouldReturnFalseIfNavPointsAreNotConnectedFor3FlagShip(int nav1, int nav2, int nav3) {
+
+        //when
+        boolean result = board.setThreeFlagShip(nav1, nav2, nav3);
+
+        //then
+        assertThat(result).isFalse();
+
+
+    }
+
+    @Test
+    @Parameters({"0,1,2,3","10,20,30,40"})
+    public void shouldReturnTrueFor4FlagShip(int nav1, int nav2, int nav3, int nav4){
+
+        //when
+        boolean result = board.setFourFlagShip(nav1, nav2, nav3,nav4);
+
+        //then
+        assertThat(result).isTrue();
+        assertThat(board.getBoard().get(nav1)).isEqualTo(Mark.S);
+        assertThat(board.getBoard().get(nav2)).isEqualTo(Mark.S);
+        assertThat(board.getBoard().get(nav3)).isEqualTo(Mark.S);
+        assertThat(board.getBoard().get(nav4)).isEqualTo(Mark.S);
+
+    }
+
+    @Test
+    @Parameters({"0,1,2,4", "95,96,97,99", "40,50,60,80"})
+    public void shouldReturnFalseIfNavPointsAreNotConnectedFor4FlagShip(int nav1, int nav2, int nav3, int nav4) {
+
+        //when
+        boolean result = board.setFourFlagShip(nav1, nav2, nav3, nav4);
+
+        //then
+        assertThat(result).isFalse();
+        assertThat(board.getBoard().get(nav1)).isEqualTo(Mark.EMPTY);
+        assertThat(board.getBoard().get(nav2)).isEqualTo(Mark.EMPTY);
+        assertThat(board.getBoard().get(nav3)).isEqualTo(Mark.EMPTY);
+        assertThat(board.getBoard().get(nav4)).isEqualTo(Mark.EMPTY);
     }
 
 
