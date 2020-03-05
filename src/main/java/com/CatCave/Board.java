@@ -5,8 +5,8 @@ import lombok.Getter;
 
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.Collections;
 import java.util.List;
+import java.util.stream.Collectors;
 
 @Getter
 public class Board {
@@ -32,15 +32,9 @@ public class Board {
     }
 
     public boolean setOneFlagShip(int nav, List<Integer> list) {
-        if (nav < 0 || nav > 99) {
-            return false;
-        }
-
-        if (!board.get(nav).equals(Mark.EMPTY)) {
-            return false;
-        }
-
-        if (thereIsShipNearby(nav, list)) {
+        if (nav < 0 || nav > 99
+                || !board.get(nav).equals(Mark.EMPTY)
+                || thereIsShipNearby(nav, list)) {
             return false;
         }
 
@@ -49,93 +43,77 @@ public class Board {
     }
 
     public boolean setTwoFlagShip(int nav, int nav2) {
-        if (nav2 < 0 || nav2 > 99) {
-            return false;
-        }
-
-        if (nav - nav2 == -11 || nav - nav2 == -9 || nav - nav2 == 11 || nav - nav2 == 9) {
-            System.out.println("Diagonalne statki są niedozwolone");
+        if (nav2 < 0 || nav2 > 99
+                || Math.abs(nav - nav2) == 11 || Math.abs(nav - nav2) == 9) {
+            System.out.println("Niedozwolone miejsce");
             return false;
         }
 
         if (Math.abs(nav - nav2) == 10 || Math.abs(nav - nav2) == 1) {
-            List<Integer> nextShipModulNavListCheck = new ArrayList<>();
-            for (Integer integer : listToCheckArea) {
-                if (integer != nav - nav2) {
-                    nextShipModulNavListCheck.add(integer);
-                }
-            }
-
             if (!setOneFlagShip(nav, listToCheckArea)) {
                 return false;
             }
 
-            return setOneFlagShip(nav2, nextShipModulNavListCheck);
+            return setOneFlagShip(nav2, listToCheckArea.stream()
+                    .filter(num -> num != nav - nav2)
+                    .collect(Collectors.toList()));
+
         }
 
-        System.out.println("Maszty statku muszą być postawione obok siebie, inaczej to nie pływa...");
+        System.out.println("Aby statek był integralny, jego części muszą pływać razem :)");
         return false;
     }
 
+    private boolean diagonalOrBendShip(int thirdFromEndNav, int secondFromEndNav, int lastNav){
+        if (Math.abs(secondFromEndNav - lastNav) == 11 || Math.abs(secondFromEndNav - lastNav) == 9
+                || (Math.abs(thirdFromEndNav - secondFromEndNav) == 10 && Math.abs(secondFromEndNav - lastNav) != 10)
+                || (Math.abs(thirdFromEndNav - secondFromEndNav) == 1 && Math.abs(secondFromEndNav - lastNav) != 1)
+        ) {
+            System.out.println("Niedozwolone miejsce");
+            return true;
+        } else {
+            return false;
+        }
+    }
+
     public boolean setThreeFlagShip(int nav1, int nav2, int nav3) {
-        if (nav2 - nav3 == -11 || nav2 - nav3 == -9 || nav2 - nav3 == 11 || nav2 - nav3 == 9) {
-            System.out.println("Diagonalne statki są niedozwolone");
+
+        if (diagonalOrBendShip(nav1, nav2, nav3)){
             return false;
         }
-
-        if ((Math.abs(nav1 - nav2) == 10 && Math.abs(nav2 - nav3) != 10) || (Math.abs(nav1 - nav2) == 1 && Math.abs(nav2 - nav3) != 1)) {
-            System.out.println("Łamane statki są niedozwolone");
-            return false;
-        }
-
 
         if (Math.abs(nav1 - nav2) == 10 || Math.abs(nav1 - nav2) == 1) {
-            List<Integer> nextShipModulNavListCheck = new ArrayList<>();
-            for (Integer integer : listToCheckArea) {
-                if (integer != nav1 - nav2) {
-                    nextShipModulNavListCheck.add(integer);
-                }
-            }
-
             if (!setTwoFlagShip(nav1, nav2)) {
                 return false;
             }
-            return setOneFlagShip(nav3, nextShipModulNavListCheck);
+
+            return setOneFlagShip(nav3, listToCheckArea.stream()
+                    .filter(num -> num != nav1 - nav2)
+                    .collect(Collectors.toList()));
         }
 
-        System.out.println("Maszty statku muszą być postawione obok siebie, inaczej to nie pływa...");
+        System.out.println("Aby statek był integralny, jego części muszą pływać razem :)");
         return false;
 
     }
 
     public boolean setFourFlagShip(int nav1, int nav2, int nav3, int nav4) {
 
-        if (nav3 - nav4 == -11 || nav3 - nav4 == -9 || nav3 - nav4 == 11 || nav3 - nav4 == 9) {
-            System.out.println("Diagonalne statki są niedozwolone");
+        if (diagonalOrBendShip(nav2, nav3, nav4)){
             return false;
         }
-
-        if ((Math.abs(nav2 - nav3) == 10 && Math.abs(nav3 - nav4) != 10) || (Math.abs(nav2 - nav3) == 1 && Math.abs(nav3 - nav4) != 1)) {
-            System.out.println("Łamane statki są niedozwolone");
-            return false;
-        }
-
 
         if (Math.abs(nav2 - nav3) == 10 || Math.abs(nav2 - nav3) == 1) {
-            List<Integer> nextShipModulNavListCheck = new ArrayList<>();
-            for (Integer integer : listToCheckArea) {
-                if (integer != nav2 - nav3) {
-                    nextShipModulNavListCheck.add(integer);
-                }
-            }
-
             if (!setThreeFlagShip(nav1, nav2, nav3)) {
                 return false;
             }
-            return setOneFlagShip(nav4, nextShipModulNavListCheck);
+
+            return setOneFlagShip(nav4, listToCheckArea.stream()
+            .filter(num -> num != nav2 - nav3)
+            .collect(Collectors.toList()));
         }
 
-        System.out.println("Maszty statku muszą być postawione obok siebie, inaczej to nie pływa...");
+        System.out.println("Aby statek był integralny, jego części muszą pływać razem :)");
         return false;
 
     }
