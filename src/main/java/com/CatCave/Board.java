@@ -79,7 +79,15 @@ public class Board {
 
     public boolean setThreeFlagShip(int nav1, int nav2, int nav3){
 
-        //metoda do sprawdzania diagonali!!
+        if (nav2-nav3 == -11 || nav2-nav3 == -9 || nav2-nav3 == 11 || nav2-nav3 == 9){
+            System.out.println("Diagonalne statki są niedozwolone");
+            return false;
+        }
+
+        if ((Math.abs(nav1-nav2) == 10 && Math.abs(nav2-nav3) != 10) || (Math.abs(nav1-nav2) == 1 && Math.abs(nav2-nav3) != 1)){
+            System.out.println("Łamane statki są niedozwolone");
+            return false;
+        }
 
        if (!setTwoFlagShip(nav1, nav2)){
            return false;
@@ -95,6 +103,11 @@ public class Board {
 
         return setOneFlagShip(nav3, nextShipModulNavListCheck);
 
+    }
+
+    public boolean setFourFlagShip(int nav1, int nav2, int nav3, int nav4){
+
+        return false;
     }
 
 
