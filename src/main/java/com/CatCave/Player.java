@@ -19,16 +19,11 @@ public class Player {
 
     public int stringToNavPoints(List<String> list){
 
-        int tens = ((list.get(0).charAt(0)) - 97) * 10;
+        int tens = ((list.get(0).charAt(0)) - 'a') * 10;
         int num = Integer.parseInt(list.get(1));
 
         return tens+num-1;
     }
 
-    public static void main(String[] args) {
-        Player p = new Player();
-        System.out.println(p.playerInputToStrigList("a     10"));
-
-    }
 
 }
