@@ -31,31 +31,50 @@ public class Board {
                 );
     }
 
-    public boolean setOneFlagShip(int nav, List<Integer> list) {
-        if (nav < 0 || nav > 99
-                || !board.get(nav).equals(Mark.EMPTY)
-                || thereIsShipNearby(nav, list)) {
+    private boolean diagonalShip(int secondFromEndNav, int lastNav) {
+        if (Math.abs(secondFromEndNav - lastNav) == 11 || Math.abs(secondFromEndNav - lastNav) == 9) {
+            System.out.println("Niedozwolone miejsce");
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    private boolean bendShip(int thirdFromEndNav, int secondFromEndNav, int lastNav) {
+        if (
+                (Math.abs(thirdFromEndNav - secondFromEndNav) == 10 && Math.abs(secondFromEndNav - lastNav) != 10)
+                        || (Math.abs(thirdFromEndNav - secondFromEndNav) == 1 && Math.abs(secondFromEndNav - lastNav) != 1)) {
+            System.out.println("Niedozwolone miejsce");
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    public boolean setOneFlagShip(int nav1, List<Integer> list) {
+        if (nav1 < 0 || nav1 > 99
+                || !board.get(nav1).equals(Mark.EMPTY)
+                || thereIsShipNearby(nav1, list)) {
             return false;
         }
 
-        board.set(nav, Mark.S);
+        board.set(nav1, Mark.S);
         return true;
     }
 
-    public boolean setTwoFlagShip(int nav, int nav2) {
-        if (nav2 < 0 || nav2 > 99
-                || Math.abs(nav - nav2) == 11 || Math.abs(nav - nav2) == 9) {
+    public boolean setTwoFlagShip(int nav1, int nav2) {
+        if (diagonalShip(nav1, nav2)) {
             System.out.println("Niedozwolone miejsce");
             return false;
         }
 
-        if (Math.abs(nav - nav2) == 10 || Math.abs(nav - nav2) == 1) {
-            if (!setOneFlagShip(nav, listToCheckArea)) {
+        if (Math.abs(nav1 - nav2) == 10 || Math.abs(nav1 - nav2) == 1) {
+            if (!setOneFlagShip(nav1, listToCheckArea)) {
                 return false;
             }
 
             return setOneFlagShip(nav2, listToCheckArea.stream()
-                    .filter(num -> num != nav - nav2)
+                    .filter(num -> num != nav1 - nav2)
                     .collect(Collectors.toList()));
 
         }
@@ -64,21 +83,10 @@ public class Board {
         return false;
     }
 
-    private boolean diagonalOrBendShip(int thirdFromEndNav, int secondFromEndNav, int lastNav){
-        if (Math.abs(secondFromEndNav - lastNav) == 11 || Math.abs(secondFromEndNav - lastNav) == 9
-                || (Math.abs(thirdFromEndNav - secondFromEndNav) == 10 && Math.abs(secondFromEndNav - lastNav) != 10)
-                || (Math.abs(thirdFromEndNav - secondFromEndNav) == 1 && Math.abs(secondFromEndNav - lastNav) != 1)
-        ) {
-            System.out.println("Niedozwolone miejsce");
-            return true;
-        } else {
-            return false;
-        }
-    }
 
     public boolean setThreeFlagShip(int nav1, int nav2, int nav3) {
 
-        if (diagonalOrBendShip(nav1, nav2, nav3)){
+        if (bendShip(nav1, nav2, nav3) || diagonalShip(nav2, nav3)) {
             return false;
         }
 
@@ -94,12 +102,11 @@ public class Board {
 
         System.out.println("Aby statek był integralny, jego części muszą pływać razem :)");
         return false;
-
     }
 
     public boolean setFourFlagShip(int nav1, int nav2, int nav3, int nav4) {
 
-        if (diagonalOrBendShip(nav2, nav3, nav4)){
+        if (bendShip(nav2, nav3, nav4) || diagonalShip(nav3, nav4)) {
             return false;
         }
 
@@ -109,14 +116,12 @@ public class Board {
             }
 
             return setOneFlagShip(nav4, listToCheckArea.stream()
-            .filter(num -> num != nav2 - nav3)
-            .collect(Collectors.toList()));
+                    .filter(num -> num != nav2 - nav3)
+                    .collect(Collectors.toList()));
         }
 
         System.out.println("Aby statek był integralny, jego części muszą pływać razem :)");
         return false;
-
     }
-
 
 }

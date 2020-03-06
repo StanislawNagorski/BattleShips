@@ -81,6 +81,20 @@ public class BoardTest {
     }
 
     @Test
+    @Parameters({"0,1,0,1", "10,11,11,12"," 98,99,89,99"})
+    public void shouldReturnFalseIsBoardIsNotEmptyFor2FlagShip(int nav1, int nav2, int nav3, int nav4) {
+        //given
+     board.setTwoFlagShip(nav1,nav2);
+
+        //when
+        boolean result = board.setTwoFlagShip(nav3, nav4);
+
+        //then
+        assertThat(result).isFalse();
+
+    }
+
+    @Test
     @Parameters({"0", "11", "48", "99"})
     public void shouldReturnTrueIsBoardIsEmpty(int nav) {
 
@@ -104,14 +118,14 @@ public class BoardTest {
     }
 
     @Test
-    @Parameters({"0,1","1,2","2,12","55,44","88,99"})
-    public void shouldReturnFalseWhenSettingShipToCloseToEachOther(int nav1, int nav2) {
+    @Parameters({"10,0,1","0,1,2","1,2,12","33,55,44","77,88,99"})
+    public void shouldReturnFalseWhenSettingShipToCloseToEachOther(int nav1, int nav2, int nav3) {
 
         //given
         board.setOneFlagShip(nav1, board.getListToCheckArea());
 
         //when
-        boolean result = board.setOneFlagShip(nav2, board.getListToCheckArea());
+        boolean result = board.setTwoFlagShip(nav2,nav3);
 
         //then
         assertThat(result).isFalse();
