@@ -9,7 +9,6 @@ import org.junit.runner.RunWith;
 import java.util.Arrays;
 import java.util.List;
 
-import static org.junit.Assert.*;
 @RunWith(JUnitParamsRunner.class)
 public class PlayerTest {
 
@@ -36,6 +35,17 @@ public class PlayerTest {
         int result = p.stringToNavPoints(list);
         //then
         Assertions.assertThat(result).isEqualTo(expectedNav);
+    }
+
+    @Test
+    @Parameters({"a10,9", "b-2,11", "c   10   ,29", "j   10,99"})
+    public void integrationOfProcesConvertingUserInputToNavPoints(String input, int expectedNav) {
+        //given
+        Player p = new Player();
+        //when
+        List<String> result = p.playerInputToStrigList(input);
+        //then
+        Assertions.assertThat(p.stringToNavPoints(result)).isEqualTo(expectedNav);
     }
 
 
