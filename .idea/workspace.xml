@@ -2,8 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="04807bcd-94f2-4538-b2af-807d2dd0e988" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/CatCave/Player.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/com/CatCave/PlayerTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/CatCave/Board.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/CatCave/Board.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/CatCave/BoardTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/CatCave/BoardTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/CatCave/Board.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/CatCave/Board.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/com/CatCave/BoardTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/com/CatCave/BoardTest.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -13,8 +18,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Class" />
         <option value="Enum" />
+        <option value="Class" />
         <option value="JUnit4 Test Class" />
       </list>
     </option>
@@ -48,7 +53,8 @@
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit4" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit4" value="" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../EgzaminSDA" />
-    <property name="settings.editor.selected.configurable" value="reference.projectsettings.compiler.javacompiler" />
+    <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
   <component name="RecentsManager">
     <key name="CreateTestDialog.RecentsKey">
@@ -58,8 +64,21 @@
       <recent name="" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.BoardTest">
-    <configuration name="BoardTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="JUnit.PlayerTest">
+    <configuration name="Player" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.CatCave.Player" />
+      <module name="Statki" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.CatCave.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="PlayerTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Statki" />
       <extension name="coverage">
         <pattern>
@@ -68,13 +87,13 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="com.CatCave" />
-      <option name="MAIN_CLASS_NAME" value="com.CatCave.BoardTest" />
+      <option name="MAIN_CLASS_NAME" value="com.CatCave.PlayerTest" />
       <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="BoardTest.shouldReturnFalseFor3FlagShipForNotStraightLine" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="PlayerTest.playerInputToStringList" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Statki" />
       <extension name="coverage">
         <pattern>
@@ -83,14 +102,14 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="com.CatCave" />
-      <option name="MAIN_CLASS_NAME" value="com.CatCave.BoardTest" />
-      <option name="METHOD_NAME" value="shouldReturnFalseFor3FlagShipForNotStraightLine" />
+      <option name="MAIN_CLASS_NAME" value="com.CatCave.PlayerTest" />
+      <option name="METHOD_NAME" value="playerInputToStringList" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="BoardTest.shouldReturnFalseFor3FlagShipInDiagonalLine" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="PlayerTest.stringListToNavPoints" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Statki" />
       <extension name="coverage">
         <pattern>
@@ -99,52 +118,27 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="com.CatCave" />
-      <option name="MAIN_CLASS_NAME" value="com.CatCave.BoardTest" />
-      <option name="METHOD_NAME" value="shouldReturnFalseFor3FlagShipInDiagonalLine" />
+      <option name="MAIN_CLASS_NAME" value="com.CatCave.PlayerTest" />
+      <option name="METHOD_NAME" value="stringListToNavPoints" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="BoardTest.shouldReturnFalseIfNavPointsAreNotConnected" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="Statki" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.CatCave.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="com.CatCave" />
-      <option name="MAIN_CLASS_NAME" value="com.CatCave.BoardTest" />
-      <option name="METHOD_NAME" value="shouldReturnFalseIfNavPointsAreNotConnected" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="BoardTest.shouldReturnFalseIfNavPointsAreNotConnectedFor3FlagShip" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="Statki" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.CatCave.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="com.CatCave" />
-      <option name="MAIN_CLASS_NAME" value="com.CatCave.BoardTest" />
-      <option name="METHOD_NAME" value="shouldReturnFalseIfNavPointsAreNotConnectedFor3FlagShip" />
-      <option name="TEST_OBJECT" value="method" />
+    <configuration name="Scratch" type="Java Scratch" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Scratch" />
+      <option name="SCRATCH_FILE_URL" value="file://$APPLICATION_CONFIG_DIR$/scratches/scratch_3.java" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.BoardTest" />
-        <item itemvalue="JUnit.BoardTest.shouldReturnFalseFor3FlagShipForNotStraightLine" />
-        <item itemvalue="JUnit.BoardTest.shouldReturnFalseFor3FlagShipInDiagonalLine" />
-        <item itemvalue="JUnit.BoardTest.shouldReturnFalseIfNavPointsAreNotConnected" />
-        <item itemvalue="JUnit.BoardTest.shouldReturnFalseIfNavPointsAreNotConnectedFor3FlagShip" />
+        <item itemvalue="JUnit.PlayerTest" />
+        <item itemvalue="Java Scratch.Scratch" />
+        <item itemvalue="JUnit.PlayerTest.stringListToNavPoints" />
+        <item itemvalue="JUnit.PlayerTest.playerInputToStringList" />
+        <item itemvalue="Application.Player" />
       </list>
     </recent_temporary>
   </component>
@@ -192,7 +186,14 @@
       <option name="project" value="LOCAL" />
       <updated>1583441320774</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Refectoring klasy Board">
+      <created>1583441510205</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1583441510205</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -206,62 +207,66 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="92" y="92" width="1736" height="856" key="#com.intellij.execution.junit2.states.ComparisonFailureState$DiffDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1583311986369" />
-    <state x="614" y="114" key="CommitChangelistDialog2" timestamp="1583441319469">
+    <state x="707" y="366" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1" timestamp="1583445640978">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="614" y="114" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1583441319469" />
-    <state width="565" height="912" key="GridCell.Tab.0.bottom" timestamp="1583441469350">
+    <state x="707" y="366" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1/0.0.1920.1040@0.0.1920.1040" timestamp="1583445640978" />
+    <state x="614" y="114" key="CommitChangelistDialog2" timestamp="1583441509304">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="565" height="912" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1583441469350" />
-    <state width="565" height="912" key="GridCell.Tab.0.center" timestamp="1583441469350">
+    <state x="614" y="114" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1583441509304" />
+    <state width="565" height="912" key="GridCell.Tab.0.bottom" timestamp="1583488798570">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="565" height="912" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1583441469350" />
-    <state width="565" height="912" key="GridCell.Tab.0.left" timestamp="1583441469350">
+    <state width="565" height="912" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1583488798570" />
+    <state width="565" height="912" key="GridCell.Tab.0.center" timestamp="1583488798570">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="565" height="912" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1583441469350" />
-    <state width="565" height="912" key="GridCell.Tab.0.right" timestamp="1583441469350">
+    <state width="565" height="912" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1583488798570" />
+    <state width="565" height="912" key="GridCell.Tab.0.left" timestamp="1583488798570">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="565" height="912" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1583441469350" />
-    <state width="1877" height="348" key="GridCell.Tab.1.bottom" timestamp="1583398936070">
+    <state width="565" height="912" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1583488798570" />
+    <state width="565" height="912" key="GridCell.Tab.0.right" timestamp="1583488798570">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="348" key="GridCell.Tab.1.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1583398936070" />
-    <state width="1877" height="348" key="GridCell.Tab.1.center" timestamp="1583398936070">
+    <state width="565" height="912" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1583488798570" />
+    <state width="1877" height="348" key="GridCell.Tab.1.bottom" timestamp="1583442403538">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="348" key="GridCell.Tab.1.center/0.0.1920.1040@0.0.1920.1040" timestamp="1583398936070" />
-    <state width="1877" height="348" key="GridCell.Tab.1.left" timestamp="1583398936070">
+    <state width="1877" height="348" key="GridCell.Tab.1.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1583442403538" />
+    <state width="1877" height="348" key="GridCell.Tab.1.center" timestamp="1583442403538">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="348" key="GridCell.Tab.1.left/0.0.1920.1040@0.0.1920.1040" timestamp="1583398936070" />
-    <state width="1877" height="348" key="GridCell.Tab.1.right" timestamp="1583398936070">
+    <state width="1877" height="348" key="GridCell.Tab.1.center/0.0.1920.1040@0.0.1920.1040" timestamp="1583442403538" />
+    <state width="1877" height="348" key="GridCell.Tab.1.left" timestamp="1583442403538">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="348" key="GridCell.Tab.1.right/0.0.1920.1040@0.0.1920.1040" timestamp="1583398936070" />
-    <state x="461" y="162" key="SettingsEditor" timestamp="1583241652997">
+    <state width="1877" height="348" key="GridCell.Tab.1.left/0.0.1920.1040@0.0.1920.1040" timestamp="1583442403538" />
+    <state width="1877" height="348" key="GridCell.Tab.1.right" timestamp="1583442403538">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="461" y="162" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1583241652997" />
-    <state x="552" y="252" key="Vcs.Push.Dialog.v2" timestamp="1583441348297">
+    <state width="1877" height="348" key="GridCell.Tab.1.right/0.0.1920.1040@0.0.1920.1040" timestamp="1583442403538" />
+    <state x="461" y="162" key="SettingsEditor" timestamp="1583445532783">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="552" y="252" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1583441348297" />
-    <state x="656" y="343" key="com.intellij.ide.util.TipDialog" timestamp="1583397779809">
+    <state x="461" y="162" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1583445532783" />
+    <state x="552" y="252" key="Vcs.Push.Dialog.v2" timestamp="1583441907809">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="656" y="343" key="com.intellij.ide.util.TipDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1583397779809" />
+    <state x="552" y="252" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1583441907809" />
+    <state x="656" y="343" key="com.intellij.ide.util.TipDialog" timestamp="1583482294139">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="656" y="343" key="com.intellij.ide.util.TipDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1583482294139" />
     <state x="769" y="436" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1583398606976">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="769" y="436" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1920.1040@0.0.1920.1040" timestamp="1583398606976" />
-    <state x="731" y="222" key="com.intellij.testIntegration.createTest.CreateTestDialog" timestamp="1583242708983">
+    <state x="731" y="222" key="com.intellij.testIntegration.createTest.CreateTestDialog" timestamp="1583485641049">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="731" y="222" key="com.intellij.testIntegration.createTest.CreateTestDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1583242708983" />
+    <state x="731" y="222" key="com.intellij.testIntegration.createTest.CreateTestDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1583485641049" />
     <state x="655" y="311" key="git4idea.merge.GitPullDialog" timestamp="1583400673084">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
