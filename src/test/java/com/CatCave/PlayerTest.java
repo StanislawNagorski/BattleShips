@@ -18,7 +18,7 @@ public class PlayerTest {
         //given
         Player p = new Player();
         //when
-        List<String> result = p.playerInputToStrigList(input);
+        List<String> result = p.playerInputToStringList(input);
         //then
         Assertions.assertThat(result.get(0)).isEqualTo(aBC);
         Assertions.assertThat(result.get(1)).isEqualTo(num);
@@ -26,26 +26,25 @@ public class PlayerTest {
 
 
     @Test
-    @Parameters({"a, 10, 9", "b, 2, 11", "c, 10, 29", "j,10, 99"})
-    public void stringListToNavPoints(String letter,String num, int expectedNav) {
+    @Parameters({"a_10, 9", "b-2, 11", "c    10, 29", "j10, 99"})
+    public void stringListToNavPoints(String input, int expectedNav) {
         //given
         Player p = new Player();
-        List<String> list = Arrays.asList(letter,num);
         //when
-        int result = p.stringToNavPoints(list);
+        int result = p.stringToNavPoints(input);
         //then
         Assertions.assertThat(result).isEqualTo(expectedNav);
     }
 
     @Test
     @Parameters({"a10,9", "b-2,11", "c   10   ,29", "j   10,99"})
-    public void integrationOfProcesConvertingUserInputToNavPoints(String input, int expectedNav) {
+    public void integrationOfProcessConvertingUserInputToNavPoints(String input, int expectedNav) {
         //given
         Player p = new Player();
         //when
-        List<String> result = p.playerInputToStrigList(input);
+       int result =p.stringToNavPoints(input);
         //then
-        Assertions.assertThat(p.stringToNavPoints(result)).isEqualTo(expectedNav);
+        Assertions.assertThat(result).isEqualTo(expectedNav);
     }
 
 
