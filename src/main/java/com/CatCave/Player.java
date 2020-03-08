@@ -7,7 +7,7 @@ import java.util.stream.Stream;
 public class Player {
 
 
-    List<String> playerInputToStrigList(String input){
+  List<String> playerInputToStringList(String input){
 
         return Stream.of(input.trim()
                 .toLowerCase()
@@ -17,7 +17,9 @@ public class Player {
 
     }
 
-    public int stringToNavPoints(List<String> list){
+    public int stringToNavPoints(String input){
+
+        List<String> list = playerInputToStringList(input);
 
         int tens = ((list.get(0).charAt(0)) - 'a') * 10;
         int num = Integer.parseInt(list.get(1));
