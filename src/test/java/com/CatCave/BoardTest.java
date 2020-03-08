@@ -29,9 +29,9 @@ public class BoardTest {
     @Parameters({"-1", "111", "-48", "199"})
     public void shouldReturnFalseForOutOfBoundriesNav(int nav) {
         //when
-        board.setOneFlagShipOnBoard(nav, board.getListToCheckArea());
+        board.setOneFlagShipOnBoard(nav, board.getAreaAroundNavPoint());
         //then
-        assertThat(board.setOneFlagShipOnBoard(nav, board.getListToCheckArea())).isFalse();
+        assertThat(board.setOneFlagShipOnBoard(nav, board.getAreaAroundNavPoint())).isFalse();
     }
 
     @Test
@@ -61,7 +61,7 @@ public class BoardTest {
     @Parameters({"0", "11", "48", "99"})
     public void shouldPutOneWingShipOnBoard(int nav) {
         //when
-        board.setOneFlagShipOnBoard(nav, board.getListToCheckArea());
+        board.setOneFlagShipOnBoard(nav, board.getAreaAroundNavPoint());
         //then
         assertThat(board.getBoard().get(nav)).isEqualTo(Mark.S);
     }
@@ -70,10 +70,10 @@ public class BoardTest {
     @Parameters({"0", "11", "48", "99"})
     public void shouldReturnFalseIsBoardIsNotEmpty(int nav) {
         //given
-        board.setOneFlagShipOnBoard(nav, board.getListToCheckArea());
+        board.setOneFlagShipOnBoard(nav, board.getAreaAroundNavPoint());
 
         //when
-        boolean result = board.setOneFlagShipOnBoard(nav, board.getListToCheckArea());
+        boolean result = board.setOneFlagShipOnBoard(nav, board.getAreaAroundNavPoint());
 
         //then
         assertThat(result).isFalse();
@@ -99,7 +99,7 @@ public class BoardTest {
     public void shouldReturnTrueIsBoardIsEmpty(int nav) {
 
         //when
-        boolean result = board.setOneFlagShipOnBoard(nav, board.getListToCheckArea());
+        boolean result = board.setOneFlagShipOnBoard(nav, board.getAreaAroundNavPoint());
 
         //then
         assertThat(result).isTrue();
@@ -111,7 +111,7 @@ public class BoardTest {
 
 
         //when
-        boolean result = board.setOneFlagShipOnBoard(nav, board.getListToCheckArea());
+        boolean result = board.setOneFlagShipOnBoard(nav, board.getAreaAroundNavPoint());
 
         //then
         assertThat(result).isTrue();
@@ -122,7 +122,7 @@ public class BoardTest {
     public void shouldReturnFalseWhenSettingShipToCloseToEachOther(int nav1, int nav2, int nav3) {
 
         //given
-        board.setOneFlagShipOnBoard(nav1, board.getListToCheckArea());
+        board.setOneFlagShipOnBoard(nav1, board.getAreaAroundNavPoint());
 
         //when
         boolean result = board.setTwoFlagShipOnBoard(nav2,nav3);
@@ -261,7 +261,7 @@ public class BoardTest {
     @Parameters({"0", "10", "55", "99"})
     public void shouldReturnTrueIfShipIsHit(int nav1){
         //given
-        board.setOneFlagShipOnBoard(nav1,board.getListToCheckArea());
+        board.setOneFlagShipOnBoard(nav1,board.getAreaAroundNavPoint());
         //when
         boolean result = board.hit(nav1);
         //then
@@ -273,7 +273,7 @@ public class BoardTest {
     @Parameters({"0", "10", "55", "99"})
     public void shouldReturnFalseIsShipWasAlreadyHited(int nav1){
         //given
-        board.setOneFlagShipOnBoard(nav1,board.getListToCheckArea());
+        board.setOneFlagShipOnBoard(nav1,board.getAreaAroundNavPoint());
         board.hit(nav1);
         //when
         boolean result = board.hit(nav1);
@@ -410,6 +410,27 @@ public class BoardTest {
 
         //then
         assertThat(board.getLisOfShips().get(0).isItSink()).isFalse();
+    }
+
+    @Test
+    @Parameters({"10,11,10,11", "35,36,36,35"})
+    public void shouldSetXAroundSinkedShip(int nav1, int nav2, int hit1, int hit2 ){
+        //given
+        board.setTwoFlagShip(nav1, nav2);
+
+        //when
+        board.hit(hit1);
+        board.hit(hit2);
+        board.markXAllAroundSinkedShip(board.getLisOfShips().get(0));
+
+
+        //then
+        assertThat(board.getBoard().get(nav1-10)).isEqualTo(Mark.X);
+        assertThat(board.getBoard().get(nav1-9)).isEqualTo(Mark.X);
+        assertThat(board.getBoard().get(nav1-1)).isEqualTo(Mark.X);
+        assertThat(board.getBoard().get(nav1+9)).isEqualTo(Mark.X);
+        assertThat(board.getBoard().get(nav1+10)).isEqualTo(Mark.X);
+        assertThat(board.getBoard().get(nav1+11)).isEqualTo(Mark.X);
     }
 
 

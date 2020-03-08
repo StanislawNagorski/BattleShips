@@ -17,7 +17,7 @@ public class Board {
 
     private List<Ship> lisOfShips;
     private List<Mark> board;
-    private List<Integer> listToCheckArea = Arrays.asList(-11, -10, -9, -1, 1, 9, 10, 11);
+    private List<Integer> areaAroundNavPoint = Arrays.asList(-11, -10, -9, -1, 1, 9, 10, 11);
     private static final int BOARD_SIZE = 100;
 
 
@@ -59,7 +59,7 @@ public class Board {
     }
 
     public boolean setOneFlagShip(int nav1) {
-        if (setOneFlagShipOnBoard(nav1, listToCheckArea)) {
+        if (setOneFlagShipOnBoard(nav1, areaAroundNavPoint)) {
             lisOfShips.add(new Ship(nav1));
             return true;
         }
@@ -72,11 +72,11 @@ public class Board {
         }
 
         if (Math.abs(nav1 - nav2) == 10 || Math.abs(nav1 - nav2) == 1) {
-            if (!setOneFlagShipOnBoard(nav1, listToCheckArea)) {
+            if (!setOneFlagShipOnBoard(nav1, areaAroundNavPoint)) {
                 return false;
             }
 
-            return setOneFlagShipOnBoard(nav2, listToCheckArea.stream()
+            return setOneFlagShipOnBoard(nav2, areaAroundNavPoint.stream()
                     .filter(num -> num != nav1 - nav2)
                     .collect(Collectors.toList()));
         }
@@ -104,7 +104,7 @@ public class Board {
                 return false;
             }
 
-            return setOneFlagShipOnBoard(nav3, listToCheckArea.stream()
+            return setOneFlagShipOnBoard(nav3, areaAroundNavPoint.stream()
                     .filter(num -> num != nav1 - nav2)
                     .collect(Collectors.toList()));
         }
@@ -131,12 +131,13 @@ public class Board {
                 return false;
             }
 
-            return setOneFlagShipOnBoard(nav4, listToCheckArea.stream()
+            return setOneFlagShipOnBoard(nav4, areaAroundNavPoint.stream()
                     .filter(num -> num != nav2 - nav3)
                     .collect(Collectors.toList()));
         }
         return false;
     }
+
     public boolean setFourFlagShip(int nav1, int nav2, int nav3, int nav4) {
 
         if (setFourFlagShipOnBoard(nav1, nav2, nav3, nav4)) {
@@ -168,5 +169,20 @@ public class Board {
             return true;
         }
         return false;
+    }
+
+    // czy to można do streama???
+    public void markXAllAroundSinkedShip(Ship ship) {
+        for (Integer shipNavPoint : ship.getListofShipNavPoints()) {
+            for (Integer navPointAround : areaAroundNavPoint) {
+                if (shipNavPoint + navPointAround > 99 || shipNavPoint + navPointAround < 0) {
+                    continue;
+                }
+
+                if (board.get(shipNavPoint + navPointAround).equals(Mark.EMPTY)) {
+                    board.set(shipNavPoint + navPointAround, Mark.X);
+                }
+            }
+        }
     }
 }
