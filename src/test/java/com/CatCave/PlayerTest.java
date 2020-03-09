@@ -13,7 +13,7 @@ import java.util.List;
 public class PlayerTest {
 
     @Test
-    @Parameters({"a1,a,1", "b-2,b, 2", "c   9   ,c, 9", "j   10,j,10"})
+    @Parameters({"a1,a,1", "b-2,b, 2", " c   9   ,c,9", "j   10,j,10"})
     public void playerInputToStringList(String input, String aBC, String num) {
         //given
         Player p = new Player();
@@ -26,7 +26,7 @@ public class PlayerTest {
 
 
     @Test
-    @Parameters({"a_10, 9", "b-2, 11", "c    10, 29", "j10, 99"})
+    @Parameters({"a_10, 9", "b-2, 11", "c    10, 29", "j10, 99", "a1, 0"})
     public void stringListToNavPoints(String input, int expectedNav) {
         //given
         Player p = new Player();

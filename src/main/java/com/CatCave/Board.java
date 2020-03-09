@@ -26,10 +26,31 @@ public class Board {
         lisOfShips = new ArrayList<>();
         for (int i = 0; i < BOARD_SIZE; i++) {
             board.add(Mark.EMPTY);
+            //board.add(Mark.X);
         }
     }
 
     private boolean thereIsShipNearby(int nav, List<Integer> list) {
+
+        if (nav % 10 == 0){
+            //wywal z listy LEWĄ stronę czyli -11, -1, +9
+
+
+            return list.stream()
+                    .filter(num -> (nav + num >= 0 && nav + num <= 99))
+                    .filter(num -> num != -11 && num != -1 && num  != 9)
+                    .anyMatch(num -> (!board.get(nav + num).equals(Mark.EMPTY))
+                    );
+        }
+
+        if ((nav +1) % 10 == 0){
+            //wywal z listy PRAWĄ stronę czyli +11, +1, -9
+            return list.stream()
+                    .filter(num -> (nav + num >= 0 && nav + num <= 99))
+                    .filter(num ->  num != 11 && num != 1 &&  num != -9)
+                    .anyMatch(num -> (!board.get(nav + num).equals(Mark.EMPTY))
+                    );
+        }
 
         return list.stream()
                 .filter(num -> (nav + num >= 0 && nav + num <= 99))
@@ -47,7 +68,7 @@ public class Board {
 
     }
 
-    public boolean setOneFlagShipOnBoard(int nav1, List<Integer> list) {
+    private boolean setOneFlagShipOnBoard(int nav1, List<Integer> list) {
         if (nav1 < 0 || nav1 > 99
                 || !board.get(nav1).equals(Mark.EMPTY)
                 || thereIsShipNearby(nav1, list)) {
@@ -66,12 +87,12 @@ public class Board {
         return false;
     }
 
-    public boolean setTwoFlagShipOnBoard(int nav1, int nav2) {
+    private boolean setTwoFlagShipOnBoard(int nav1, int nav2) {
         if (diagonalShip(nav1, nav2)) {
             return false;
         }
 
-        if (Math.abs(nav1 - nav2) == 10 || Math.abs(nav1 - nav2) == 1) {
+        if (Math.abs(nav1 - nav2) == 10 || (Math.abs(nav1 - nav2) == 1 &&  (nav1/10 == nav2/10) )) {
             if (!setOneFlagShipOnBoard(nav1, areaAroundNavPoint)) {
                 return false;
             }
@@ -93,13 +114,13 @@ public class Board {
     }
 
 
-    public boolean setThreeFlagShipOnBoard(int nav1, int nav2, int nav3) {
+    private boolean setThreeFlagShipOnBoard(int nav1, int nav2, int nav3) {
 
         if (bendShip(nav1, nav2, nav3) || diagonalShip(nav2, nav3)) {
             return false;
         }
 
-        if (Math.abs(nav1 - nav2) == 10 || Math.abs(nav1 - nav2) == 1) {
+        if (Math.abs(nav1 - nav2) == 10 || (Math.abs(nav1 - nav2) == 1 &&  (nav1/10 == nav2/10) )) {
             if (!setTwoFlagShipOnBoard(nav1, nav2)) {
                 return false;
             }
@@ -120,13 +141,13 @@ public class Board {
         return false;
     }
 
-    public boolean setFourFlagShipOnBoard(int nav1, int nav2, int nav3, int nav4) {
+    private boolean setFourFlagShipOnBoard(int nav1, int nav2, int nav3, int nav4) {
 
         if (bendShip(nav2, nav3, nav4) || diagonalShip(nav3, nav4)) {
             return false;
         }
 
-        if (Math.abs(nav2 - nav3) == 10 || Math.abs(nav2 - nav3) == 1) {
+        if (Math.abs(nav2 - nav3) == 10 || (Math.abs(nav2 - nav3) == 1 &&  (nav2/10 == nav3/10) )) {
             if (!setThreeFlagShipOnBoard(nav1, nav2, nav3)) {
                 return false;
             }
@@ -148,7 +169,7 @@ public class Board {
     }
 
 
-    public boolean hit(int nav) {
+    public boolean fire(int nav) {
 
         if (board.get(nav).equals(Mark.EMPTY)) {
             board.set(nav, Mark.X);
@@ -185,4 +206,36 @@ public class Board {
             }
         }
     }
+
+    public void printBoard() {
+
+        char c = 'a';
+        System.out.println(" | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10|");
+
+        for (int i = 0; i < board.size(); i++) {
+            if (i == 0) {
+                System.out.print(c + "|");
+                c++;
+            }
+
+            if (i != 0 && (i) % 10 == 0 && i < 99) {
+                System.out.println();
+                System.out.print(c + "|");
+                c++;
+            }
+
+            if (board.get(i).equals(Mark.EMPTY)) {
+                System.out.print("   |");
+            } else {
+                System.out.print(" " + board.get(i) + " |");
+            }
+        }
+        System.out.println();
+    }
+        //????
+    public static void clearScreen() {
+        System.out.print("\033[H\033[2J");
+        System.out.flush();
+    }
+
 }

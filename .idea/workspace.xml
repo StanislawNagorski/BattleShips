@@ -2,12 +2,16 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="04807bcd-94f2-4538-b2af-807d2dd0e988" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/CatCave/Game.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/CatCave/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/CatCave/App.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/CatCave/Board.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/CatCave/Board.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/CatCave/ships/Ship.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/CatCave/ships/Ship.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/CatCave/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/CatCave/Player.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/com/CatCave/BoardTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/CatCave/BoardTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/CatCave/PlayerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/CatCave/PlayerTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/CatCave/App.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/CatCave/App.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/CatCave/Board.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/CatCave/Board.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/com/CatCave/BoardTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/com/CatCave/BoardTest.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -19,8 +23,8 @@
       <list>
         <option value="Enum" />
         <option value="JUnit4 Test Class" />
-        <option value="Class" />
         <option value="Interface" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -67,8 +71,9 @@
       <recent name="" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.BoardTest.shouldSetXAroundSinkedShip">
-    <configuration name="AppTest.shouldAnswerWithTrue" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="Application.App">
+    <configuration name="App" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.CatCave.App" />
       <module name="Statki" />
       <extension name="coverage">
         <pattern>
@@ -76,10 +81,6 @@
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="com.CatCave" />
-      <option name="MAIN_CLASS_NAME" value="com.CatCave.AppTest" />
-      <option name="METHOD_NAME" value="shouldAnswerWithTrue" />
-      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -99,7 +100,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="BoardTest.shouldReturnFalseIfFourFlagShipsIsNotSink" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="BoardTest.shouldNotAllowToPutShipsOutSideEdges" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Statki" />
       <extension name="coverage">
         <pattern>
@@ -109,13 +110,13 @@
       </extension>
       <option name="PACKAGE_NAME" value="com.CatCave" />
       <option name="MAIN_CLASS_NAME" value="com.CatCave.BoardTest" />
-      <option name="METHOD_NAME" value="shouldReturnFalseIfFourFlagShipsIsNotSink" />
+      <option name="METHOD_NAME" value="shouldNotAllowToPutShipsOutSideEdges" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="BoardTest.shouldReturnTrueIfFourFlagShipsIsSink" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="BoardTest.shouldReturnTrueForTwo2FlagShip" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Statki" />
       <extension name="coverage">
         <pattern>
@@ -125,13 +126,13 @@
       </extension>
       <option name="PACKAGE_NAME" value="com.CatCave" />
       <option name="MAIN_CLASS_NAME" value="com.CatCave.BoardTest" />
-      <option name="METHOD_NAME" value="shouldReturnTrueIfFourFlagShipsIsSink" />
+      <option name="METHOD_NAME" value="shouldReturnTrueForTwo2FlagShip" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="BoardTest.shouldSetXAroundSinkedShip" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="PlayerTest.playerInputToStringList" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Statki" />
       <extension name="coverage">
         <pattern>
@@ -140,8 +141,8 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="com.CatCave" />
-      <option name="MAIN_CLASS_NAME" value="com.CatCave.BoardTest" />
-      <option name="METHOD_NAME" value="shouldSetXAroundSinkedShip" />
+      <option name="MAIN_CLASS_NAME" value="com.CatCave.PlayerTest" />
+      <option name="METHOD_NAME" value="playerInputToStringList" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -149,11 +150,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.BoardTest.shouldSetXAroundSinkedShip" />
-        <item itemvalue="JUnit.AppTest.shouldAnswerWithTrue" />
+        <item itemvalue="Application.App" />
+        <item itemvalue="JUnit.PlayerTest.playerInputToStringList" />
         <item itemvalue="JUnit.BoardTest" />
-        <item itemvalue="JUnit.BoardTest.shouldReturnFalseIfFourFlagShipsIsNotSink" />
-        <item itemvalue="JUnit.BoardTest.shouldReturnTrueIfFourFlagShipsIsSink" />
+        <item itemvalue="JUnit.BoardTest.shouldReturnTrueForTwo2FlagShip" />
+        <item itemvalue="JUnit.BoardTest.shouldNotAllowToPutShipsOutSideEdges" />
       </list>
     </recent_temporary>
   </component>
@@ -229,7 +230,14 @@
       <option name="project" value="LOCAL" />
       <updated>1583684041457</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="metoda zaznaczająca X naokoło zatopionego statku">
+      <created>1583702657176</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1583702657176</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -239,7 +247,8 @@
     <MESSAGE value="Dwie metody tłumaczące input urzytkownika w formacie a10 na navPointy -&gt; 9" />
     <MESSAGE value="test integracyjny userInput -&gt; NavPoint" />
     <MESSAGE value="statki są teraz obiektami, metoda IsItSink działa poprawnie" />
-    <option name="LAST_COMMIT_MESSAGE" value="statki są teraz obiektami, metoda IsItSink działa poprawnie" />
+    <MESSAGE value="metoda zaznaczająca X naokoło zatopionego statku" />
+    <option name="LAST_COMMIT_MESSAGE" value="metoda zaznaczająca X naokoło zatopionego statku" />
   </component>
   <component name="WindowStateProjectService">
     <state x="191" y="138" key="#Live_Templates" timestamp="1583520631711">
@@ -251,10 +260,10 @@
     </state>
     <state x="92" y="92" width="1736" height="856" key="#com.intellij.execution.junit2.states.ComparisonFailureState$DiffDialog/0.0.1919.1040@0.0.1919.1040" timestamp="1583702250297" />
     <state x="92" y="92" width="1736" height="856" key="#com.intellij.execution.junit2.states.ComparisonFailureState$DiffDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1583311986369" />
-    <state x="765" y="229" key="#com.intellij.ide.util.MemberChooser" timestamp="1583676544262">
+    <state x="765" y="229" key="#com.intellij.ide.util.MemberChooser" timestamp="1583767648454">
       <screen x="0" y="0" width="1919" height="1040" />
     </state>
-    <state x="765" y="229" key="#com.intellij.ide.util.MemberChooser/0.0.1919.1040@0.0.1919.1040" timestamp="1583676544262" />
+    <state x="765" y="229" key="#com.intellij.ide.util.MemberChooser/0.0.1919.1040@0.0.1919.1040" timestamp="1583767648454" />
     <state x="765" y="229" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1040@0.0.1920.1040" timestamp="1583618727222" />
     <state x="755" y="379" width="408" height="291" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes" timestamp="1583674249655">
       <screen x="0" y="0" width="1919" height="1040" />
@@ -272,30 +281,30 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="707" y="366" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1/0.0.1920.1040@0.0.1920.1040" timestamp="1583445640978" />
-    <state x="614" y="114" key="CommitChangelistDialog2" timestamp="1583684039168">
+    <state x="614" y="114" key="CommitChangelistDialog2" timestamp="1583702654565">
       <screen x="0" y="0" width="1919" height="1040" />
     </state>
-    <state x="614" y="114" key="CommitChangelistDialog2/0.0.1919.1040@0.0.1919.1040" timestamp="1583684039168" />
+    <state x="614" y="114" key="CommitChangelistDialog2/0.0.1919.1040@0.0.1919.1040" timestamp="1583702654565" />
     <state x="614" y="114" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1583489551161" />
-    <state width="564" height="912" key="GridCell.Tab.0.bottom" timestamp="1583702255443">
+    <state width="566" height="912" key="GridCell.Tab.0.bottom" timestamp="1583787381672">
       <screen x="0" y="0" width="1919" height="1040" />
     </state>
-    <state width="564" height="912" key="GridCell.Tab.0.bottom/0.0.1919.1040@0.0.1919.1040" timestamp="1583702255443" />
+    <state width="566" height="912" key="GridCell.Tab.0.bottom/0.0.1919.1040@0.0.1919.1040" timestamp="1583787381672" />
     <state width="565" height="912" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1583601056878" />
-    <state width="564" height="912" key="GridCell.Tab.0.center" timestamp="1583702255443">
+    <state width="566" height="912" key="GridCell.Tab.0.center" timestamp="1583787381672">
       <screen x="0" y="0" width="1919" height="1040" />
     </state>
-    <state width="564" height="912" key="GridCell.Tab.0.center/0.0.1919.1040@0.0.1919.1040" timestamp="1583702255443" />
+    <state width="566" height="912" key="GridCell.Tab.0.center/0.0.1919.1040@0.0.1919.1040" timestamp="1583787381672" />
     <state width="565" height="912" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1583601056878" />
-    <state width="564" height="912" key="GridCell.Tab.0.left" timestamp="1583702255443">
+    <state width="566" height="912" key="GridCell.Tab.0.left" timestamp="1583787381672">
       <screen x="0" y="0" width="1919" height="1040" />
     </state>
-    <state width="564" height="912" key="GridCell.Tab.0.left/0.0.1919.1040@0.0.1919.1040" timestamp="1583702255443" />
+    <state width="566" height="912" key="GridCell.Tab.0.left/0.0.1919.1040@0.0.1919.1040" timestamp="1583787381672" />
     <state width="565" height="912" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1583601056878" />
-    <state width="564" height="912" key="GridCell.Tab.0.right" timestamp="1583702255443">
+    <state width="566" height="912" key="GridCell.Tab.0.right" timestamp="1583787381672">
       <screen x="0" y="0" width="1919" height="1040" />
     </state>
-    <state width="564" height="912" key="GridCell.Tab.0.right/0.0.1919.1040@0.0.1919.1040" timestamp="1583702255443" />
+    <state width="566" height="912" key="GridCell.Tab.0.right/0.0.1919.1040@0.0.1919.1040" timestamp="1583787381672" />
     <state width="565" height="912" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1583601056878" />
     <state width="1877" height="348" key="GridCell.Tab.1.bottom" timestamp="1583442403538">
       <screen x="0" y="0" width="1920" height="1040" />
@@ -317,15 +326,15 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="461" y="162" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1583445532783" />
-    <state x="552" y="252" key="Vcs.Push.Dialog.v2" timestamp="1583684104788">
+    <state x="552" y="252" key="Vcs.Push.Dialog.v2" timestamp="1583702665190">
       <screen x="0" y="0" width="1919" height="1040" />
     </state>
-    <state x="552" y="252" key="Vcs.Push.Dialog.v2/0.0.1919.1040@0.0.1919.1040" timestamp="1583684104788" />
+    <state x="552" y="252" key="Vcs.Push.Dialog.v2/0.0.1919.1040@0.0.1919.1040" timestamp="1583702665190" />
     <state x="552" y="252" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1583489560736" />
-    <state x="656" y="343" key="com.intellij.ide.util.TipDialog" timestamp="1583692916593">
+    <state x="656" y="343" key="com.intellij.ide.util.TipDialog" timestamp="1583763180443">
       <screen x="0" y="0" width="1919" height="1040" />
     </state>
-    <state x="656" y="343" key="com.intellij.ide.util.TipDialog/0.0.1919.1040@0.0.1919.1040" timestamp="1583692916593" />
+    <state x="656" y="343" key="com.intellij.ide.util.TipDialog/0.0.1919.1040@0.0.1919.1040" timestamp="1583763180443" />
     <state x="656" y="343" key="com.intellij.ide.util.TipDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1583612576526" />
     <state x="769" y="436" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1583684367850">
       <screen x="0" y="0" width="1919" height="1040" />
