@@ -17,7 +17,6 @@ public class Player {
                 .split("\\W|(?<=\\d)(?=\\D)|(?=\\d)(?<=\\D)"))
                 .filter(sign -> !sign.isBlank())
                 .collect(Collectors.toList());
-
     }
 
     int stringToNavPoints(String input) {
@@ -136,6 +135,16 @@ public class Player {
 
             board.printBoard();
         }
+    }
+
+    public void fire(Board board){
+         Scanner scan = new Scanner(System.in);
+
+         boolean flag = true;
+         while (flag){
+             flag = board.hit(stringToNavPoints(scan.nextLine()));
+             board.printBoardOfHits();
+         }
     }
 
 

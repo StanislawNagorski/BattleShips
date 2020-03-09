@@ -26,28 +26,25 @@ public class Board {
         lisOfShips = new ArrayList<>();
         for (int i = 0; i < BOARD_SIZE; i++) {
             board.add(Mark.EMPTY);
-            //board.add(Mark.X);
         }
     }
 
     private boolean thereIsShipNearby(int nav, List<Integer> list) {
 
-        if (nav % 10 == 0){
-            //wywal z listy LEWĄ stronę czyli -11, -1, +9
+        if (nav % 10 == 0) {
 
 
             return list.stream()
                     .filter(num -> (nav + num >= 0 && nav + num <= 99))
-                    .filter(num -> num != -11 && num != -1 && num  != 9)
+                    .filter(num -> num != -11 && num != -1 && num != 9)
                     .anyMatch(num -> (!board.get(nav + num).equals(Mark.EMPTY))
                     );
         }
 
-        if ((nav +1) % 10 == 0){
-            //wywal z listy PRAWĄ stronę czyli +11, +1, -9
+        if ((nav + 1) % 10 == 0) {
             return list.stream()
                     .filter(num -> (nav + num >= 0 && nav + num <= 99))
-                    .filter(num ->  num != 11 && num != 1 &&  num != -9)
+                    .filter(num -> num != 11 && num != 1 && num != -9)
                     .anyMatch(num -> (!board.get(nav + num).equals(Mark.EMPTY))
                     );
         }
@@ -92,7 +89,7 @@ public class Board {
             return false;
         }
 
-        if (Math.abs(nav1 - nav2) == 10 || (Math.abs(nav1 - nav2) == 1 &&  (nav1/10 == nav2/10) )) {
+        if (Math.abs(nav1 - nav2) == 10 || (Math.abs(nav1 - nav2) == 1 && (nav1 / 10 == nav2 / 10))) {
             if (!setOneFlagShipOnBoard(nav1, areaAroundNavPoint)) {
                 return false;
             }
@@ -120,7 +117,7 @@ public class Board {
             return false;
         }
 
-        if (Math.abs(nav1 - nav2) == 10 || (Math.abs(nav1 - nav2) == 1 &&  (nav1/10 == nav2/10) )) {
+        if (Math.abs(nav1 - nav2) == 10 || (Math.abs(nav1 - nav2) == 1 && (nav1 / 10 == nav2 / 10))) {
             if (!setTwoFlagShipOnBoard(nav1, nav2)) {
                 return false;
             }
@@ -147,7 +144,7 @@ public class Board {
             return false;
         }
 
-        if (Math.abs(nav2 - nav3) == 10 || (Math.abs(nav2 - nav3) == 1 &&  (nav2/10 == nav3/10) )) {
+        if (Math.abs(nav2 - nav3) == 10 || (Math.abs(nav2 - nav3) == 1 && (nav2 / 10 == nav3 / 10))) {
             if (!setThreeFlagShipOnBoard(nav1, nav2, nav3)) {
                 return false;
             }
@@ -169,23 +166,28 @@ public class Board {
     }
 
 
-    public boolean fire(int nav) {
+    public boolean hit(int nav) {
 
         if (board.get(nav).equals(Mark.EMPTY)) {
             board.set(nav, Mark.X);
             return false;
         }
 
-        if (board.get(nav).equals(Mark.X) || board.get(nav).equals(Mark.HS)) {
+        if (board.get(nav).equals(Mark.X) || board.get(nav).equals(Mark.O)) {
             return false;
         }
 
         if (board.get(nav).equals(Mark.S)) {
             lisOfShips.stream()
                     .filter(ship -> ship.getListofShipNavPoints().contains(nav))
-                    .forEach(Ship::reduceHealthPointsByOne);
-
-            board.set(nav, Mark.HS);
+                    // .forEach(Ship::reduceHealthPointsByOne);
+                    .forEach(ship -> {
+                        ship.reduceHealthPointsByOne();
+                        if (ship.isItSink()) {
+                            markXAllAroundSinkedShip(ship);
+                        }
+                    });
+            board.set(nav, Mark.O);
 
             return true;
         }
@@ -199,6 +201,10 @@ public class Board {
                 if (shipNavPoint + navPointAround > 99 || shipNavPoint + navPointAround < 0) {
                     continue;
                 }
+
+              //ten sam błąd co przy nawigacji
+
+
 
                 if (board.get(shipNavPoint + navPointAround).equals(Mark.EMPTY)) {
                     board.set(shipNavPoint + navPointAround, Mark.X);
@@ -232,10 +238,32 @@ public class Board {
         }
         System.out.println();
     }
-        //????
-    public static void clearScreen() {
-        System.out.print("\033[H\033[2J");
-        System.out.flush();
+
+    public void printBoardOfHits() {
+
+        char c = 'a';
+        System.out.println(" | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10|");
+
+        for (int i = 0; i < board.size(); i++) {
+            if (i == 0) {
+                System.out.print(c + "|");
+                c++;
+            }
+
+            if (i != 0 && (i) % 10 == 0 && i < 99) {
+                System.out.println();
+                System.out.print(c + "|");
+                c++;
+            }
+
+            if (board.get(i).equals(Mark.EMPTY) || board.get(i).equals(Mark.S)) {
+                System.out.print("   |");
+            } else {
+                System.out.print(" " + board.get(i) + " |");
+            }
+        }
+        System.out.println();
     }
+
 
 }

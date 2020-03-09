@@ -306,10 +306,10 @@ public class BoardTest {
         //given
         board.setOneFlagShip(nav1);
         //when
-        boolean result = board.fire(nav1);
+        boolean result = board.hit(nav1);
         //then
         assertThat(result).isTrue();
-        assertThat(board.getBoard().get(nav1)).isEqualTo(Mark.HS);
+        assertThat(board.getBoard().get(nav1)).isEqualTo(Mark.O);
     }
 
     @Test
@@ -317,21 +317,21 @@ public class BoardTest {
     public void shouldReturnFalseIsShipWasAlreadyHited(int nav1){
         //given
         board.setOneFlagShip(nav1);
-        board.fire(nav1);
+        board.hit(nav1);
         //when
-        boolean result = board.fire(nav1);
+        boolean result = board.hit(nav1);
         //then
         assertThat(result).isFalse();
-        assertThat(board.getBoard().get(nav1)).isEqualTo(Mark.HS);
+        assertThat(board.getBoard().get(nav1)).isEqualTo(Mark.O);
     }
 
     @Test
     @Parameters({"0", "10", "55", "99"})
     public void shouldReturnFalseIsFieldWasAlreadyHited(int nav1){
         //given
-        board.fire(nav1);
+        board.hit(nav1);
         //when
-        boolean result = board.fire(nav1);
+        boolean result = board.hit(nav1);
         //then
         assertThat(result).isFalse();
         assertThat(board.getBoard().get(nav1)).isEqualTo(Mark.X);
@@ -344,7 +344,7 @@ public class BoardTest {
         board.setOneFlagShip(nav1);
 
         //when
-        board.fire(hit1);
+        board.hit(hit1);
 
         //then
         assertThat(board.getLisOfShips().get(0).isItSink()).isTrue();
@@ -357,7 +357,7 @@ public class BoardTest {
         board.setOneFlagShip(nav1);
 
         //when
-        board.fire(hit1);
+        board.hit(hit1);
 
         //then
         assertThat(board.getLisOfShips().get(0).isItSink()).isFalse();
@@ -370,8 +370,8 @@ public class BoardTest {
         board.setTwoFlagShip(nav1, nav2);
 
         //when
-        board.fire(hit1);
-        board.fire(hit2);
+        board.hit(hit1);
+        board.hit(hit2);
 
         //then
         assertThat(board.getLisOfShips().get(0).isItSink()).isTrue();
@@ -384,8 +384,8 @@ public class BoardTest {
         board.setTwoFlagShip(nav1, nav2);
 
         //when
-        board.fire(hit1);
-        board.fire(hit2);
+        board.hit(hit1);
+        board.hit(hit2);
 
         //then
         assertThat(board.getLisOfShips().get(0).isItSink()).isFalse();
@@ -398,9 +398,9 @@ public class BoardTest {
         board.setThreeFlagShip(nav1, nav2, nav3);
 
         //when
-        board.fire(hit1);
-        board.fire(hit2);
-        board.fire(hit3);
+        board.hit(hit1);
+        board.hit(hit2);
+        board.hit(hit3);
 
         //then
         assertThat(board.getLisOfShips().get(0).isItSink()).isTrue();
@@ -413,9 +413,9 @@ public class BoardTest {
         board.setThreeFlagShip(nav1, nav2, nav3);
 
         //when
-        board.fire(hit1);
-        board.fire(hit2);
-        board.fire(hit3);
+        board.hit(hit1);
+        board.hit(hit2);
+        board.hit(hit3);
 
         //then
         assertThat(board.getLisOfShips().get(0).isItSink()).isFalse();
@@ -429,10 +429,10 @@ public class BoardTest {
         board.setFourFlagShip(nav1, nav2, nav3, nav4);
 
         //when
-        board.fire(hit1);
-        board.fire(hit2);
-        board.fire(hit3);
-        board.fire(hit4);
+        board.hit(hit1);
+        board.hit(hit2);
+        board.hit(hit3);
+        board.hit(hit4);
 
         //then
         assertThat(board.getLisOfShips().get(0).isItSink()).isTrue();
@@ -446,10 +446,10 @@ public class BoardTest {
         board.setFourFlagShip(nav1, nav2, nav3, nav4);
 
         //when
-        board.fire(hit1);
-        board.fire(hit2);
-        board.fire(hit3);
-        board.fire(hit4);
+        board.hit(hit1);
+        board.hit(hit2);
+        board.hit(hit3);
+        board.hit(hit4);
 
         //then
         assertThat(board.getLisOfShips().get(0).isItSink()).isFalse();
@@ -462,8 +462,8 @@ public class BoardTest {
         board.setTwoFlagShip(nav1, nav2);
 
         //when
-        board.fire(hit1);
-        board.fire(hit2);
+        board.hit(hit1);
+        board.hit(hit2);
         board.markXAllAroundSinkedShip(board.getLisOfShips().get(0));
 
 
