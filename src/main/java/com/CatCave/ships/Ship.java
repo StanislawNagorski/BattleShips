@@ -5,8 +5,8 @@ import java.util.List;
 
 public class Ship {
 
-    int healthPoints;
-    List<Integer> listofShipNavPoints;
+   private int healthPoints;
+   private List<Integer> listofShipNavPoints;
 
 
     public Ship(int nav1){

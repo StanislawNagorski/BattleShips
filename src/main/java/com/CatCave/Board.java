@@ -17,7 +17,7 @@ public class Board {
 
     private List<Ship> lisOfShips;
     private List<Mark> board;
-    private List<Integer> listToCheckArea = Arrays.asList(-11, -10, -9, -1, 1, 9, 10, 11);
+    private List<Integer> areaAroundNavPoint = Arrays.asList(-11, -10, -9, -1, 1, 9, 10, 11);
     private static final int BOARD_SIZE = 100;
 
 
@@ -30,6 +30,24 @@ public class Board {
     }
 
     private boolean thereIsShipNearby(int nav, List<Integer> list) {
+
+        if (nav % 10 == 0) {
+
+
+            return list.stream()
+                    .filter(num -> (nav + num >= 0 && nav + num <= 99))
+                    .filter(num -> num != -11 && num != -1 && num != 9)
+                    .anyMatch(num -> (!board.get(nav + num).equals(Mark.EMPTY))
+                    );
+        }
+
+        if ((nav + 1) % 10 == 0) {
+            return list.stream()
+                    .filter(num -> (nav + num >= 0 && nav + num <= 99))
+                    .filter(num -> num != 11 && num != 1 && num != -9)
+                    .anyMatch(num -> (!board.get(nav + num).equals(Mark.EMPTY))
+                    );
+        }
 
         return list.stream()
                 .filter(num -> (nav + num >= 0 && nav + num <= 99))
@@ -47,7 +65,7 @@ public class Board {
 
     }
 
-    public boolean setOneFlagShipOnBoard(int nav1, List<Integer> list) {
+    private boolean setOneFlagShipOnBoard(int nav1, List<Integer> list) {
         if (nav1 < 0 || nav1 > 99
                 || !board.get(nav1).equals(Mark.EMPTY)
                 || thereIsShipNearby(nav1, list)) {
@@ -59,24 +77,24 @@ public class Board {
     }
 
     public boolean setOneFlagShip(int nav1) {
-        if (setOneFlagShipOnBoard(nav1, listToCheckArea)) {
+        if (setOneFlagShipOnBoard(nav1, areaAroundNavPoint)) {
             lisOfShips.add(new Ship(nav1));
             return true;
         }
         return false;
     }
 
-    public boolean setTwoFlagShipOnBoard(int nav1, int nav2) {
+    private boolean setTwoFlagShipOnBoard(int nav1, int nav2) {
         if (diagonalShip(nav1, nav2)) {
             return false;
         }
 
-        if (Math.abs(nav1 - nav2) == 10 || Math.abs(nav1 - nav2) == 1) {
-            if (!setOneFlagShipOnBoard(nav1, listToCheckArea)) {
+        if (Math.abs(nav1 - nav2) == 10 || (Math.abs(nav1 - nav2) == 1 && (nav1 / 10 == nav2 / 10))) {
+            if (!setOneFlagShipOnBoard(nav1, areaAroundNavPoint)) {
                 return false;
             }
 
-            return setOneFlagShipOnBoard(nav2, listToCheckArea.stream()
+            return setOneFlagShipOnBoard(nav2, areaAroundNavPoint.stream()
                     .filter(num -> num != nav1 - nav2)
                     .collect(Collectors.toList()));
         }
@@ -93,18 +111,18 @@ public class Board {
     }
 
 
-    public boolean setThreeFlagShipOnBoard(int nav1, int nav2, int nav3) {
+    private boolean setThreeFlagShipOnBoard(int nav1, int nav2, int nav3) {
 
         if (bendShip(nav1, nav2, nav3) || diagonalShip(nav2, nav3)) {
             return false;
         }
 
-        if (Math.abs(nav1 - nav2) == 10 || Math.abs(nav1 - nav2) == 1) {
+        if (Math.abs(nav1 - nav2) == 10 || (Math.abs(nav1 - nav2) == 1 && (nav1 / 10 == nav2 / 10))) {
             if (!setTwoFlagShipOnBoard(nav1, nav2)) {
                 return false;
             }
 
-            return setOneFlagShipOnBoard(nav3, listToCheckArea.stream()
+            return setOneFlagShipOnBoard(nav3, areaAroundNavPoint.stream()
                     .filter(num -> num != nav1 - nav2)
                     .collect(Collectors.toList()));
         }
@@ -120,23 +138,24 @@ public class Board {
         return false;
     }
 
-    public boolean setFourFlagShipOnBoard(int nav1, int nav2, int nav3, int nav4) {
+    private boolean setFourFlagShipOnBoard(int nav1, int nav2, int nav3, int nav4) {
 
         if (bendShip(nav2, nav3, nav4) || diagonalShip(nav3, nav4)) {
             return false;
         }
 
-        if (Math.abs(nav2 - nav3) == 10 || Math.abs(nav2 - nav3) == 1) {
+        if (Math.abs(nav2 - nav3) == 10 || (Math.abs(nav2 - nav3) == 1 && (nav2 / 10 == nav3 / 10))) {
             if (!setThreeFlagShipOnBoard(nav1, nav2, nav3)) {
                 return false;
             }
 
-            return setOneFlagShipOnBoard(nav4, listToCheckArea.stream()
+            return setOneFlagShipOnBoard(nav4, areaAroundNavPoint.stream()
                     .filter(num -> num != nav2 - nav3)
                     .collect(Collectors.toList()));
         }
         return false;
     }
+
     public boolean setFourFlagShip(int nav1, int nav2, int nav3, int nav4) {
 
         if (setFourFlagShipOnBoard(nav1, nav2, nav3, nav4)) {
@@ -154,19 +173,97 @@ public class Board {
             return false;
         }
 
-        if (board.get(nav).equals(Mark.X) || board.get(nav).equals(Mark.HS)) {
+        if (board.get(nav).equals(Mark.X) || board.get(nav).equals(Mark.O)) {
             return false;
         }
 
         if (board.get(nav).equals(Mark.S)) {
             lisOfShips.stream()
                     .filter(ship -> ship.getListofShipNavPoints().contains(nav))
-                    .forEach(Ship::reduceHealthPointsByOne);
-
-            board.set(nav, Mark.HS);
+                    // .forEach(Ship::reduceHealthPointsByOne);
+                    .forEach(ship -> {
+                        ship.reduceHealthPointsByOne();
+                        if (ship.isItSink()) {
+                            markXAllAroundSinkedShip(ship);
+                        }
+                    });
+            board.set(nav, Mark.O);
 
             return true;
         }
         return false;
     }
+
+    // czy to można do streama???
+    public void markXAllAroundSinkedShip(Ship ship) {
+        for (Integer shipNavPoint : ship.getListofShipNavPoints()) {
+            for (Integer navPointAround : areaAroundNavPoint) {
+                if (shipNavPoint + navPointAround > 99 || shipNavPoint + navPointAround < 0) {
+                    continue;
+                }
+
+              //ten sam błąd co przy nawigacji
+
+
+
+                if (board.get(shipNavPoint + navPointAround).equals(Mark.EMPTY)) {
+                    board.set(shipNavPoint + navPointAround, Mark.X);
+                }
+            }
+        }
+    }
+
+    public void printBoard() {
+
+        char c = 'a';
+        System.out.println(" | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10|");
+
+        for (int i = 0; i < board.size(); i++) {
+            if (i == 0) {
+                System.out.print(c + "|");
+                c++;
+            }
+
+            if (i != 0 && (i) % 10 == 0 && i < 99) {
+                System.out.println();
+                System.out.print(c + "|");
+                c++;
+            }
+
+            if (board.get(i).equals(Mark.EMPTY)) {
+                System.out.print("   |");
+            } else {
+                System.out.print(" " + board.get(i) + " |");
+            }
+        }
+        System.out.println();
+    }
+
+    public void printBoardOfHits() {
+
+        char c = 'a';
+        System.out.println(" | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10|");
+
+        for (int i = 0; i < board.size(); i++) {
+            if (i == 0) {
+                System.out.print(c + "|");
+                c++;
+            }
+
+            if (i != 0 && (i) % 10 == 0 && i < 99) {
+                System.out.println();
+                System.out.print(c + "|");
+                c++;
+            }
+
+            if (board.get(i).equals(Mark.EMPTY) || board.get(i).equals(Mark.S)) {
+                System.out.print("   |");
+            } else {
+                System.out.print(" " + board.get(i) + " |");
+            }
+        }
+        System.out.println();
+    }
+
+
 }
