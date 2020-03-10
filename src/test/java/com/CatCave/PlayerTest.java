@@ -6,23 +6,11 @@ import org.assertj.core.api.Assertions;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 
-import java.util.Arrays;
 import java.util.List;
 
 @RunWith(JUnitParamsRunner.class)
 public class PlayerTest {
 
-    @Test
-    @Parameters({"a1,a,1", "b-2,b, 2", " c   9   ,c,9", "j   10,j,10"})
-    public void playerInputToStringList(String input, String aBC, String num) {
-        //given
-        Player p = new Player();
-        //when
-        List<String> result = p.playerInputToStringList(input);
-        //then
-        Assertions.assertThat(result.get(0)).isEqualTo(aBC);
-        Assertions.assertThat(result.get(1)).isEqualTo(num);
-    }
 
 
     @Test
@@ -31,7 +19,7 @@ public class PlayerTest {
         //given
         Player p = new Player();
         //when
-        int result = p.stringToNavPoints(input);
+        int result = p.playerInputToNavPoints(input);
         //then
         Assertions.assertThat(result).isEqualTo(expectedNav);
     }
@@ -42,7 +30,7 @@ public class PlayerTest {
         //given
         Player p = new Player();
         //when
-       int result =p.stringToNavPoints(input);
+       int result =p.playerInputToNavPoints(input);
         //then
         Assertions.assertThat(result).isEqualTo(expectedNav);
     }

@@ -456,7 +456,7 @@ public class BoardTest {
     }
 
     @Test
-    @Parameters({"10,11,10,11", "35,36,36,35"})
+    @Parameters({"11,12,11,12", "35,36,36,35"})
     public void shouldSetXAroundSinkedShip(int nav1, int nav2, int hit1, int hit2 ){
         //given
         board.setTwoFlagShip(nav1, nav2);
@@ -468,12 +468,59 @@ public class BoardTest {
 
 
         //then
+        assertThat(board.getBoard().get(nav1-11)).isEqualTo(Mark.X);
         assertThat(board.getBoard().get(nav1-10)).isEqualTo(Mark.X);
         assertThat(board.getBoard().get(nav1-9)).isEqualTo(Mark.X);
         assertThat(board.getBoard().get(nav1-1)).isEqualTo(Mark.X);
         assertThat(board.getBoard().get(nav1+9)).isEqualTo(Mark.X);
         assertThat(board.getBoard().get(nav1+10)).isEqualTo(Mark.X);
         assertThat(board.getBoard().get(nav1+11)).isEqualTo(Mark.X);
+    }
+
+    @Test
+    @Parameters({"80,81,80,81", "20,21,20,21"})
+    public void shouldNotMarkXonAnotherSideOfBoardForLeftSide(int nav1, int nav2, int hit1, int hit2 ){
+        //given
+        board.setTwoFlagShip(nav1, nav2);
+
+        //when
+        board.hit(hit1);
+        board.hit(hit2);
+        board.markXAllAroundSinkedShip(board.getLisOfShips().get(0));
+
+
+        //then
+        assertThat(board.getBoard().get(nav1-11)).isEqualTo(Mark.EMPTY);
+        assertThat(board.getBoard().get(nav1-1)).isEqualTo(Mark.EMPTY);
+        assertThat(board.getBoard().get(nav1+9)).isEqualTo(Mark.EMPTY);
+
+        assertThat(board.getBoard().get(nav1-10)).isEqualTo(Mark.X);
+        assertThat(board.getBoard().get(nav1-9)).isEqualTo(Mark.X);
+        assertThat(board.getBoard().get(nav1+10)).isEqualTo(Mark.X);
+        assertThat(board.getBoard().get(nav1+11)).isEqualTo(Mark.X);
+    }
+
+    @Test
+    @Parameters({"18,19,18,19", "28,29,28,29"})
+    public void shouldNotMarkXonAnotherSideOfBoardForRightSide(int nav1, int nav2, int hit1, int hit2 ){
+        //given
+        board.setTwoFlagShip(nav1, nav2);
+
+        //when
+        board.hit(hit1);
+        board.hit(hit2);
+        board.markXAllAroundSinkedShip(board.getLisOfShips().get(0));
+
+
+        //then
+        assertThat(board.getBoard().get(nav2+11)).isEqualTo(Mark.EMPTY);
+        assertThat(board.getBoard().get(nav2+1)).isEqualTo(Mark.EMPTY);
+        assertThat(board.getBoard().get(nav2-9)).isEqualTo(Mark.EMPTY);
+
+        assertThat(board.getBoard().get(nav2-10)).isEqualTo(Mark.X);
+        assertThat(board.getBoard().get(nav2+9)).isEqualTo(Mark.X);
+        assertThat(board.getBoard().get(nav2+10)).isEqualTo(Mark.X);
+        assertThat(board.getBoard().get(nav2-11)).isEqualTo(Mark.X);
     }
 
 
