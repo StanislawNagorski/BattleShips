@@ -10,7 +10,7 @@ import java.util.stream.Stream;
 public class Player {
 
 
-     List<String> playerInputToStringList(String input) {
+    private List<String> playerInputToStringList(String input) {
 
         return Stream.of(input.trim()
                 .toLowerCase()
@@ -19,7 +19,7 @@ public class Player {
                 .collect(Collectors.toList());
     }
 
-    int stringToNavPoints(String input) {
+    public int playerInputToNavPoints(String input) {
 
         List<String> list = playerInputToStringList(input);
 
@@ -41,7 +41,7 @@ public class Player {
             while (flag) {
 
                 System.out.println("Gdzie postawić statek? Podaj punkt");
-                flag = !board.setOneFlagShip(stringToNavPoints(scan.nextLine()));
+                flag = !board.setOneFlagShip(playerInputToNavPoints(scan.nextLine()));
                 if (flag) {
                     System.out.println("Niepoprawne miejsce");
                 }
@@ -63,7 +63,7 @@ public class Player {
                 List<Integer> listOfUserNavPoints = new ArrayList<>();
                 for (int j = 0; j < 2; j++) {
                     System.out.println("Gdzie postawić statek? Podaj punkt");
-                    listOfUserNavPoints.add(stringToNavPoints(scan.nextLine()));
+                    listOfUserNavPoints.add(playerInputToNavPoints(scan.nextLine()));
                 }
 
                 Collections.sort(listOfUserNavPoints);
@@ -91,7 +91,7 @@ public class Player {
                 List<Integer> listOfUserNavPoints = new ArrayList<>();
                 for (int j = 0; j < 3; j++) {
                     System.out.println("Gdzie postawić statek? Podaj punkt");
-                    listOfUserNavPoints.add(stringToNavPoints(scan.nextLine()));
+                    listOfUserNavPoints.add(playerInputToNavPoints(scan.nextLine()));
                 }
 
                 Collections.sort(listOfUserNavPoints);
@@ -119,7 +119,7 @@ public class Player {
                 List<Integer> listOfUserNavPoints = new ArrayList<>();
                 for (int j = 0; j < 4; j++) {
                     System.out.println("Gdzie postawić statek? Podaj punkt");
-                    listOfUserNavPoints.add(stringToNavPoints(scan.nextLine()));
+                    listOfUserNavPoints.add(playerInputToNavPoints(scan.nextLine()));
                 }
 
                 Collections.sort(listOfUserNavPoints);
@@ -137,14 +137,14 @@ public class Player {
         }
     }
 
-    public void fire(Board board){
-         Scanner scan = new Scanner(System.in);
-
-         boolean flag = true;
-         while (flag){
-             flag = board.hit(stringToNavPoints(scan.nextLine()));
-             board.printBoardOfHits();
-         }
+    public void fire(Board board) {
+        Scanner scan = new Scanner(System.in);
+        boolean flag = true;
+        while (flag) {
+            System.out.println("Oddaj STRZAŁ! podaj pole");
+            flag = board.hit(playerInputToNavPoints(scan.nextLine()));
+            board.printBoardOfHits();
+        }
     }
 
 

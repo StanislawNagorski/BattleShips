@@ -5,6 +5,7 @@ import com.CatCave.ships.*;
 import lombok.Getter;
 import lombok.Setter;
 
+import java.sql.SQLOutput;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -31,26 +32,19 @@ public class Board {
 
     private boolean thereIsShipNearby(int nav, List<Integer> list) {
 
-        if (nav % 10 == 0) {
-
-
-            return list.stream()
-                    .filter(num -> (nav + num >= 0 && nav + num <= 99))
-                    .filter(num -> num != -11 && num != -1 && num != 9)
-                    .anyMatch(num -> (!board.get(nav + num).equals(Mark.EMPTY))
-                    );
-        }
-
-        if ((nav + 1) % 10 == 0) {
-            return list.stream()
-                    .filter(num -> (nav + num >= 0 && nav + num <= 99))
-                    .filter(num -> num != 11 && num != 1 && num != -9)
-                    .anyMatch(num -> (!board.get(nav + num).equals(Mark.EMPTY))
-                    );
-        }
 
         return list.stream()
                 .filter(num -> (nav + num >= 0 && nav + num <= 99))
+                .filter(navAround -> {
+                    if ((nav + 1)%10==0){
+                        return navAround != 11 && navAround != 1 && navAround != -9;
+                    }
+                    if ((nav)%10==0){
+                        return navAround != -11 && navAround != -1 && navAround != 9;
+                    }
+                    return true;
+
+                })
                 .anyMatch(num -> (!board.get(nav + num).equals(Mark.EMPTY))
                 );
     }
@@ -60,6 +54,9 @@ public class Board {
     }
 
     private boolean bendShip(int thirdFromEndNav, int secondFromEndNav, int lastNav) {
+        if (Game.ARE_BENDED_SHIP_ALLOWED) {
+            return true;
+        }
         return (Math.abs(thirdFromEndNav - secondFromEndNav) == 10 && Math.abs(secondFromEndNav - lastNav) != 10)
                 || (Math.abs(thirdFromEndNav - secondFromEndNav) == 1 && Math.abs(secondFromEndNav - lastNav) != 1);
 
@@ -170,6 +167,7 @@ public class Board {
 
         if (board.get(nav).equals(Mark.EMPTY)) {
             board.set(nav, Mark.X);
+            System.out.println("Pudło!");
             return false;
         }
 
@@ -180,11 +178,12 @@ public class Board {
         if (board.get(nav).equals(Mark.S)) {
             lisOfShips.stream()
                     .filter(ship -> ship.getListofShipNavPoints().contains(nav))
-                    // .forEach(Ship::reduceHealthPointsByOne);
                     .forEach(ship -> {
                         ship.reduceHealthPointsByOne();
+                        System.out.println("Trafiony!");
                         if (ship.isItSink()) {
                             markXAllAroundSinkedShip(ship);
+                            System.out.println("TRAFIONY ZATOPIONY!");
                         }
                     });
             board.set(nav, Mark.O);
@@ -194,24 +193,27 @@ public class Board {
         return false;
     }
 
-    // czy to można do streama???
     public void markXAllAroundSinkedShip(Ship ship) {
-        for (Integer shipNavPoint : ship.getListofShipNavPoints()) {
-            for (Integer navPointAround : areaAroundNavPoint) {
-                if (shipNavPoint + navPointAround > 99 || shipNavPoint + navPointAround < 0) {
-                    continue;
-                }
 
-              //ten sam błąd co przy nawigacji
-
-
-
-                if (board.get(shipNavPoint + navPointAround).equals(Mark.EMPTY)) {
-                    board.set(shipNavPoint + navPointAround, Mark.X);
-                }
-            }
-        }
+        ship.getListofShipNavPoints()
+                .forEach(shipNavPoint -> areaAroundNavPoint.stream()
+                        .filter(navAround -> (shipNavPoint + navAround >= 0 && shipNavPoint + navAround <= 99))
+                        .filter(navAround -> {
+                            if ((shipNavPoint + 1)%10==0){
+                                return navAround != 11 && navAround != 1 && navAround != -9;
+                            }
+                            if ((shipNavPoint)%10==0){
+                                return navAround != -11 && navAround != -1 && navAround != 9;
+                            }
+                            return true;
+                        })
+                        .forEach(navAround -> {
+                            if (board.get(shipNavPoint + navAround).equals(Mark.EMPTY)) {
+                                board.set(shipNavPoint + navAround, Mark.X);
+                            }
+                        }));
     }
+
 
     public void printBoard() {
 
