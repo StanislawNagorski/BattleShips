@@ -9,12 +9,10 @@ public class App {
         Board playerTwoBoard = new Board();
         Player player2 = new Player();
 
-//        player1.putShipsOnBoard(playerOneBoard);
-//        player2.putShipsOnBoard(playerTwoBoard);
         System.out.println("Zaczyna gracz numer JEDEN. Ustaw statki");
-        player1.putFourFlagShip(playerOneBoard);
+        player1.putShipsOnBoard(playerOneBoard);
         System.out.println("Graczu numer DWA. Ustaw statki");
-        player2.putFourFlagShip(playerTwoBoard);
+        player2.putShipsOnBoard(playerTwoBoard);
 
 
         while (playerOneBoard.areThereStillShips() || playerTwoBoard.areThereStillShips()) {

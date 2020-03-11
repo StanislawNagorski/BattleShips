@@ -6,13 +6,6 @@
       <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/CatCave/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/CatCave/App.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/CatCave/Board.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/CatCave/Board.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/CatCave/Mark.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/CatCave/BoardMark.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/CatCave/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/CatCave/Player.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/CatCave/BoardTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/CatCave/BoardTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/CatCave/App.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/CatCave/App.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/CatCave/Board.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/CatCave/Board.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/CatCave/Mark.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/com/CatCave/BoardTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/com/CatCave/BoardTest.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -250,7 +243,14 @@
       <option name="project" value="LOCAL" />
       <updated>1583862916966</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="Gra dla dwóch graczy działa">
+      <created>1583959418289</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1583959418289</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -264,7 +264,8 @@
     <MESSAGE value="Dodana klasa Game i implantacje logiki" />
     <MESSAGE value="To Do" />
     <MESSAGE value="Metoda MarkXAllaroundSinkedShip poprawnie zaznacza pudła i bierze pod uwagę krawędzie mapy" />
-    <option name="LAST_COMMIT_MESSAGE" value="Metoda MarkXAllaroundSinkedShip poprawnie zaznacza pudła i bierze pod uwagę krawędzie mapy" />
+    <MESSAGE value="Gra dla dwóch graczy działa" />
+    <option name="LAST_COMMIT_MESSAGE" value="Gra dla dwóch graczy działa" />
   </component>
   <component name="WindowStateProjectService">
     <state x="191" y="138" key="#Live_Templates" timestamp="1583520631711">
@@ -297,10 +298,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="707" y="366" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1/0.0.1920.1040@0.0.1920.1040" timestamp="1583445640978" />
-    <state x="614" y="114" key="CommitChangelistDialog2" timestamp="1583862914805">
+    <state x="614" y="114" key="CommitChangelistDialog2" timestamp="1583959416023">
       <screen x="0" y="0" width="1919" height="1040" />
     </state>
-    <state x="614" y="114" key="CommitChangelistDialog2/0.0.1919.1040@0.0.1919.1040" timestamp="1583862914805" />
+    <state x="614" y="114" key="CommitChangelistDialog2/0.0.1919.1040@0.0.1919.1040" timestamp="1583959416023" />
     <state x="614" y="114" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1583489551161" />
     <state width="713" height="912" key="GridCell.Tab.0.bottom" timestamp="1583959341622">
       <screen x="0" y="0" width="1919" height="1040" />
@@ -346,10 +347,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="461" y="162" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1583445532783" />
-    <state x="552" y="252" key="Vcs.Push.Dialog.v2" timestamp="1583862921605">
+    <state x="552" y="252" key="Vcs.Push.Dialog.v2" timestamp="1583959422331">
       <screen x="0" y="0" width="1919" height="1040" />
     </state>
-    <state x="552" y="252" key="Vcs.Push.Dialog.v2/0.0.1919.1040@0.0.1919.1040" timestamp="1583862921605" />
+    <state x="552" y="252" key="Vcs.Push.Dialog.v2/0.0.1919.1040@0.0.1919.1040" timestamp="1583959422331" />
     <state x="552" y="252" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1583489560736" />
     <state x="656" y="343" key="com.intellij.ide.util.TipDialog" timestamp="1583763180443">
       <screen x="0" y="0" width="1919" height="1040" />

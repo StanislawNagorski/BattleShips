@@ -275,7 +275,4 @@ public class Board {
                 .anyMatch(ship -> !ship.isItSink());
     }
 
-
-
-
 }
