@@ -1,12 +1,7 @@
 package com.CatCave;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Scanner;
-
-public class App
-{
-    public static void main( String[] args ){
+public class App {
+    public static void main(String[] args) {
 
         Board playerOneBoard = new Board();
         Player player1 = new Player();
@@ -14,23 +9,35 @@ public class App
         Board playerTwoBoard = new Board();
         Player player2 = new Player();
 
-
-//        playerOneBoard.printBoard();
-//        player1.putFourFlagShip(playerOneBoard);
-//        player1.putThreeFlagShip(playerOneBoard);
-//        player1.putTwoFlagShip(playerOneBoard);
-//        player1.putOneFlagShip(playerOneBoard);
-
-        System.out.println();
-
-        playerTwoBoard.printBoard();
+//        player1.putShipsOnBoard(playerOneBoard);
+//        player2.putShipsOnBoard(playerTwoBoard);
+        System.out.println("Zaczyna gracz numer JEDEN. Ustaw statki");
+        player1.putFourFlagShip(playerOneBoard);
+        System.out.println("Graczu numer DWA. Ustaw statki");
         player2.putFourFlagShip(playerTwoBoard);
-//        player2.putThreeFlagShip(playerTwoBoard);
-//        player2.putTwoFlagShip(playerTwoBoard);
-        player2.putOneFlagShip(playerTwoBoard);
 
-        player1.fire(playerTwoBoard);
 
+        while (playerOneBoard.areThereStillShips() || playerTwoBoard.areThereStillShips()) {
+
+            System.out.println("Tura gracza numer JEDEN");
+            player1.fire(playerTwoBoard);
+            if (!playerTwoBoard.areThereStillShips()) {
+                System.out.println("Wygrywa gracz numer JEDEN!");
+                break;
+            }
+
+
+            System.out.println("Tura gracza numer DWA");
+            player2.fire(playerOneBoard);
+            if (!playerOneBoard.areThereStillShips()) {
+                System.out.println("Wygrywa gracz numer DWA!");
+                break;
+            }
+
+
+        }
+
+        System.out.println("Dzięki za gre!");
 
 
     }

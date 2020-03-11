@@ -10,6 +10,8 @@ import java.util.stream.Stream;
 public class Player {
 
 
+
+
     private List<String> playerInputToStringList(String input) {
 
         return Stream.of(input.trim()
@@ -137,13 +139,24 @@ public class Player {
         }
     }
 
+    public void putShipsOnBoard(Board board){
+        putFourFlagShip(board);
+        putThreeFlagShip(board);
+        putTwoFlagShip(board);
+        putOneFlagShip(board);
+
+    }
+
     public void fire(Board board) {
         Scanner scan = new Scanner(System.in);
         boolean flag = true;
         while (flag) {
             System.out.println("Oddaj STRZAŁ! podaj pole");
-            flag = board.hit(playerInputToNavPoints(scan.nextLine()));
             board.printBoardOfHits();
+            flag = board.hit(playerInputToNavPoints(scan.nextLine()));
+            if (!board.areThereStillShips()){
+                return;
+            }
         }
     }
 

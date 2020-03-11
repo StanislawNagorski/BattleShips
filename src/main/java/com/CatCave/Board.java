@@ -5,7 +5,6 @@ import com.CatCave.ships.*;
 import lombok.Getter;
 import lombok.Setter;
 
-import java.sql.SQLOutput;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -17,16 +16,17 @@ import java.util.stream.Collectors;
 public class Board {
 
     private List<Ship> lisOfShips;
-    private List<Mark> board;
+    private List<BoardMark> board;
     private List<Integer> areaAroundNavPoint = Arrays.asList(-11, -10, -9, -1, 1, 9, 10, 11);
     private static final int BOARD_SIZE = 100;
+    private Player currentPlayer;
 
 
     public Board() {
         board = new ArrayList<>();
         lisOfShips = new ArrayList<>();
         for (int i = 0; i < BOARD_SIZE; i++) {
-            board.add(Mark.EMPTY);
+            board.add(BoardMark.EMPTY);
         }
     }
 
@@ -45,7 +45,7 @@ public class Board {
                     return true;
 
                 })
-                .anyMatch(num -> (!board.get(nav + num).equals(Mark.EMPTY))
+                .anyMatch(num -> (!board.get(nav + num).equals(BoardMark.EMPTY))
                 );
     }
 
@@ -64,11 +64,11 @@ public class Board {
 
     private boolean setOneFlagShipOnBoard(int nav1, List<Integer> list) {
         if (nav1 < 0 || nav1 > 99
-                || !board.get(nav1).equals(Mark.EMPTY)
+                || !board.get(nav1).equals(BoardMark.EMPTY)
                 || thereIsShipNearby(nav1, list)) {
             return false;
         }
-        board.set(nav1, Mark.S);
+        board.set(nav1, BoardMark.S);
 
         return true;
     }
@@ -165,17 +165,17 @@ public class Board {
 
     public boolean hit(int nav) {
 
-        if (board.get(nav).equals(Mark.EMPTY)) {
-            board.set(nav, Mark.X);
+        if (board.get(nav).equals(BoardMark.EMPTY)) {
+            board.set(nav, BoardMark.X);
             System.out.println("Pudło!");
             return false;
         }
 
-        if (board.get(nav).equals(Mark.X) || board.get(nav).equals(Mark.O)) {
+        if (board.get(nav).equals(BoardMark.X) || board.get(nav).equals(BoardMark.O)) {
             return false;
         }
 
-        if (board.get(nav).equals(Mark.S)) {
+        if (board.get(nav).equals(BoardMark.S)) {
             lisOfShips.stream()
                     .filter(ship -> ship.getListofShipNavPoints().contains(nav))
                     .forEach(ship -> {
@@ -186,7 +186,7 @@ public class Board {
                             System.out.println("TRAFIONY ZATOPIONY!");
                         }
                     });
-            board.set(nav, Mark.O);
+            board.set(nav, BoardMark.O);
 
             return true;
         }
@@ -208,8 +208,8 @@ public class Board {
                             return true;
                         })
                         .forEach(navAround -> {
-                            if (board.get(shipNavPoint + navAround).equals(Mark.EMPTY)) {
-                                board.set(shipNavPoint + navAround, Mark.X);
+                            if (board.get(shipNavPoint + navAround).equals(BoardMark.EMPTY)) {
+                                board.set(shipNavPoint + navAround, BoardMark.X);
                             }
                         }));
     }
@@ -232,7 +232,7 @@ public class Board {
                 c++;
             }
 
-            if (board.get(i).equals(Mark.EMPTY)) {
+            if (board.get(i).equals(BoardMark.EMPTY)) {
                 System.out.print("   |");
             } else {
                 System.out.print(" " + board.get(i) + " |");
@@ -258,14 +258,24 @@ public class Board {
                 c++;
             }
 
-            if (board.get(i).equals(Mark.EMPTY) || board.get(i).equals(Mark.S)) {
+            if (board.get(i).equals(BoardMark.EMPTY) || board.get(i).equals(BoardMark.S)) {
                 System.out.print("   |");
-            } else {
+            } else if(board.get(i).equals(BoardMark.O)){
+                System.out.print(" \u00d8 |");
+            }
+            else {
                 System.out.print(" " + board.get(i) + " |");
             }
         }
         System.out.println();
     }
+
+    public boolean areThereStillShips(){
+        return lisOfShips.stream()
+                .anyMatch(ship -> !ship.isItSink());
+    }
+
+
 
 
 }

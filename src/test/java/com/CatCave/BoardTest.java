@@ -22,7 +22,7 @@ public class BoardTest {
     public void shouldCreateArrayOf100FilledWithEMPTY() {
         //then
         assertThat(board.getBoard().size()).isEqualTo(100);
-        assertThat(board.getBoard()).containsOnly(Mark.EMPTY);
+        assertThat(board.getBoard()).containsOnly(BoardMark.EMPTY);
     }
 
     @Test
@@ -63,7 +63,7 @@ public class BoardTest {
         //when
         board.setOneFlagShip(nav);
         //then
-        assertThat(board.getBoard().get(nav)).isEqualTo(Mark.S);
+        assertThat(board.getBoard().get(nav)).isEqualTo(BoardMark.S);
     }
 
     @Test
@@ -91,10 +91,10 @@ public class BoardTest {
     }
 
     @Test
-    @Parameters({"0,1,0,1", "10,11,11,12"," 98,99,89,99"})
+    @Parameters({"0,1,0,1", "10,11,11,12", " 98,99,89,99"})
     public void shouldReturnFalseIsBoardIsNotEmptyFor2FlagShip(int nav1, int nav2, int nav3, int nav4) {
         //given
-     board.setTwoFlagShip(nav1,nav2);
+        board.setTwoFlagShip(nav1, nav2);
 
         //when
         boolean result = board.setTwoFlagShip(nav3, nav4);
@@ -128,14 +128,14 @@ public class BoardTest {
     }
 
     @Test
-    @Parameters({"10,0,1","0,1,2","1,2,12","33,55,44","77,88,99"})
+    @Parameters({"10,0,1", "0,1,2", "1,2,12", "33,55,44", "77,88,99"})
     public void shouldReturnFalseWhenSettingShipToCloseToEachOther(int nav1, int nav2, int nav3) {
 
         //given
         board.setOneFlagShip(nav1);
 
         //when
-        boolean result = board.setTwoFlagShip(nav2,nav3);
+        boolean result = board.setTwoFlagShip(nav2, nav3);
 
         //then
         assertThat(result).isFalse();
@@ -150,8 +150,8 @@ public class BoardTest {
 
         //then
         assertThat(result).isTrue();
-        assertThat(board.getBoard().get(nav1)).isEqualTo(Mark.S);
-        assertThat(board.getBoard().get(nav2)).isEqualTo(Mark.S);
+        assertThat(board.getBoard().get(nav1)).isEqualTo(BoardMark.S);
+        assertThat(board.getBoard().get(nav2)).isEqualTo(BoardMark.S);
     }
 
     @Test
@@ -163,8 +163,8 @@ public class BoardTest {
 
         //then
         assertThat(result).isFalse();
-        assertThat(board.getBoard().get(nav1)).isEqualTo(Mark.EMPTY);
-        assertThat(board.getBoard().get(nav2)).isEqualTo(Mark.EMPTY);
+        assertThat(board.getBoard().get(nav1)).isEqualTo(BoardMark.EMPTY);
+        assertThat(board.getBoard().get(nav2)).isEqualTo(BoardMark.EMPTY);
     }
 
     @Test
@@ -176,8 +176,8 @@ public class BoardTest {
 
         //then
         assertThat(result).isFalse();
-        assertThat(board.getBoard().get(nav1)).isEqualTo(Mark.EMPTY);
-        assertThat(board.getBoard().get(nav2)).isEqualTo(Mark.EMPTY);
+        assertThat(board.getBoard().get(nav1)).isEqualTo(BoardMark.EMPTY);
+        assertThat(board.getBoard().get(nav2)).isEqualTo(BoardMark.EMPTY);
     }
 
 
@@ -190,9 +190,9 @@ public class BoardTest {
 
         //then
         assertThat(result).isTrue();
-        assertThat(board.getBoard().get(nav1)).isEqualTo(Mark.S);
-        assertThat(board.getBoard().get(nav2)).isEqualTo(Mark.S);
-        assertThat(board.getBoard().get(nav3)).isEqualTo(Mark.S);
+        assertThat(board.getBoard().get(nav1)).isEqualTo(BoardMark.S);
+        assertThat(board.getBoard().get(nav2)).isEqualTo(BoardMark.S);
+        assertThat(board.getBoard().get(nav3)).isEqualTo(BoardMark.S);
     }
 
     @Test
@@ -204,9 +204,9 @@ public class BoardTest {
 
         //then
         assertThat(result).isFalse();
-        assertThat(board.getBoard().get(nav1)).isEqualTo(Mark.EMPTY);
-        assertThat(board.getBoard().get(nav2)).isEqualTo(Mark.EMPTY);
-        assertThat(board.getBoard().get(nav3)).isEqualTo(Mark.EMPTY);
+        assertThat(board.getBoard().get(nav1)).isEqualTo(BoardMark.EMPTY);
+        assertThat(board.getBoard().get(nav2)).isEqualTo(BoardMark.EMPTY);
+        assertThat(board.getBoard().get(nav3)).isEqualTo(BoardMark.EMPTY);
     }
 
     @Test
@@ -218,9 +218,9 @@ public class BoardTest {
 
         //then
         assertThat(result).isFalse();
-        assertThat(board.getBoard().get(nav1)).isEqualTo(Mark.EMPTY);
-        assertThat(board.getBoard().get(nav2)).isEqualTo(Mark.EMPTY);
-        assertThat(board.getBoard().get(nav3)).isEqualTo(Mark.EMPTY);
+        assertThat(board.getBoard().get(nav1)).isEqualTo(BoardMark.EMPTY);
+        assertThat(board.getBoard().get(nav2)).isEqualTo(BoardMark.EMPTY);
+        assertThat(board.getBoard().get(nav3)).isEqualTo(BoardMark.EMPTY);
 
     }
 
@@ -233,8 +233,8 @@ public class BoardTest {
 
         //then
         assertThat(result).isFalse();
-        assertThat(board.getBoard().get(nav1)).isEqualTo(Mark.EMPTY);
-        assertThat(board.getBoard().get(nav2)).isEqualTo(Mark.EMPTY);
+        assertThat(board.getBoard().get(nav1)).isEqualTo(BoardMark.EMPTY);
+        assertThat(board.getBoard().get(nav2)).isEqualTo(BoardMark.EMPTY);
     }
 
     @Test
@@ -251,37 +251,37 @@ public class BoardTest {
     }
 
     @Test
-    @Parameters({"0,1,2,3","10,20,30,40"})
-    public void shouldReturnTrueFor4FlagShip(int nav1, int nav2, int nav3, int nav4){
+    @Parameters({"0,1,2,3", "10,20,30,40"})
+    public void shouldReturnTrueFor4FlagShip(int nav1, int nav2, int nav3, int nav4) {
 
         //when
-        boolean result = board.setFourFlagShip(nav1, nav2, nav3,nav4);
+        boolean result = board.setFourFlagShip(nav1, nav2, nav3, nav4);
 
         //then
         assertThat(result).isTrue();
-        assertThat(board.getBoard().get(nav1)).isEqualTo(Mark.S);
-        assertThat(board.getBoard().get(nav2)).isEqualTo(Mark.S);
-        assertThat(board.getBoard().get(nav3)).isEqualTo(Mark.S);
-        assertThat(board.getBoard().get(nav4)).isEqualTo(Mark.S);
+        assertThat(board.getBoard().get(nav1)).isEqualTo(BoardMark.S);
+        assertThat(board.getBoard().get(nav2)).isEqualTo(BoardMark.S);
+        assertThat(board.getBoard().get(nav3)).isEqualTo(BoardMark.S);
+        assertThat(board.getBoard().get(nav4)).isEqualTo(BoardMark.S);
 
     }
 
     @Test
-    @Parameters({"0,1,3,4","10,20,22,12"})
-    public void shouldReturnTrueForTwo2FlagShip(int nav1, int nav2, int nav3, int nav4){
+    @Parameters({"0,1,3,4", "10,20,22,12"})
+    public void shouldReturnTrueForTwo2FlagShip(int nav1, int nav2, int nav3, int nav4) {
         //given
         board.setTwoFlagShip(nav1, nav2);
 
 
         //when
-        boolean result = board.setTwoFlagShip(nav3,nav4);
+        boolean result = board.setTwoFlagShip(nav3, nav4);
 
         //then
         assertThat(result).isTrue();
-        assertThat(board.getBoard().get(nav1)).isEqualTo(Mark.S);
-        assertThat(board.getBoard().get(nav2)).isEqualTo(Mark.S);
-        assertThat(board.getBoard().get(nav3)).isEqualTo(Mark.S);
-        assertThat(board.getBoard().get(nav4)).isEqualTo(Mark.S);
+        assertThat(board.getBoard().get(nav1)).isEqualTo(BoardMark.S);
+        assertThat(board.getBoard().get(nav2)).isEqualTo(BoardMark.S);
+        assertThat(board.getBoard().get(nav3)).isEqualTo(BoardMark.S);
+        assertThat(board.getBoard().get(nav4)).isEqualTo(BoardMark.S);
 
     }
 
@@ -294,27 +294,27 @@ public class BoardTest {
 
         //then
         assertThat(result).isFalse();
-        assertThat(board.getBoard().get(nav1)).isEqualTo(Mark.EMPTY);
-        assertThat(board.getBoard().get(nav2)).isEqualTo(Mark.EMPTY);
-        assertThat(board.getBoard().get(nav3)).isEqualTo(Mark.EMPTY);
-        assertThat(board.getBoard().get(nav4)).isEqualTo(Mark.EMPTY);
+        assertThat(board.getBoard().get(nav1)).isEqualTo(BoardMark.EMPTY);
+        assertThat(board.getBoard().get(nav2)).isEqualTo(BoardMark.EMPTY);
+        assertThat(board.getBoard().get(nav3)).isEqualTo(BoardMark.EMPTY);
+        assertThat(board.getBoard().get(nav4)).isEqualTo(BoardMark.EMPTY);
     }
 
     @Test
     @Parameters({"0", "10", "55", "99"})
-    public void shouldReturnTrueIfShipIsHit(int nav1){
+    public void shouldReturnTrueIfShipIsHit(int nav1) {
         //given
         board.setOneFlagShip(nav1);
         //when
         boolean result = board.hit(nav1);
         //then
         assertThat(result).isTrue();
-        assertThat(board.getBoard().get(nav1)).isEqualTo(Mark.O);
+        assertThat(board.getBoard().get(nav1)).isEqualTo(BoardMark.O);
     }
 
     @Test
     @Parameters({"0", "10", "55", "99"})
-    public void shouldReturnFalseIsShipWasAlreadyHited(int nav1){
+    public void shouldReturnFalseIsShipWasAlreadyHited(int nav1) {
         //given
         board.setOneFlagShip(nav1);
         board.hit(nav1);
@@ -322,24 +322,24 @@ public class BoardTest {
         boolean result = board.hit(nav1);
         //then
         assertThat(result).isFalse();
-        assertThat(board.getBoard().get(nav1)).isEqualTo(Mark.O);
+        assertThat(board.getBoard().get(nav1)).isEqualTo(BoardMark.O);
     }
 
     @Test
     @Parameters({"0", "10", "55", "99"})
-    public void shouldReturnFalseIsFieldWasAlreadyHited(int nav1){
+    public void shouldReturnFalseIsFieldWasAlreadyHited(int nav1) {
         //given
         board.hit(nav1);
         //when
         boolean result = board.hit(nav1);
         //then
         assertThat(result).isFalse();
-        assertThat(board.getBoard().get(nav1)).isEqualTo(Mark.X);
+        assertThat(board.getBoard().get(nav1)).isEqualTo(BoardMark.X);
     }
 
     @Test
     @Parameters({"10,10", "35,35"})
-    public void shouldReturnTrueIfOneFlagShipsIsSink(int nav1, int hit1){
+    public void shouldReturnTrueIfOneFlagShipsIsSink(int nav1, int hit1) {
         //given
         board.setOneFlagShip(nav1);
 
@@ -352,7 +352,7 @@ public class BoardTest {
 
     @Test
     @Parameters({"10,11", "35,33"})
-    public void shouldReturnFalseIfOneFlagShipsIsNotSink(int nav1, int hit1){
+    public void shouldReturnFalseIfOneFlagShipsIsNotSink(int nav1, int hit1) {
         //given
         board.setOneFlagShip(nav1);
 
@@ -365,7 +365,7 @@ public class BoardTest {
 
     @Test
     @Parameters({"10,11,10,11", "35,45,45,35"})
-    public void shouldReturnTrueIfTwoFlagShipsIsSink(int nav1, int nav2, int hit1, int hit2){
+    public void shouldReturnTrueIfTwoFlagShipsIsSink(int nav1, int nav2, int hit1, int hit2) {
         //given
         board.setTwoFlagShip(nav1, nav2);
 
@@ -379,7 +379,7 @@ public class BoardTest {
 
     @Test
     @Parameters({"10,11,10,12", "35,45,45,55"})
-    public void shouldReturnFalseIfTwoFlagShipsIsNotSink(int nav1, int nav2, int hit1, int hit2){
+    public void shouldReturnFalseIfTwoFlagShipsIsNotSink(int nav1, int nav2, int hit1, int hit2) {
         //given
         board.setTwoFlagShip(nav1, nav2);
 
@@ -393,7 +393,7 @@ public class BoardTest {
 
     @Test
     @Parameters({"10,11,12,10,11,12", "35,45,55,45,55,35"})
-    public void shouldReturnTrueIfThreeFlagShipsIsSink(int nav1, int nav2,int nav3, int hit1, int hit2, int hit3){
+    public void shouldReturnTrueIfThreeFlagShipsIsSink(int nav1, int nav2, int nav3, int hit1, int hit2, int hit3) {
         //given
         board.setThreeFlagShip(nav1, nav2, nav3);
 
@@ -408,7 +408,7 @@ public class BoardTest {
 
     @Test
     @Parameters({"10,11,12,10,11,13", "35,45,55,35,25,45"})
-    public void shouldReturnFalseIfThreeFlagShipsIsNotSink(int nav1, int nav2,int nav3, int hit1, int hit2, int hit3){
+    public void shouldReturnFalseIfThreeFlagShipsIsNotSink(int nav1, int nav2, int nav3, int hit1, int hit2, int hit3) {
         //given
         board.setThreeFlagShip(nav1, nav2, nav3);
 
@@ -423,8 +423,8 @@ public class BoardTest {
 
     @Test
     @Parameters({"10,11,12,13,10,11,12,13", "35,45,55,65,45,55,65,35"})
-    public void shouldReturnTrueIfFourFlagShipsIsSink(int nav1, int nav2,int nav3, int nav4,
-                                                      int hit1, int hit2, int hit3, int hit4){
+    public void shouldReturnTrueIfFourFlagShipsIsSink(int nav1, int nav2, int nav3, int nav4,
+                                                      int hit1, int hit2, int hit3, int hit4) {
         //given
         board.setFourFlagShip(nav1, nav2, nav3, nav4);
 
@@ -440,8 +440,8 @@ public class BoardTest {
 
     @Test
     @Parameters({"10,11,12,13,10,9,11,12", "35,45,55,65,45,55,65,75"})
-    public void shouldReturnFalseIfFourFlagShipsIsNotSink(int nav1, int nav2,int nav3, int nav4,
-                                                          int hit1, int hit2, int hit3, int hit4){
+    public void shouldReturnFalseIfFourFlagShipsIsNotSink(int nav1, int nav2, int nav3, int nav4,
+                                                          int hit1, int hit2, int hit3, int hit4) {
         //given
         board.setFourFlagShip(nav1, nav2, nav3, nav4);
 
@@ -457,7 +457,7 @@ public class BoardTest {
 
     @Test
     @Parameters({"11,12,11,12", "35,36,36,35"})
-    public void shouldSetXAroundSinkedShip(int nav1, int nav2, int hit1, int hit2 ){
+    public void shouldSetXAroundSinkedShip(int nav1, int nav2, int hit1, int hit2) {
         //given
         board.setTwoFlagShip(nav1, nav2);
 
@@ -468,18 +468,18 @@ public class BoardTest {
 
 
         //then
-        assertThat(board.getBoard().get(nav1-11)).isEqualTo(Mark.X);
-        assertThat(board.getBoard().get(nav1-10)).isEqualTo(Mark.X);
-        assertThat(board.getBoard().get(nav1-9)).isEqualTo(Mark.X);
-        assertThat(board.getBoard().get(nav1-1)).isEqualTo(Mark.X);
-        assertThat(board.getBoard().get(nav1+9)).isEqualTo(Mark.X);
-        assertThat(board.getBoard().get(nav1+10)).isEqualTo(Mark.X);
-        assertThat(board.getBoard().get(nav1+11)).isEqualTo(Mark.X);
+        assertThat(board.getBoard().get(nav1 - 11)).isEqualTo(BoardMark.X);
+        assertThat(board.getBoard().get(nav1 - 10)).isEqualTo(BoardMark.X);
+        assertThat(board.getBoard().get(nav1 - 9)).isEqualTo(BoardMark.X);
+        assertThat(board.getBoard().get(nav1 - 1)).isEqualTo(BoardMark.X);
+        assertThat(board.getBoard().get(nav1 + 9)).isEqualTo(BoardMark.X);
+        assertThat(board.getBoard().get(nav1 + 10)).isEqualTo(BoardMark.X);
+        assertThat(board.getBoard().get(nav1 + 11)).isEqualTo(BoardMark.X);
     }
 
     @Test
     @Parameters({"80,81,80,81", "20,21,20,21"})
-    public void shouldNotMarkXonAnotherSideOfBoardForLeftSide(int nav1, int nav2, int hit1, int hit2 ){
+    public void shouldNotMarkXonAnotherSideOfBoardForLeftSide(int nav1, int nav2, int hit1, int hit2) {
         //given
         board.setTwoFlagShip(nav1, nav2);
 
@@ -490,19 +490,19 @@ public class BoardTest {
 
 
         //then
-        assertThat(board.getBoard().get(nav1-11)).isEqualTo(Mark.EMPTY);
-        assertThat(board.getBoard().get(nav1-1)).isEqualTo(Mark.EMPTY);
-        assertThat(board.getBoard().get(nav1+9)).isEqualTo(Mark.EMPTY);
+        assertThat(board.getBoard().get(nav1 - 11)).isEqualTo(BoardMark.EMPTY);
+        assertThat(board.getBoard().get(nav1 - 1)).isEqualTo(BoardMark.EMPTY);
+        assertThat(board.getBoard().get(nav1 + 9)).isEqualTo(BoardMark.EMPTY);
 
-        assertThat(board.getBoard().get(nav1-10)).isEqualTo(Mark.X);
-        assertThat(board.getBoard().get(nav1-9)).isEqualTo(Mark.X);
-        assertThat(board.getBoard().get(nav1+10)).isEqualTo(Mark.X);
-        assertThat(board.getBoard().get(nav1+11)).isEqualTo(Mark.X);
+        assertThat(board.getBoard().get(nav1 - 10)).isEqualTo(BoardMark.X);
+        assertThat(board.getBoard().get(nav1 - 9)).isEqualTo(BoardMark.X);
+        assertThat(board.getBoard().get(nav1 + 10)).isEqualTo(BoardMark.X);
+        assertThat(board.getBoard().get(nav1 + 11)).isEqualTo(BoardMark.X);
     }
 
     @Test
     @Parameters({"18,19,18,19", "28,29,28,29"})
-    public void shouldNotMarkXonAnotherSideOfBoardForRightSide(int nav1, int nav2, int hit1, int hit2 ){
+    public void shouldNotMarkXonAnotherSideOfBoardForRightSide(int nav1, int nav2, int hit1, int hit2) {
         //given
         board.setTwoFlagShip(nav1, nav2);
 
@@ -513,21 +513,45 @@ public class BoardTest {
 
 
         //then
-        assertThat(board.getBoard().get(nav2+11)).isEqualTo(Mark.EMPTY);
-        assertThat(board.getBoard().get(nav2+1)).isEqualTo(Mark.EMPTY);
-        assertThat(board.getBoard().get(nav2-9)).isEqualTo(Mark.EMPTY);
+        assertThat(board.getBoard().get(nav2 + 11)).isEqualTo(BoardMark.EMPTY);
+        assertThat(board.getBoard().get(nav2 + 1)).isEqualTo(BoardMark.EMPTY);
+        assertThat(board.getBoard().get(nav2 - 9)).isEqualTo(BoardMark.EMPTY);
 
-        assertThat(board.getBoard().get(nav2-10)).isEqualTo(Mark.X);
-        assertThat(board.getBoard().get(nav2+9)).isEqualTo(Mark.X);
-        assertThat(board.getBoard().get(nav2+10)).isEqualTo(Mark.X);
-        assertThat(board.getBoard().get(nav2-11)).isEqualTo(Mark.X);
+        assertThat(board.getBoard().get(nav2 - 10)).isEqualTo(BoardMark.X);
+        assertThat(board.getBoard().get(nav2 + 9)).isEqualTo(BoardMark.X);
+        assertThat(board.getBoard().get(nav2 + 10)).isEqualTo(BoardMark.X);
+        assertThat(board.getBoard().get(nav2 - 11)).isEqualTo(BoardMark.X);
     }
 
+    @Test
+    @Parameters({"18,19,18,19", "28,29,28,29"})
+    public void shouldReturnFalseIfAllShipsAreSinked(int nav1, int nav2, int hit1, int hit2) {
+        //given
+        board.setTwoFlagShip(nav1, nav2);
+
+        //when
+        board.hit(hit1);
+        board.hit(hit2);
 
 
+        //then
+        assertThat(board.areThereStillShips()).isFalse();
+    }
+
+    @Test
+    @Parameters({"18,19,50,18,19", "28,29,50,28,29"})
+    public void shouldReturnTrueIfThereAreStillNotSinkedShips(int nav1, int nav2,int nav3, int hit1, int hit2) {
+        //given
+        board.setTwoFlagShip(nav1, nav2);
+        board.setOneFlagShip(nav3);
+
+        //when
+        board.hit(hit1);
+        board.hit(hit2);
 
 
-
-
+        //then
+        assertThat(board.areThereStillShips()).isTrue();
+    }
 
 }
