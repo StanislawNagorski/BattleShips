@@ -4,38 +4,48 @@ public class App {
     public static void main(String[] args) {
 
         Board playerOneBoard = new Board();
-        Player player1 = new Player();
+        Player player1 = new HumanPlayer(Game.PLAYER_ONE_NAME);
 
         Board playerTwoBoard = new Board();
-        Player player2 = new Player();
+        Player player2;
 
-        System.out.println("Zaczyna gracz numer JEDEN. Ustaw statki");
+        if (Game.NUMBER_OF_PLAYERS == 2) {
+            player2 = new HumanPlayer(Game.PLAYER_TWO_NAME);
+        } else {
+            player2 = new AIplayer();
+        }
+
+
+        System.out.println("Zaczyna gracz " + player1.getPlayerName() + ". Ustaw statki");
         player1.putShipsOnBoard(playerOneBoard);
-        System.out.println("Graczu numer DWA. Ustaw statki");
+
+        Board.clearScreen();
+
+        System.out.println("Tura gracza: " + player2.getPlayerName() + ". Ustaw statki");
         player2.putShipsOnBoard(playerTwoBoard);
 
+        Board.clearScreen();
 
         while (playerOneBoard.areThereStillShips() || playerTwoBoard.areThereStillShips()) {
 
-            System.out.println("Tura gracza numer JEDEN");
+            System.out.println("Tura gracza: " + player1.getPlayerName() + ".");
             player1.fire(playerTwoBoard);
             if (!playerTwoBoard.areThereStillShips()) {
-                System.out.println("Wygrywa gracz numer JEDEN!");
+                System.out.println("Wygrywa gracz:" + player1.getPlayerName() + "!");
                 break;
             }
 
 
-            System.out.println("Tura gracza numer DWA");
+            System.out.println("Tura gracza: " + player2.getPlayerName() + ".");
             player2.fire(playerOneBoard);
             if (!playerOneBoard.areThereStillShips()) {
-                System.out.println("Wygrywa gracz numer DWA!");
+                System.out.println("Wygrywa gracz:" + player2.getPlayerName() + "!");
                 break;
             }
-
 
         }
 
-        System.out.println("Dzięki za gre!");
+        System.out.println("Dzieki za gre!");
 
 
     }

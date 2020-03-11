@@ -5,6 +5,7 @@ To Do:
 - ~~warunki zwycięstwa~~
 - wydzielić warunki filtra edgescase to osobnej metody
 - ~~stworzyć logikę gry dla dwóch graczy~~
-- zaimpelemntować głupie AI
-- zaimplementować mniej głupie AI
+- ~~zabezpieczyć input pprzed wprowadzeniem navigacji odwrotnie 7c i c7~~
+- zaimplementować  AI
+- stworzyć edycję zasad z pliku tekstowego
 

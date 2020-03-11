@@ -1,4 +1,4 @@
-package com.CatCave.ships;
+package com.CatCave;
 
 import java.util.Arrays;
 import java.util.List;

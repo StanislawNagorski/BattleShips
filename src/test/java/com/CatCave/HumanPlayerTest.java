@@ -6,10 +6,8 @@ import org.assertj.core.api.Assertions;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 
-import java.util.List;
-
 @RunWith(JUnitParamsRunner.class)
-public class PlayerTest {
+public class HumanPlayerTest {
 
 
 
@@ -17,7 +15,7 @@ public class PlayerTest {
     @Parameters({"a_10, 9", "b-2, 11", "c    10, 29", "j10, 99", "a1, 0"})
     public void stringListToNavPoints(String input, int expectedNav) {
         //given
-        Player p = new Player();
+        HumanPlayer p = new HumanPlayer(Game.PLAYER_ONE_NAME);
         //when
         int result = p.playerInputToNavPoints(input);
         //then
@@ -28,7 +26,7 @@ public class PlayerTest {
     @Parameters({"a10,9", "b-2,11", "c   10   ,29", "j   10,99"})
     public void integrationOfProcessConvertingUserInputToNavPoints(String input, int expectedNav) {
         //given
-        Player p = new Player();
+        HumanPlayer p = new HumanPlayer(Game.PLAYER_ONE_NAME);
         //when
        int result =p.playerInputToNavPoints(input);
         //then

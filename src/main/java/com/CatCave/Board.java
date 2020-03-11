@@ -1,7 +1,6 @@
 package com.CatCave;
 
 
-import com.CatCave.ships.*;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -19,7 +18,6 @@ public class Board {
     private List<BoardMark> board;
     private List<Integer> areaAroundNavPoint = Arrays.asList(-11, -10, -9, -1, 1, 9, 10, 11);
     private static final int BOARD_SIZE = 100;
-    private Player currentPlayer;
 
 
     public Board() {
@@ -31,7 +29,6 @@ public class Board {
     }
 
     private boolean thereIsShipNearby(int nav, List<Integer> list) {
-
 
         return list.stream()
                 .filter(num -> (nav + num >= 0 && nav + num <= 99))
@@ -268,6 +265,10 @@ public class Board {
             }
         }
         System.out.println();
+    }
+    public static void clearScreen() {
+        System.out.print("\033[H\033[2J");
+        System.out.flush();
     }
 
     public boolean areThereStillShips(){
