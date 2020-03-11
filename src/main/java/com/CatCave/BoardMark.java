@@ -1,6 +1,6 @@
 package com.CatCave;
 
-public enum Mark {
+public enum BoardMark {
     X, //miss
     S, //ship
     O, //hitedShip

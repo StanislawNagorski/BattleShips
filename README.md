@@ -2,10 +2,10 @@
 Javowa zabawa nad klasyczną kartkową grą w statki
 
 To Do:
-- ~~metoda która po zatopieniu zmieni wszystkie okoliczne pola na X~~
-- ~~w klasie gracz: współrzędne załadować do tablicy, każdorazowa sortowanej przed przekazazaniem do metod~~
-- ~~dodaj klasę Game w której umieścisz zasady (liczbe statków, wygninanie)~~
-- ~~poprawić metodę MarkXAllAroundSinkedShips aby nie zajmowała miejsc w poprzednim rzędzie
-dla pozycji X0 i X9~~
-- stworzyć logikę gry
+- ~~warunki zwycięstwa~~
+- wydzielić warunki filtra edgescase to osobnej metody
+- ~~stworzyć logikę gry dla dwóch graczy~~
+- ~~zabezpieczyć input pprzed wprowadzeniem navigacji odwrotnie 7c i c7~~
+- zaimplementować  AI
+- stworzyć edycję zasad z pliku tekstowego
 

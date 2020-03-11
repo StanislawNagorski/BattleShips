@@ -1,0 +1,11 @@
+Aby uruchomić grę w terminalu wpisz:
+                                    mvn exec:java
+
+    NUMBER_OF_ONE_FLAG_SHIPS = 4;
+    NUMBER_OF_TWO_FLAG_SHIPS = 3;
+    NUMBER_OF_THREE_FLAG_SHIPS = 2;
+    NUMBER_OF_FOUR_FLAG_SHIPS = 1;
+    ARE_BENDED_SHIP_ALLOWED? = false;
+    NUMBER_OF_PLAYERS = 2;
+    PLAYER_ONE_NAME = "Staszek"
+    PLAYER_TWO_NAME = "Werka"

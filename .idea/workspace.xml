@@ -1,13 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="04807bcd-94f2-4538-b2af-807d2dd0e988" name="Default Changelist" comment="Metoda MarkXAllaroundSinkedShip poprawnie zaznacza pudła i bierze pod uwagę krawędzie mapy">
+    <list default="true" id="04807bcd-94f2-4538-b2af-807d2dd0e988" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/(☞ﾟ∀ﾟ)☞ ! UstawieniaGry ! (• ε •)" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/CatCave/AIplayer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/CatCave/HumanPlayer.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/CatCave/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/CatCave/App.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/CatCave/Board.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/CatCave/Board.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/CatCave/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/CatCave/Game.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/CatCave/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/CatCave/Player.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/CatCave/BoardTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/CatCave/BoardTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/CatCave/PlayerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/CatCave/PlayerTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/CatCave/ships/Ship.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/CatCave/Ship.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/CatCave/PlayerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/CatCave/HumanPlayerTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/CatCave/App.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/CatCave/App.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/CatCave/Board.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/CatCave/Board.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/test-classes/com/CatCave/BoardTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/com/CatCave/BoardTest.class" afterDir="false" />
     </list>
@@ -21,8 +28,8 @@
       <list>
         <option value="Enum" />
         <option value="JUnit4 Test Class" />
-        <option value="Interface" />
         <option value="Class" />
+        <option value="Interface" />
       </list>
     </option>
   </component>
@@ -55,6 +62,9 @@
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit4" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit4" value="" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../EgzaminSDA" />
+    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.proportion" value="0.0" />
+    <property name="project.structure.side.proportion" value="0.0" />
     <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
@@ -69,7 +79,7 @@
       <recent name="" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.BoardTest">
+  <component name="RunManager" selected="Application.App">
     <configuration name="App" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.CatCave.App" />
       <module name="Statki" />
@@ -98,7 +108,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="BoardTest.shouldNotMarkXonAnotherSideOfBoardForLeftSide" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="BoardTest.shouldReturnTrueIfAllShipsAreSinked" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Statki" />
       <extension name="coverage">
         <pattern>
@@ -108,13 +118,13 @@
       </extension>
       <option name="PACKAGE_NAME" value="com.CatCave" />
       <option name="MAIN_CLASS_NAME" value="com.CatCave.BoardTest" />
-      <option name="METHOD_NAME" value="shouldNotMarkXonAnotherSideOfBoardForLeftSide" />
+      <option name="METHOD_NAME" value="shouldReturnTrueIfAllShipsAreSinked" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="BoardTest.shouldNotMarkXonAnotherSideOfBoardForRightSide" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="BoardTest.shouldReturnTrueIfThereAreStillNotSinkedShips" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Statki" />
       <extension name="coverage">
         <pattern>
@@ -124,35 +134,26 @@
       </extension>
       <option name="PACKAGE_NAME" value="com.CatCave" />
       <option name="MAIN_CLASS_NAME" value="com.CatCave.BoardTest" />
-      <option name="METHOD_NAME" value="shouldNotMarkXonAnotherSideOfBoardForRightSide" />
+      <option name="METHOD_NAME" value="shouldReturnTrueIfThereAreStillNotSinkedShips" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="BoardTest.shouldSetXAroundSinkedShip" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="Statki" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.CatCave.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="com.CatCave" />
-      <option name="MAIN_CLASS_NAME" value="com.CatCave.BoardTest" />
-      <option name="METHOD_NAME" value="shouldSetXAroundSinkedShip" />
-      <option name="TEST_OBJECT" value="method" />
+    <configuration name="Scratch" type="Java Scratch" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Scratch" />
+      <option name="SCRATCH_FILE_URL" value="file://$APPLICATION_CONFIG_DIR$/scratches/scratch_3.java" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.BoardTest" />
-        <item itemvalue="JUnit.BoardTest.shouldNotMarkXonAnotherSideOfBoardForRightSide" />
         <item itemvalue="Application.App" />
-        <item itemvalue="JUnit.BoardTest.shouldNotMarkXonAnotherSideOfBoardForLeftSide" />
-        <item itemvalue="JUnit.BoardTest.shouldSetXAroundSinkedShip" />
+        <item itemvalue="JUnit.BoardTest" />
+        <item itemvalue="JUnit.BoardTest.shouldReturnTrueIfThereAreStillNotSinkedShips" />
+        <item itemvalue="JUnit.BoardTest.shouldReturnTrueIfAllShipsAreSinked" />
+        <item itemvalue="Java Scratch.Scratch" />
       </list>
     </recent_temporary>
   </component>
@@ -249,7 +250,28 @@
       <option name="project" value="LOCAL" />
       <updated>1583792361410</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="Metoda MarkXAllaroundSinkedShip poprawnie zaznacza pudła i bierze pod uwagę krawędzie mapy">
+      <created>1583862916966</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1583862916966</updated>
+    </task>
+    <task id="LOCAL-00012" summary="Gra dla dwóch graczy działa">
+      <created>1583959418289</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1583959418289</updated>
+    </task>
+    <task id="LOCAL-00013" summary="Gra dla dwóch graczy działa">
+      <created>1583960021107</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1583960021107</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -263,93 +285,106 @@
     <MESSAGE value="Dodana klasa Game i implantacje logiki" />
     <MESSAGE value="To Do" />
     <MESSAGE value="Metoda MarkXAllaroundSinkedShip poprawnie zaznacza pudła i bierze pod uwagę krawędzie mapy" />
-    <option name="LAST_COMMIT_MESSAGE" value="Metoda MarkXAllaroundSinkedShip poprawnie zaznacza pudła i bierze pod uwagę krawędzie mapy" />
+    <MESSAGE value="Gra dla dwóch graczy działa" />
+    <option name="LAST_COMMIT_MESSAGE" value="Gra dla dwóch graczy działa" />
   </component>
   <component name="WindowStateProjectService">
     <state x="191" y="138" key="#Live_Templates" timestamp="1583520631711">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="191" y="138" key="#Live_Templates/0.0.1920.1040@0.0.1920.1040" timestamp="1583520631711" />
+    <state x="551" y="178" key="#Project_Structure" timestamp="1583966413672">
+      <screen x="0" y="0" width="1919" height="1040" />
+    </state>
+    <state x="551" y="178" key="#Project_Structure/0.0.1919.1040@0.0.1919.1040" timestamp="1583966413672" />
     <state x="92" y="92" width="1736" height="856" key="#com.intellij.execution.junit2.states.ComparisonFailureState$DiffDialog" timestamp="1583702250297">
       <screen x="0" y="0" width="1919" height="1040" />
     </state>
     <state x="92" y="92" width="1736" height="856" key="#com.intellij.execution.junit2.states.ComparisonFailureState$DiffDialog/0.0.1919.1040@0.0.1919.1040" timestamp="1583702250297" />
     <state x="92" y="92" width="1736" height="856" key="#com.intellij.execution.junit2.states.ComparisonFailureState$DiffDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1583311986369" />
-    <state x="765" y="229" key="#com.intellij.ide.util.MemberChooser" timestamp="1583767648454">
+    <state x="692" y="322" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1583964274475">
       <screen x="0" y="0" width="1919" height="1040" />
     </state>
-    <state x="765" y="229" key="#com.intellij.ide.util.MemberChooser/0.0.1919.1040@0.0.1919.1040" timestamp="1583767648454" />
+    <state x="692" y="322" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1919.1040@0.0.1919.1040" timestamp="1583964274475" />
+    <state x="765" y="229" key="#com.intellij.ide.util.MemberChooser" timestamp="1583967001777">
+      <screen x="0" y="0" width="1919" height="1040" />
+    </state>
+    <state x="765" y="229" key="#com.intellij.ide.util.MemberChooser/0.0.1919.1040@0.0.1919.1040" timestamp="1583967001777" />
     <state x="765" y="229" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1040@0.0.1920.1040" timestamp="1583618727222" />
-    <state x="755" y="379" width="408" height="291" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes" timestamp="1583674249655">
+    <state x="755" y="379" width="408" height="291" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes" timestamp="1583961133031">
       <screen x="0" y="0" width="1919" height="1040" />
     </state>
-    <state x="755" y="379" width="408" height="291" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes/0.0.1919.1040@0.0.1919.1040" timestamp="1583674249655" />
-    <state x="713" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1583676629532">
+    <state x="755" y="379" width="408" height="291" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes/0.0.1919.1040@0.0.1919.1040" timestamp="1583961133031" />
+    <state x="713" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1583966399282">
       <screen x="0" y="0" width="1919" height="1040" />
     </state>
-    <state x="713" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1919.1040@0.0.1919.1040" timestamp="1583676629532" />
-    <state x="689" y="266" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1583676596848">
+    <state x="713" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1919.1040@0.0.1919.1040" timestamp="1583966399282" />
+    <state x="689" y="266" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1583966550349">
       <screen x="0" y="0" width="1919" height="1040" />
     </state>
-    <state x="689" y="266" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1919.1040@0.0.1919.1040" timestamp="1583676596848" />
+    <state x="689" y="266" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1919.1040@0.0.1919.1040" timestamp="1583966550349" />
     <state x="707" y="366" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1" timestamp="1583445640978">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="707" y="366" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1/0.0.1920.1040@0.0.1920.1040" timestamp="1583445640978" />
-    <state x="614" y="114" key="CommitChangelistDialog2" timestamp="1583862858121">
+    <state x="614" y="114" key="CommitChangelistDialog2" timestamp="1583968009188">
       <screen x="0" y="0" width="1919" height="1040" />
     </state>
-    <state x="614" y="114" key="CommitChangelistDialog2/0.0.1919.1040@0.0.1919.1040" timestamp="1583862858121" />
+    <state x="614" y="114" key="CommitChangelistDialog2/0.0.1919.1040@0.0.1919.1040" timestamp="1583968009188" />
     <state x="614" y="114" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1583489551161" />
-    <state width="851" height="912" key="GridCell.Tab.0.bottom" timestamp="1583862907622">
+    <state width="1876" height="348" key="GridCell.Tab.0.bottom" timestamp="1583967758125">
       <screen x="0" y="0" width="1919" height="1040" />
     </state>
-    <state width="851" height="912" key="GridCell.Tab.0.bottom/0.0.1919.1040@0.0.1919.1040" timestamp="1583862907622" />
+    <state width="1876" height="348" key="GridCell.Tab.0.bottom/0.0.1919.1040@0.0.1919.1040" timestamp="1583967758125" />
     <state width="565" height="912" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1583601056878" />
-    <state width="851" height="912" key="GridCell.Tab.0.center" timestamp="1583862907622">
+    <state width="1876" height="348" key="GridCell.Tab.0.center" timestamp="1583967758125">
       <screen x="0" y="0" width="1919" height="1040" />
     </state>
-    <state width="851" height="912" key="GridCell.Tab.0.center/0.0.1919.1040@0.0.1919.1040" timestamp="1583862907622" />
+    <state width="1876" height="348" key="GridCell.Tab.0.center/0.0.1919.1040@0.0.1919.1040" timestamp="1583967758125" />
     <state width="565" height="912" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1583601056878" />
-    <state width="851" height="912" key="GridCell.Tab.0.left" timestamp="1583862907622">
+    <state width="1876" height="348" key="GridCell.Tab.0.left" timestamp="1583967758125">
       <screen x="0" y="0" width="1919" height="1040" />
     </state>
-    <state width="851" height="912" key="GridCell.Tab.0.left/0.0.1919.1040@0.0.1919.1040" timestamp="1583862907622" />
+    <state width="1876" height="348" key="GridCell.Tab.0.left/0.0.1919.1040@0.0.1919.1040" timestamp="1583967758125" />
     <state width="565" height="912" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1583601056878" />
-    <state width="851" height="912" key="GridCell.Tab.0.right" timestamp="1583862907622">
+    <state width="1876" height="348" key="GridCell.Tab.0.right" timestamp="1583967758125">
       <screen x="0" y="0" width="1919" height="1040" />
     </state>
-    <state width="851" height="912" key="GridCell.Tab.0.right/0.0.1919.1040@0.0.1919.1040" timestamp="1583862907622" />
+    <state width="1876" height="348" key="GridCell.Tab.0.right/0.0.1919.1040@0.0.1919.1040" timestamp="1583967758125" />
     <state width="565" height="912" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1583601056878" />
-    <state width="1877" height="348" key="GridCell.Tab.1.bottom" timestamp="1583442403538">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state width="1876" height="348" key="GridCell.Tab.1.bottom" timestamp="1583967758126">
+      <screen x="0" y="0" width="1919" height="1040" />
     </state>
+    <state width="1876" height="348" key="GridCell.Tab.1.bottom/0.0.1919.1040@0.0.1919.1040" timestamp="1583967758126" />
     <state width="1877" height="348" key="GridCell.Tab.1.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1583442403538" />
-    <state width="1877" height="348" key="GridCell.Tab.1.center" timestamp="1583442403538">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state width="1876" height="348" key="GridCell.Tab.1.center" timestamp="1583967758126">
+      <screen x="0" y="0" width="1919" height="1040" />
     </state>
+    <state width="1876" height="348" key="GridCell.Tab.1.center/0.0.1919.1040@0.0.1919.1040" timestamp="1583967758126" />
     <state width="1877" height="348" key="GridCell.Tab.1.center/0.0.1920.1040@0.0.1920.1040" timestamp="1583442403538" />
-    <state width="1877" height="348" key="GridCell.Tab.1.left" timestamp="1583442403538">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state width="1876" height="348" key="GridCell.Tab.1.left" timestamp="1583967758125">
+      <screen x="0" y="0" width="1919" height="1040" />
     </state>
+    <state width="1876" height="348" key="GridCell.Tab.1.left/0.0.1919.1040@0.0.1919.1040" timestamp="1583967758125" />
     <state width="1877" height="348" key="GridCell.Tab.1.left/0.0.1920.1040@0.0.1920.1040" timestamp="1583442403538" />
-    <state width="1877" height="348" key="GridCell.Tab.1.right" timestamp="1583442403538">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state width="1876" height="348" key="GridCell.Tab.1.right" timestamp="1583967758126">
+      <screen x="0" y="0" width="1919" height="1040" />
     </state>
+    <state width="1876" height="348" key="GridCell.Tab.1.right/0.0.1919.1040@0.0.1919.1040" timestamp="1583967758126" />
     <state width="1877" height="348" key="GridCell.Tab.1.right/0.0.1920.1040@0.0.1920.1040" timestamp="1583442403538" />
     <state x="461" y="162" key="SettingsEditor" timestamp="1583445532783">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="461" y="162" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1583445532783" />
-    <state x="552" y="252" key="Vcs.Push.Dialog.v2" timestamp="1583792366869">
+    <state x="552" y="252" key="Vcs.Push.Dialog.v2" timestamp="1583960032421">
       <screen x="0" y="0" width="1919" height="1040" />
     </state>
-    <state x="552" y="252" key="Vcs.Push.Dialog.v2/0.0.1919.1040@0.0.1919.1040" timestamp="1583792366869" />
+    <state x="552" y="252" key="Vcs.Push.Dialog.v2/0.0.1919.1040@0.0.1919.1040" timestamp="1583960032421" />
     <state x="552" y="252" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1583489560736" />
-    <state x="656" y="343" key="com.intellij.ide.util.TipDialog" timestamp="1583763180443">
+    <state x="656" y="343" key="com.intellij.ide.util.TipDialog" timestamp="1583967830058">
       <screen x="0" y="0" width="1919" height="1040" />
     </state>
-    <state x="656" y="343" key="com.intellij.ide.util.TipDialog/0.0.1919.1040@0.0.1919.1040" timestamp="1583763180443" />
+    <state x="656" y="343" key="com.intellij.ide.util.TipDialog/0.0.1919.1040@0.0.1919.1040" timestamp="1583967830058" />
     <state x="656" y="343" key="com.intellij.ide.util.TipDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1583612576526" />
     <state x="769" y="436" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1583684367850">
       <screen x="0" y="0" width="1919" height="1040" />

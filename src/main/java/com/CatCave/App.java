@@ -1,36 +1,51 @@
 package com.CatCave;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Scanner;
-
-public class App
-{
-    public static void main( String[] args ){
+public class App {
+    public static void main(String[] args) {
 
         Board playerOneBoard = new Board();
-        Player player1 = new Player();
+        Player player1 = new HumanPlayer(Game.PLAYER_ONE_NAME);
 
         Board playerTwoBoard = new Board();
-        Player player2 = new Player();
+        Player player2;
+
+        if (Game.NUMBER_OF_PLAYERS == 2) {
+            player2 = new HumanPlayer(Game.PLAYER_TWO_NAME);
+        } else {
+            player2 = new AIplayer();
+        }
 
 
-//        playerOneBoard.printBoard();
-//        player1.putFourFlagShip(playerOneBoard);
-//        player1.putThreeFlagShip(playerOneBoard);
-//        player1.putTwoFlagShip(playerOneBoard);
-//        player1.putOneFlagShip(playerOneBoard);
+        System.out.println("Zaczyna gracz " + player1.getPlayerName() + ". Ustaw statki");
+        player1.putShipsOnBoard(playerOneBoard);
 
-        System.out.println();
+        Board.clearScreen();
 
-        playerTwoBoard.printBoard();
-        player2.putFourFlagShip(playerTwoBoard);
-//        player2.putThreeFlagShip(playerTwoBoard);
-//        player2.putTwoFlagShip(playerTwoBoard);
-        player2.putOneFlagShip(playerTwoBoard);
+        System.out.println("Tura gracza: " + player2.getPlayerName() + ". Ustaw statki");
+        player2.putShipsOnBoard(playerTwoBoard);
 
-        player1.fire(playerTwoBoard);
+        Board.clearScreen();
 
+        while (playerOneBoard.areThereStillShips() || playerTwoBoard.areThereStillShips()) {
+
+            System.out.println("Tura gracza: " + player1.getPlayerName() + ".");
+            player1.fire(playerTwoBoard);
+            if (!playerTwoBoard.areThereStillShips()) {
+                System.out.println("Wygrywa gracz:" + player1.getPlayerName() + "!");
+                break;
+            }
+
+
+            System.out.println("Tura gracza: " + player2.getPlayerName() + ".");
+            player2.fire(playerOneBoard);
+            if (!playerOneBoard.areThereStillShips()) {
+                System.out.println("Wygrywa gracz:" + player2.getPlayerName() + "!");
+                break;
+            }
+
+        }
+
+        System.out.println("Dzieki za gre!");
 
 
     }
