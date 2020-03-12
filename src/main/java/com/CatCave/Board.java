@@ -16,13 +16,13 @@ public class Board {
 
     private List<Ship> lisOfShips;
     private List<BoardMark> board;
-    private List<Integer> areaAroundNavPoint = Arrays.asList(-11, -10, -9, -1, 1, 9, 10, 11);
+    private static final List<Integer> AREA_AROUND_NAV_POINT = Arrays.asList(-11, -10, -9, -1, 1, 9, 10, 11);
     private static final int BOARD_SIZE = 100;
 
 
     public Board() {
-        board = new ArrayList<>();
         lisOfShips = new ArrayList<>();
+        board = new ArrayList<>();
         for (int i = 0; i < BOARD_SIZE; i++) {
             board.add(BoardMark.EMPTY);
         }
@@ -71,7 +71,7 @@ public class Board {
     }
 
     public boolean setOneFlagShip(int nav1) {
-        if (setOneFlagShipOnBoard(nav1, areaAroundNavPoint)) {
+        if (setOneFlagShipOnBoard(nav1, AREA_AROUND_NAV_POINT)) {
             lisOfShips.add(new Ship(nav1));
             return true;
         }
@@ -84,11 +84,11 @@ public class Board {
         }
 
         if (Math.abs(nav1 - nav2) == 10 || (Math.abs(nav1 - nav2) == 1 && (nav1 / 10 == nav2 / 10))) {
-            if (!setOneFlagShipOnBoard(nav1, areaAroundNavPoint)) {
+            if (!setOneFlagShipOnBoard(nav1, AREA_AROUND_NAV_POINT)) {
                 return false;
             }
 
-            return setOneFlagShipOnBoard(nav2, areaAroundNavPoint.stream()
+            return setOneFlagShipOnBoard(nav2, AREA_AROUND_NAV_POINT.stream()
                     .filter(num -> num != nav1 - nav2)
                     .collect(Collectors.toList()));
         }
@@ -116,7 +116,7 @@ public class Board {
                 return false;
             }
 
-            return setOneFlagShipOnBoard(nav3, areaAroundNavPoint.stream()
+            return setOneFlagShipOnBoard(nav3, AREA_AROUND_NAV_POINT.stream()
                     .filter(num -> num != nav1 - nav2)
                     .collect(Collectors.toList()));
         }
@@ -143,7 +143,7 @@ public class Board {
                 return false;
             }
 
-            return setOneFlagShipOnBoard(nav4, areaAroundNavPoint.stream()
+            return setOneFlagShipOnBoard(nav4, AREA_AROUND_NAV_POINT.stream()
                     .filter(num -> num != nav2 - nav3)
                     .collect(Collectors.toList()));
         }
@@ -193,7 +193,7 @@ public class Board {
     public void markXAllAroundSinkedShip(Ship ship) {
 
         ship.getListofShipNavPoints()
-                .forEach(shipNavPoint -> areaAroundNavPoint.stream()
+                .forEach(shipNavPoint -> AREA_AROUND_NAV_POINT.stream()
                         .filter(navAround -> (shipNavPoint + navAround >= 0 && shipNavPoint + navAround <= 99))
                         .filter(navAround -> {
                             if ((shipNavPoint + 1)%10==0){

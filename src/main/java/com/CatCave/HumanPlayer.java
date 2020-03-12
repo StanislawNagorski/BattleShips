@@ -35,13 +35,13 @@ public class HumanPlayer implements Player {
 
         List<String> list = playerInputToStringList(input);
 
-        if (list.size() != 2){
+        if (list.size() != 2) {
             return 150;
         }
 
         int tens, num;
 
-        if (!Character.isDigit(list.get(0).charAt(0))){
+        if (!Character.isDigit(list.get(0).charAt(0))) {
             tens = ((list.get(0).trim().charAt(0)) - 'a') * 10;
             num = Integer.parseInt(list.get(1));
         } else {
@@ -84,7 +84,8 @@ public class HumanPlayer implements Player {
             while (flag) {
 
                 List<Integer> listOfUserNavPoints = new ArrayList<>();
-                for (int j = 0; j < 2; j++) {
+                int numberOfShipFlags = 2;
+                for (int j = 0; j < numberOfShipFlags; j++) {
                     System.out.println("Gdzie postawic statek? Podaj punkt");
                     listOfUserNavPoints.add(playerInputToNavPoints(scan.nextLine()));
                 }
@@ -110,9 +111,9 @@ public class HumanPlayer implements Player {
 
             boolean flag = true;
             while (flag) {
-
+                int numberOfShipFlags = 3;
                 List<Integer> listOfUserNavPoints = new ArrayList<>();
-                for (int j = 0; j < 3; j++) {
+                for (int j = 0; j < numberOfShipFlags; j++) {
                     System.out.println("Gdzie postawic statek? Podaj punkt");
                     listOfUserNavPoints.add(playerInputToNavPoints(scan.nextLine()));
                 }
@@ -139,8 +140,9 @@ public class HumanPlayer implements Player {
             boolean flag = true;
             while (flag) {
 
+                int numberOfShipFlags = 4;
                 List<Integer> listOfUserNavPoints = new ArrayList<>();
-                for (int j = 0; j < 4; j++) {
+                for (int j = 0; j < numberOfShipFlags; j++) {
                     System.out.println("Gdzie postawic statek? Podaj punkt");
                     listOfUserNavPoints.add(playerInputToNavPoints(scan.nextLine()));
                 }
@@ -160,7 +162,7 @@ public class HumanPlayer implements Player {
         }
     }
 
-    public void putShipsOnBoard(Board board){
+    public void putShipsOnBoard(Board board) {
         putFourFlagShip(board);
         putThreeFlagShip(board);
         putTwoFlagShip(board);
@@ -175,7 +177,7 @@ public class HumanPlayer implements Player {
             System.out.println("Oddaj STRZAL! podaj pole");
             board.printBoardOfHits();
             flag = board.hit(playerInputToNavPoints(scan.nextLine()));
-            if (!board.areThereStillShips()){
+            if (!board.areThereStillShips()) {
                 return;
             }
         }

@@ -15,14 +15,18 @@ public class App {
             player2 = new AIplayer();
         }
 
+        System.out.println("Tura gracza: " + player2.getPlayerName() + ". Ustaw statki");
+        player2.putShipsOnBoard(playerTwoBoard);
+        playerTwoBoard.printBoard();
+
 
         System.out.println("Zaczyna gracz " + player1.getPlayerName() + ". Ustaw statki");
         player1.putShipsOnBoard(playerOneBoard);
 
-        Board.clearScreen();
 
-        System.out.println("Tura gracza: " + player2.getPlayerName() + ". Ustaw statki");
-        player2.putShipsOnBoard(playerTwoBoard);
+
+        //Board.clearScreen();
+
 
         Board.clearScreen();
 
