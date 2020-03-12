@@ -1,6 +1,5 @@
 package com.CatCave;
 
-import lombok.AllArgsConstructor;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -35,13 +34,13 @@ public class HumanPlayer implements Player {
 
         List<String> list = playerInputToStringList(input);
 
-        if (list.size() != 2){
+        if (list.size() != 2) {
             return 150;
         }
 
         int tens, num;
 
-        if (!Character.isDigit(list.get(0).charAt(0))){
+        if (!Character.isDigit(list.get(0).charAt(0))) {
             tens = ((list.get(0).trim().charAt(0)) - 'a') * 10;
             num = Integer.parseInt(list.get(1));
         } else {
@@ -52,7 +51,7 @@ public class HumanPlayer implements Player {
         return tens + num - 1;
     }
 
-
+    @Override
     public void putOneFlagShip(Board board) {
         for (int i = 0; i < Game.NUMBER_OF_ONE_FLAG_SHIPS; i++) {
             System.out.println("Do postawienia zostalo " + (Game.NUMBER_OF_ONE_FLAG_SHIPS - i)
@@ -60,12 +59,11 @@ public class HumanPlayer implements Player {
 
             Scanner scan = new Scanner(System.in);
 
-            boolean flag = true;
-            while (flag) {
-
+            while (true) {
                 System.out.println("Gdzie postawic statek? Podaj punkt");
-                flag = !board.setOneFlagShip(playerInputToNavPoints(scan.nextLine()));
-                if (flag) {
+                if (board.setOneFlagShip(playerInputToNavPoints(scan.nextLine()))) {
+                    break;
+                } else {
                     System.out.println("Niepoprawne miejsce");
                 }
             }
@@ -73,6 +71,7 @@ public class HumanPlayer implements Player {
         }
     }
 
+    @Override
     public void putTwoFlagShip(Board board) {
         for (int i = 0; i < Game.NUMBER_OF_TWO_FLAG_SHIPS; i++) {
             System.out.println("Do postawienia zostalo " + (Game.NUMBER_OF_TWO_FLAG_SHIPS - i)
@@ -80,19 +79,19 @@ public class HumanPlayer implements Player {
 
             Scanner scan = new Scanner(System.in);
 
-            boolean flag = true;
-            while (flag) {
+            while (true) {
 
                 List<Integer> listOfUserNavPoints = new ArrayList<>();
-                for (int j = 0; j < 2; j++) {
+                int numberOfShipFlags = 2;
+                for (int j = 0; j < numberOfShipFlags; j++) {
                     System.out.println("Gdzie postawic statek? Podaj punkt");
                     listOfUserNavPoints.add(playerInputToNavPoints(scan.nextLine()));
                 }
 
                 Collections.sort(listOfUserNavPoints);
-                flag = !board.setTwoFlagShip(listOfUserNavPoints.get(0), listOfUserNavPoints.get(1));
-
-                if (flag) {
+                if (board.setTwoFlagShip(listOfUserNavPoints.get(0), listOfUserNavPoints.get(1))) {
+                    break;
+                } else {
                     System.out.println("Niepoprawne polozenie statku");
                 }
             }
@@ -101,6 +100,7 @@ public class HumanPlayer implements Player {
         }
     }
 
+    @Override
     public void putThreeFlagShip(Board board) {
         for (int i = 0; i < Game.NUMBER_OF_THREE_FLAG_SHIPS; i++) {
             System.out.println("Do postawienia zostalo " + (Game.NUMBER_OF_THREE_FLAG_SHIPS - i)
@@ -108,19 +108,19 @@ public class HumanPlayer implements Player {
 
             Scanner scan = new Scanner(System.in);
 
-            boolean flag = true;
-            while (flag) {
-
+            while (true) {
+                int numberOfShipFlags = 3;
                 List<Integer> listOfUserNavPoints = new ArrayList<>();
-                for (int j = 0; j < 3; j++) {
+                for (int j = 0; j < numberOfShipFlags; j++) {
                     System.out.println("Gdzie postawic statek? Podaj punkt");
                     listOfUserNavPoints.add(playerInputToNavPoints(scan.nextLine()));
                 }
 
                 Collections.sort(listOfUserNavPoints);
-                flag = !board.setThreeFlagShip(listOfUserNavPoints.get(0),
-                        listOfUserNavPoints.get(1), listOfUserNavPoints.get(2));
-                if (flag) {
+                if (board.setThreeFlagShip(listOfUserNavPoints.get(0),
+                        listOfUserNavPoints.get(1), listOfUserNavPoints.get(2))) {
+                    break;
+                } else {
                     System.out.println("Niepoprawne polozenie statku");
                 }
             }
@@ -129,6 +129,7 @@ public class HumanPlayer implements Player {
         }
     }
 
+    @Override
     public void putFourFlagShip(Board board) {
         for (int i = 0; i < Game.NUMBER_OF_FOUR_FLAG_SHIPS; i++) {
             System.out.println("Do postawienia zostalo " + (Game.NUMBER_OF_FOUR_FLAG_SHIPS - i)
@@ -136,22 +137,21 @@ public class HumanPlayer implements Player {
 
             Scanner scan = new Scanner(System.in);
 
-            boolean flag = true;
-            while (flag) {
+            while (true) {
 
+                int numberOfShipFlags = 4;
                 List<Integer> listOfUserNavPoints = new ArrayList<>();
-                for (int j = 0; j < 4; j++) {
+                for (int j = 0; j < numberOfShipFlags; j++) {
                     System.out.println("Gdzie postawic statek? Podaj punkt");
                     listOfUserNavPoints.add(playerInputToNavPoints(scan.nextLine()));
                 }
 
                 Collections.sort(listOfUserNavPoints);
-                flag = !board.setFourFlagShip(
-                        listOfUserNavPoints.get(0),
-                        listOfUserNavPoints.get(1),
-                        listOfUserNavPoints.get(2),
-                        listOfUserNavPoints.get(3));
-                if (flag) {
+                if (board.setFourFlagShip(
+                        listOfUserNavPoints.get(0),listOfUserNavPoints.get(1),
+                        listOfUserNavPoints.get(2),listOfUserNavPoints.get(3))) {
+                    break;
+                } else {
                     System.out.println("Niepoprawne polozenie statku");
                 }
             }
@@ -160,14 +160,15 @@ public class HumanPlayer implements Player {
         }
     }
 
-    public void putShipsOnBoard(Board board){
+    @Override
+    public void putShipsOnBoard(Board board) {
         putFourFlagShip(board);
         putThreeFlagShip(board);
         putTwoFlagShip(board);
         putOneFlagShip(board);
-
     }
 
+    @Override
     public void fire(Board board) {
         Scanner scan = new Scanner(System.in);
         boolean flag = true;
@@ -175,7 +176,7 @@ public class HumanPlayer implements Player {
             System.out.println("Oddaj STRZAL! podaj pole");
             board.printBoardOfHits();
             flag = board.hit(playerInputToNavPoints(scan.nextLine()));
-            if (!board.areThereStillShips()){
+            if (!board.areThereStillShips()) {
                 return;
             }
         }

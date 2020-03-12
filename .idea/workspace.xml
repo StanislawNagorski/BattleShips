@@ -2,21 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="04807bcd-94f2-4538-b2af-807d2dd0e988" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/(☞ﾟ∀ﾟ)☞ ! UstawieniaGry ! (• ε •)" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/CatCave/AIplayer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/CatCave/HumanPlayer.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/CatCave/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/CatCave/App.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/CatCave/Board.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/CatCave/Board.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/CatCave/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/CatCave/Game.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/CatCave/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/CatCave/Player.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/CatCave/ships/Ship.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/CatCave/Ship.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/CatCave/PlayerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/CatCave/HumanPlayerTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/CatCave/App.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/CatCave/App.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/CatCave/Board.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/CatCave/Board.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/com/CatCave/BoardTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/com/CatCave/BoardTest.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -27,9 +14,10 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Enum" />
-        <option value="JUnit4 Test Class" />
         <option value="Class" />
         <option value="Interface" />
+        <option value="JUnit4 Test Class" />
+        <option value="JUnit5 Test Class" />
       </list>
     </option>
   </component>
@@ -59,12 +47,14 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit4" />
+    <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit5" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit4" value="" />
+    <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5" value="" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../EgzaminSDA" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.0" />
+    <property name="restartRequiresConfirmation" value="false" />
     <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
@@ -93,6 +83,37 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="AIplayerTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Statki" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.CatCave.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.CatCave" />
+      <option name="MAIN_CLASS_NAME" value="com.CatCave.AIplayerTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="AIplayerTest.shouldPutOneFlagShipOnBoard" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Statki" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.CatCave.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.CatCave" />
+      <option name="MAIN_CLASS_NAME" value="com.CatCave.AIplayerTest" />
+      <option name="METHOD_NAME" value="shouldPutOneFlagShipOnBoard" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="BoardTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Statki" />
       <extension name="coverage">
@@ -108,38 +129,6 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="BoardTest.shouldReturnTrueIfAllShipsAreSinked" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="Statki" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.CatCave.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="com.CatCave" />
-      <option name="MAIN_CLASS_NAME" value="com.CatCave.BoardTest" />
-      <option name="METHOD_NAME" value="shouldReturnTrueIfAllShipsAreSinked" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="BoardTest.shouldReturnTrueIfThereAreStillNotSinkedShips" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="Statki" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.CatCave.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="com.CatCave" />
-      <option name="MAIN_CLASS_NAME" value="com.CatCave.BoardTest" />
-      <option name="METHOD_NAME" value="shouldReturnTrueIfThereAreStillNotSinkedShips" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="Scratch" type="Java Scratch" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Scratch" />
       <option name="SCRATCH_FILE_URL" value="file://$APPLICATION_CONFIG_DIR$/scratches/scratch_3.java" />
@@ -151,9 +140,9 @@
       <list>
         <item itemvalue="Application.App" />
         <item itemvalue="JUnit.BoardTest" />
-        <item itemvalue="JUnit.BoardTest.shouldReturnTrueIfThereAreStillNotSinkedShips" />
-        <item itemvalue="JUnit.BoardTest.shouldReturnTrueIfAllShipsAreSinked" />
         <item itemvalue="Java Scratch.Scratch" />
+        <item itemvalue="JUnit.AIplayerTest.shouldPutOneFlagShipOnBoard" />
+        <item itemvalue="JUnit.AIplayerTest" />
       </list>
     </recent_temporary>
   </component>
@@ -271,7 +260,28 @@
       <option name="project" value="LOCAL" />
       <updated>1583960021107</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="Interfejs Player, klasa AIplayer">
+      <created>1583968027136</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1583968027137</updated>
+    </task>
+    <task id="LOCAL-00015" summary="Gracz AI stawia samodzielnie wszystkie statki.&#10;Niestety stawia ich za dużo...">
+      <created>1584038496290</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1584038496290</updated>
+    </task>
+    <task id="LOCAL-00016" summary="poprawiłem czytelność pętli while&#10;wciąż za dużo statków...">
+      <created>1584041763649</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1584041763649</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -286,7 +296,10 @@
     <MESSAGE value="To Do" />
     <MESSAGE value="Metoda MarkXAllaroundSinkedShip poprawnie zaznacza pudła i bierze pod uwagę krawędzie mapy" />
     <MESSAGE value="Gra dla dwóch graczy działa" />
-    <option name="LAST_COMMIT_MESSAGE" value="Gra dla dwóch graczy działa" />
+    <MESSAGE value="Interfejs Player, klasa AIplayer" />
+    <MESSAGE value="Gracz AI stawia samodzielnie wszystkie statki.&#10;Niestety stawia ich za dużo..." />
+    <MESSAGE value="poprawiłem czytelność pętli while&#10;wciąż za dużo statków..." />
+    <option name="LAST_COMMIT_MESSAGE" value="poprawiłem czytelność pętli while&#10;wciąż za dużo statków..." />
   </component>
   <component name="WindowStateProjectService">
     <state x="191" y="138" key="#Live_Templates" timestamp="1583520631711">
@@ -327,73 +340,78 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="707" y="366" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1/0.0.1920.1040@0.0.1920.1040" timestamp="1583445640978" />
-    <state x="614" y="114" key="CommitChangelistDialog2" timestamp="1583968009188">
+    <state x="614" y="114" key="CommitChangelistDialog2" timestamp="1584041761427">
       <screen x="0" y="0" width="1919" height="1040" />
     </state>
-    <state x="614" y="114" key="CommitChangelistDialog2/0.0.1919.1040@0.0.1919.1040" timestamp="1583968009188" />
+    <state x="614" y="114" key="CommitChangelistDialog2/0.0.1919.1040@0.0.1919.1040" timestamp="1584041761427" />
     <state x="614" y="114" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1583489551161" />
-    <state width="1876" height="348" key="GridCell.Tab.0.bottom" timestamp="1583967758125">
+    <state width="808" height="912" key="GridCell.Tab.0.bottom" timestamp="1584041717708">
       <screen x="0" y="0" width="1919" height="1040" />
     </state>
-    <state width="1876" height="348" key="GridCell.Tab.0.bottom/0.0.1919.1040@0.0.1919.1040" timestamp="1583967758125" />
+    <state width="808" height="912" key="GridCell.Tab.0.bottom/0.0.1919.1040@0.0.1919.1040" timestamp="1584041717708" />
     <state width="565" height="912" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1583601056878" />
-    <state width="1876" height="348" key="GridCell.Tab.0.center" timestamp="1583967758125">
+    <state width="808" height="912" key="GridCell.Tab.0.center" timestamp="1584041717707">
       <screen x="0" y="0" width="1919" height="1040" />
     </state>
-    <state width="1876" height="348" key="GridCell.Tab.0.center/0.0.1919.1040@0.0.1919.1040" timestamp="1583967758125" />
+    <state width="808" height="912" key="GridCell.Tab.0.center/0.0.1919.1040@0.0.1919.1040" timestamp="1584041717707" />
     <state width="565" height="912" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1583601056878" />
-    <state width="1876" height="348" key="GridCell.Tab.0.left" timestamp="1583967758125">
+    <state width="808" height="912" key="GridCell.Tab.0.left" timestamp="1584041717706">
       <screen x="0" y="0" width="1919" height="1040" />
     </state>
-    <state width="1876" height="348" key="GridCell.Tab.0.left/0.0.1919.1040@0.0.1919.1040" timestamp="1583967758125" />
+    <state width="808" height="912" key="GridCell.Tab.0.left/0.0.1919.1040@0.0.1919.1040" timestamp="1584041717706" />
     <state width="565" height="912" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1583601056878" />
-    <state width="1876" height="348" key="GridCell.Tab.0.right" timestamp="1583967758125">
+    <state width="808" height="912" key="GridCell.Tab.0.right" timestamp="1584041717707">
       <screen x="0" y="0" width="1919" height="1040" />
     </state>
-    <state width="1876" height="348" key="GridCell.Tab.0.right/0.0.1919.1040@0.0.1919.1040" timestamp="1583967758125" />
+    <state width="808" height="912" key="GridCell.Tab.0.right/0.0.1919.1040@0.0.1919.1040" timestamp="1584041717707" />
     <state width="565" height="912" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1583601056878" />
-    <state width="1876" height="348" key="GridCell.Tab.1.bottom" timestamp="1583967758126">
+    <state width="1876" height="348" key="GridCell.Tab.1.bottom" timestamp="1584036255838">
       <screen x="0" y="0" width="1919" height="1040" />
     </state>
-    <state width="1876" height="348" key="GridCell.Tab.1.bottom/0.0.1919.1040@0.0.1919.1040" timestamp="1583967758126" />
+    <state width="1876" height="348" key="GridCell.Tab.1.bottom/0.0.1919.1040@0.0.1919.1040" timestamp="1584036255838" />
     <state width="1877" height="348" key="GridCell.Tab.1.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1583442403538" />
-    <state width="1876" height="348" key="GridCell.Tab.1.center" timestamp="1583967758126">
+    <state width="1876" height="348" key="GridCell.Tab.1.center" timestamp="1584036255837">
       <screen x="0" y="0" width="1919" height="1040" />
     </state>
-    <state width="1876" height="348" key="GridCell.Tab.1.center/0.0.1919.1040@0.0.1919.1040" timestamp="1583967758126" />
+    <state width="1876" height="348" key="GridCell.Tab.1.center/0.0.1919.1040@0.0.1919.1040" timestamp="1584036255837" />
     <state width="1877" height="348" key="GridCell.Tab.1.center/0.0.1920.1040@0.0.1920.1040" timestamp="1583442403538" />
-    <state width="1876" height="348" key="GridCell.Tab.1.left" timestamp="1583967758125">
+    <state width="1876" height="348" key="GridCell.Tab.1.left" timestamp="1584036255837">
       <screen x="0" y="0" width="1919" height="1040" />
     </state>
-    <state width="1876" height="348" key="GridCell.Tab.1.left/0.0.1919.1040@0.0.1919.1040" timestamp="1583967758125" />
+    <state width="1876" height="348" key="GridCell.Tab.1.left/0.0.1919.1040@0.0.1919.1040" timestamp="1584036255837" />
     <state width="1877" height="348" key="GridCell.Tab.1.left/0.0.1920.1040@0.0.1920.1040" timestamp="1583442403538" />
-    <state width="1876" height="348" key="GridCell.Tab.1.right" timestamp="1583967758126">
+    <state width="1876" height="348" key="GridCell.Tab.1.right" timestamp="1584036255837">
       <screen x="0" y="0" width="1919" height="1040" />
     </state>
-    <state width="1876" height="348" key="GridCell.Tab.1.right/0.0.1919.1040@0.0.1919.1040" timestamp="1583967758126" />
+    <state width="1876" height="348" key="GridCell.Tab.1.right/0.0.1919.1040@0.0.1919.1040" timestamp="1584036255837" />
     <state width="1877" height="348" key="GridCell.Tab.1.right/0.0.1920.1040@0.0.1920.1040" timestamp="1583442403538" />
+    <state x="489" y="174" key="Maven.ArtifactSearchDialog" timestamp="1584012462150">
+      <screen x="0" y="0" width="1919" height="1040" />
+    </state>
+    <state x="489" y="174" key="Maven.ArtifactSearchDialog/0.0.1919.1040@0.0.1919.1040" timestamp="1584012462150" />
     <state x="461" y="162" key="SettingsEditor" timestamp="1583445532783">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="461" y="162" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1583445532783" />
-    <state x="552" y="252" key="Vcs.Push.Dialog.v2" timestamp="1583960032421">
+    <state x="552" y="252" key="Vcs.Push.Dialog.v2" timestamp="1584041778028">
       <screen x="0" y="0" width="1919" height="1040" />
     </state>
-    <state x="552" y="252" key="Vcs.Push.Dialog.v2/0.0.1919.1040@0.0.1919.1040" timestamp="1583960032421" />
+    <state x="552" y="252" key="Vcs.Push.Dialog.v2/0.0.1919.1040@0.0.1919.1040" timestamp="1584041778028" />
     <state x="552" y="252" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1583489560736" />
-    <state x="656" y="343" key="com.intellij.ide.util.TipDialog" timestamp="1583967830058">
+    <state x="656" y="343" key="com.intellij.ide.util.TipDialog" timestamp="1584002552988">
       <screen x="0" y="0" width="1919" height="1040" />
     </state>
-    <state x="656" y="343" key="com.intellij.ide.util.TipDialog/0.0.1919.1040@0.0.1919.1040" timestamp="1583967830058" />
+    <state x="656" y="343" key="com.intellij.ide.util.TipDialog/0.0.1919.1040@0.0.1919.1040" timestamp="1584002552988" />
     <state x="656" y="343" key="com.intellij.ide.util.TipDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1583612576526" />
-    <state x="769" y="436" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1583684367850">
+    <state x="769" y="436" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1584041730360">
       <screen x="0" y="0" width="1919" height="1040" />
     </state>
-    <state x="769" y="436" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1919.1040@0.0.1919.1040" timestamp="1583684367850" />
+    <state x="769" y="436" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1919.1040@0.0.1919.1040" timestamp="1584041730360" />
     <state x="769" y="436" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1920.1040@0.0.1920.1040" timestamp="1583398606976" />
-    <state x="731" y="222" key="com.intellij.testIntegration.createTest.CreateTestDialog" timestamp="1583485641049">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state x="731" y="222" key="com.intellij.testIntegration.createTest.CreateTestDialog" timestamp="1584014660008">
+      <screen x="0" y="0" width="1919" height="1040" />
     </state>
+    <state x="731" y="222" key="com.intellij.testIntegration.createTest.CreateTestDialog/0.0.1919.1040@0.0.1919.1040" timestamp="1584014660008" />
     <state x="731" y="222" key="com.intellij.testIntegration.createTest.CreateTestDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1583485641049" />
     <state x="655" y="311" key="git4idea.merge.GitPullDialog" timestamp="1583684382307">
       <screen x="0" y="0" width="1919" height="1040" />

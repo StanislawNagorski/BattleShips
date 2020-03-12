@@ -9,3 +9,5 @@ Aby uruchomić grę w terminalu wpisz:
     NUMBER_OF_PLAYERS = 2;
     PLAYER_ONE_NAME = "Staszek"
     PLAYER_TWO_NAME = "Werka"
+
+    (TEN PLIK NIE JEST JESZCZE POŁĄCZONY Z GRĄ)
