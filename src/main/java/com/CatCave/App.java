@@ -15,7 +15,6 @@ public class App {
             player2 = new AIplayer();
         }
 
-
         System.out.println("Tura gracza: " + player2.getPlayerName() + ". Ustaw statki");
         player2.putShipsOnBoard(playerTwoBoard);
         playerTwoBoard.printBoard();

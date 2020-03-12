@@ -12,12 +12,6 @@ Właściwości gry:
         - statki muszą być w jednej linii (edycja todo)
         - statki diagonalne są zakazane.
 
-Błąd zbyt dużej ilości statków AI:
- -
- - ~~odizolowałem listę avaliableNavPoints, na czystym randomie błąd się powtarza~~
- - ~~uprościłem pętle while~~
- - stworzyć testy jednostkowe do każdej ilości statków
- - ??? wieczór z debuggerem
 
 
 To Do:
@@ -27,5 +21,8 @@ To Do:
 - ~~stworzyć logikę gry dla dwóch graczy~~
 - ~~zabezpieczyć input pprzed wprowadzeniem navigacji odwrotnie 7c i c7~~
 - zaimplementować  AI
-- stworzyć edycję zasad z pliku tekstowego
+- stworzyć edycję zasad z pliku 
+- WYCZYŚĆ KOD PO PRINTOWANIU!
+- WYDZIEL WARUNKI POSTAWIENIA STATKU DO OSOBNEJ METODY
+
 

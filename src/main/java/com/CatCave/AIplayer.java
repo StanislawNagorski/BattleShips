@@ -38,8 +38,9 @@ public class AIplayer implements Player {
 
             while (true) {
                 Integer navPoint = getRandomNavPointFromListOfStillNotUsed();
-                if (board.setOneFlagShip(getRandomNavPointFromListOfStillNotUsed())){
+                if (board.setOneFlagShip(navPoint)){
                     avaliableNavPoints.remove(navPoint);
+                    System.out.println("JEDNOMASZTOWY na " + navPoint);
                     break;
                 }
 
@@ -67,6 +68,7 @@ public class AIplayer implements Player {
                 if (board.setTwoFlagShip(listOfNewShipNavPoints.get(0), listOfNewShipNavPoints.get(1))){
                     avaliableNavPoints.remove(listOfNewShipNavPoints.get(0));
                     avaliableNavPoints.remove(listOfNewShipNavPoints.get(1));
+                    System.out.println("DWUMASZTOWY na" + listOfNewShipNavPoints.get(0)+ "-"+ listOfNewShipNavPoints.get(1));
                     break;
                 }
 
@@ -101,6 +103,8 @@ public class AIplayer implements Player {
                     avaliableNavPoints.remove(listOfNewShipNavPoints.get(0));
                     avaliableNavPoints.remove(listOfNewShipNavPoints.get(1));
                     avaliableNavPoints.remove(listOfNewShipNavPoints.get(2));
+                    System.out.println("TRZYMASZTOWY"  + listOfNewShipNavPoints.get(0)+ "-"+ listOfNewShipNavPoints.get(1) +
+                            "-" + listOfNewShipNavPoints.get(2) + "- ");
                     break;
                 }
 
@@ -129,7 +133,6 @@ public class AIplayer implements Player {
                     listOfNewShipNavPoints.add(navPoint + 10);
                     listOfNewShipNavPoints.add(navPoint + 20);
                     listOfNewShipNavPoints.add(navPoint + 30);
-
                 }
 
                 Collections.sort(listOfNewShipNavPoints);
@@ -139,6 +142,8 @@ public class AIplayer implements Player {
                     avaliableNavPoints.remove(listOfNewShipNavPoints.get(1));
                     avaliableNavPoints.remove(listOfNewShipNavPoints.get(2));
                     avaliableNavPoints.remove(listOfNewShipNavPoints.get(3));
+                    System.out.println("CZTEROMASZTOWY "+ listOfNewShipNavPoints.get(0)+ "-"+ listOfNewShipNavPoints.get(1) +
+                            "-" + listOfNewShipNavPoints.get(2) + "- " + listOfNewShipNavPoints.get(3));
                     break;
                 }
             }
