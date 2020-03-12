@@ -8,20 +8,22 @@ public class AIplayer implements Player {
     private Random random;
 
     public AIplayer() {
-        avaliableNavPoints = new ArrayList<>();
         random = new Random();
+        avaliableNavPoints = new ArrayList<>();
         int NUMBER_OF_NAV_POINTS = 100;
         for (int i = 0; i < NUMBER_OF_NAV_POINTS; i++) {
             avaliableNavPoints.add(i);
         }
     }
 
+
     @Override
     public String getPlayerName() {
-        return "AdmirałPC";
+        return "Admirał PC";
     }
 
-    public Integer generateNavPoint() {
+    private Integer getRandomNavPointFromListOfStillNotUsed() {
+
         return avaliableNavPoints.get(random.nextInt(avaliableNavPoints.size()));
     }
 
@@ -34,14 +36,13 @@ public class AIplayer implements Player {
 
         for (int i = 0; i < Game.NUMBER_OF_ONE_FLAG_SHIPS; i++) {
 
-            boolean flag = true;
-            while (flag) {
-                Integer navPoint = generateNavPoint();
-                flag = !board.setOneFlagShip(navPoint);
-
-                if (!flag) {
+            while (true) {
+                Integer navPoint = getRandomNavPointFromListOfStillNotUsed();
+                if (board.setOneFlagShip(getRandomNavPointFromListOfStillNotUsed())){
                     avaliableNavPoints.remove(navPoint);
+                    break;
                 }
+
             }
         }
     }
@@ -50,12 +51,11 @@ public class AIplayer implements Player {
     public void putTwoFlagShip(Board board) {
         for (int i = 0; i < Game.NUMBER_OF_TWO_FLAG_SHIPS; i++) {
 
-            boolean flag = true;
-            while (flag) {
+            while (true) {
 
                 List<Integer> listOfNewShipNavPoints = new ArrayList<>();
 
-                Integer navPoint = generateNavPoint();
+                Integer navPoint = getRandomNavPointFromListOfStillNotUsed();
                 listOfNewShipNavPoints.add(navPoint);
 
                 if (buildRightOrDown() == 0) {
@@ -64,13 +64,12 @@ public class AIplayer implements Player {
                     listOfNewShipNavPoints.add(navPoint + 10);
                 }
 
-                flag = !board.setTwoFlagShip(listOfNewShipNavPoints.get(0), listOfNewShipNavPoints.get(1));
-
-                if (!flag) {
+                if (board.setTwoFlagShip(listOfNewShipNavPoints.get(0), listOfNewShipNavPoints.get(1))){
                     avaliableNavPoints.remove(listOfNewShipNavPoints.get(0));
                     avaliableNavPoints.remove(listOfNewShipNavPoints.get(1));
-
+                    break;
                 }
+
             }
         }
 
@@ -80,12 +79,11 @@ public class AIplayer implements Player {
     public void putThreeFlagShip(Board board) {
         for (int i = 0; i < Game.NUMBER_OF_THREE_FLAG_SHIPS; i++) {
 
-            boolean flag = true;
-            while (flag) {
+            while (true) {
 
                 List<Integer> listOfNewShipNavPoints = new ArrayList<>();
 
-                Integer navPoint = generateNavPoint();
+                Integer navPoint = getRandomNavPointFromListOfStillNotUsed();
                 listOfNewShipNavPoints.add(navPoint);
 
                 if (buildRightOrDown() == 0) {
@@ -98,15 +96,14 @@ public class AIplayer implements Player {
 
                 }
 
-                flag = !board.setThreeFlagShip(listOfNewShipNavPoints.get(0), listOfNewShipNavPoints.get(1),
-                        listOfNewShipNavPoints.get(2));
-
-                if (!flag) {
+                if(board.setThreeFlagShip(listOfNewShipNavPoints.get(0), listOfNewShipNavPoints.get(1),
+                        listOfNewShipNavPoints.get(2))){
                     avaliableNavPoints.remove(listOfNewShipNavPoints.get(0));
                     avaliableNavPoints.remove(listOfNewShipNavPoints.get(1));
                     avaliableNavPoints.remove(listOfNewShipNavPoints.get(2));
-
+                    break;
                 }
+
             }
         }
 
@@ -117,12 +114,10 @@ public class AIplayer implements Player {
 
         for (int i = 0; i < Game.NUMBER_OF_FOUR_FLAG_SHIPS; i++) {
 
-            boolean flag = true;
-            while (flag) {
-
+            while (true) {
                 List<Integer> listOfNewShipNavPoints = new ArrayList<>();
 
-                Integer navPoint = generateNavPoint();
+                Integer navPoint = getRandomNavPointFromListOfStillNotUsed();
                 listOfNewShipNavPoints.add(navPoint);
 
                 if (buildRightOrDown() == 0) {
@@ -138,14 +133,13 @@ public class AIplayer implements Player {
                 }
 
                 Collections.sort(listOfNewShipNavPoints);
-                flag = !board.setFourFlagShip(listOfNewShipNavPoints.get(0), listOfNewShipNavPoints.get(1),
-                        listOfNewShipNavPoints.get(2), listOfNewShipNavPoints.get(3));
-
-                if (!flag) {
+                if (board.setFourFlagShip(listOfNewShipNavPoints.get(0), listOfNewShipNavPoints.get(1),
+                        listOfNewShipNavPoints.get(2), listOfNewShipNavPoints.get(3))){
                     avaliableNavPoints.remove(listOfNewShipNavPoints.get(0));
                     avaliableNavPoints.remove(listOfNewShipNavPoints.get(1));
                     avaliableNavPoints.remove(listOfNewShipNavPoints.get(2));
                     avaliableNavPoints.remove(listOfNewShipNavPoints.get(3));
+                    break;
                 }
             }
         }

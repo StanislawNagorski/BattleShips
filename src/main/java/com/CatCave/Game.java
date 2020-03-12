@@ -11,7 +11,6 @@ public class Game {
     public static String PLAYER_ONE_NAME = "Staszek";
     public static String PLAYER_TWO_NAME = "Werka";
 
-    //suma kontrolna do sprawdzenia ilości statków?
 
 
 

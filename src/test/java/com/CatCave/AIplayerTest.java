@@ -10,6 +10,8 @@ import org.mockito.junit.MockitoJUnitRunner;
 
 import java.util.List;
 
+//test nie działa
+
 
 @RunWith(MockitoJUnitRunner.class)
 public class AIplayerTest {
@@ -30,10 +32,9 @@ public class AIplayerTest {
     public void shouldPutOneFlagShipOnBoard() {
 
         //given
-        Mockito.when(aIplayer.generateNavPoint()).thenReturn(5);
+        //Mockito.when(aIplayer.generateNavPoint()).thenReturn(5);
 
         //when
-       // System.out.println(aIplayer.avaliableNavPoints); //lista się nie generuje
         aIplayer.putOneFlagShip(board);
 
         //then
