@@ -4,7 +4,7 @@ Javowa zabawa nad klasyczną kartkową grą w statki
 Właściwości gry:
 -
 - umożliwia grę ze znajomym lub z przeciwnikiem komputerowym (todo)
-- po zatopieniu program automatycznie zaznacza wszystkie polo w okolicy jako trafione
+- po zatopieniu program automatycznie zaznacza wszystkie pola w okolicy jako trafione
 - domyślne ustawienia statków: 
 
         -  1 czteromasztowy, 2 trzymasztowe,
