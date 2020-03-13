@@ -2,13 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="04807bcd-94f2-4538-b2af-807d2dd0e988" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/CatCave/AIplayer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/CatCave/AIplayer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/CatCave/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/CatCave/App.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/CatCave/Board.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/CatCave/Board.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/CatCave/HumanPlayer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/CatCave/HumanPlayer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/CatCave/App.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/CatCave/App.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/CatCave/Board.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/CatCave/Board.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -299,7 +293,14 @@
       <option name="project" value="LOCAL" />
       <updated>1584047645937</updated>
     </task>
-    <option name="localTasksCounter" value="20" />
+    <task id="LOCAL-00020" summary="refoktoryzacja klasy Board">
+      <created>1584125879512</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1584125879512</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -319,7 +320,8 @@
     <MESSAGE value="poprawiłem czytelność pętli while&#10;wciąż za dużo statków..." />
     <MESSAGE value="aktualizacja To Do" />
     <MESSAGE value="AI już nie oszukuje i stawia poprawną ilość statków" />
-    <option name="LAST_COMMIT_MESSAGE" value="AI już nie oszukuje i stawia poprawną ilość statków" />
+    <MESSAGE value="refoktoryzacja klasy Board" />
+    <option name="LAST_COMMIT_MESSAGE" value="refoktoryzacja klasy Board" />
   </component>
   <component name="WindowStateProjectService">
     <state x="191" y="138" key="#Live_Templates" timestamp="1583520631711">
@@ -360,11 +362,11 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="707" y="366" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1/0.0.1920.1040@0.0.1920.1040" timestamp="1583445640978" />
-    <state x="614" y="114" key="CommitChangelistDialog2" timestamp="1584047644034">
-      <screen x="0" y="0" width="1919" height="1040" />
+    <state x="614" y="114" key="CommitChangelistDialog2" timestamp="1584125877115">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="614" y="114" key="CommitChangelistDialog2/0.0.1919.1040@0.0.1919.1040" timestamp="1584047644034" />
-    <state x="614" y="114" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1583489551161" />
+    <state x="614" y="114" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1584125877115" />
     <state width="544" height="912" key="GridCell.Tab.0.bottom" timestamp="1584124599559">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
