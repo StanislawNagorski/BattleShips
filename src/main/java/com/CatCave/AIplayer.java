@@ -40,7 +40,6 @@ public class AIplayer implements Player {
                 Integer navPoint = getRandomNavPointFromListOfStillNotUsed();
                 if (board.setOneFlagShip(navPoint)){
                     avaliableNavPoints.remove(navPoint);
-                    System.out.println("JEDNOMASZTOWY na " + navPoint);
                     break;
                 }
 
@@ -65,10 +64,11 @@ public class AIplayer implements Player {
                     listOfNewShipNavPoints.add(navPoint + 10);
                 }
 
-                if (board.setTwoFlagShip(listOfNewShipNavPoints.get(0), listOfNewShipNavPoints.get(1))){
+                if (board.setTwoFlagShip(
+                        listOfNewShipNavPoints.get(0),
+                        listOfNewShipNavPoints.get(1))){
                     avaliableNavPoints.remove(listOfNewShipNavPoints.get(0));
                     avaliableNavPoints.remove(listOfNewShipNavPoints.get(1));
-                    System.out.println("DWUMASZTOWY na" + listOfNewShipNavPoints.get(0)+ "-"+ listOfNewShipNavPoints.get(1));
                     break;
                 }
 
@@ -98,13 +98,13 @@ public class AIplayer implements Player {
 
                 }
 
-                if(board.setThreeFlagShip(listOfNewShipNavPoints.get(0), listOfNewShipNavPoints.get(1),
+                if(board.setThreeFlagShip(
+                        listOfNewShipNavPoints.get(0),
+                        listOfNewShipNavPoints.get(1),
                         listOfNewShipNavPoints.get(2))){
                     avaliableNavPoints.remove(listOfNewShipNavPoints.get(0));
                     avaliableNavPoints.remove(listOfNewShipNavPoints.get(1));
                     avaliableNavPoints.remove(listOfNewShipNavPoints.get(2));
-                    System.out.println("TRZYMASZTOWY"  + listOfNewShipNavPoints.get(0)+ "-"+ listOfNewShipNavPoints.get(1) +
-                            "-" + listOfNewShipNavPoints.get(2) + "- ");
                     break;
                 }
 
@@ -136,14 +136,15 @@ public class AIplayer implements Player {
                 }
 
                 Collections.sort(listOfNewShipNavPoints);
-                if (board.setFourFlagShip(listOfNewShipNavPoints.get(0), listOfNewShipNavPoints.get(1),
-                        listOfNewShipNavPoints.get(2), listOfNewShipNavPoints.get(3))){
+                if (board.setFourFlagShip(
+                        listOfNewShipNavPoints.get(0),
+                        listOfNewShipNavPoints.get(1),
+                        listOfNewShipNavPoints.get(2),
+                        listOfNewShipNavPoints.get(3))){
                     avaliableNavPoints.remove(listOfNewShipNavPoints.get(0));
                     avaliableNavPoints.remove(listOfNewShipNavPoints.get(1));
                     avaliableNavPoints.remove(listOfNewShipNavPoints.get(2));
                     avaliableNavPoints.remove(listOfNewShipNavPoints.get(3));
-                    System.out.println("CZTEROMASZTOWY "+ listOfNewShipNavPoints.get(0)+ "-"+ listOfNewShipNavPoints.get(1) +
-                            "-" + listOfNewShipNavPoints.get(2) + "- " + listOfNewShipNavPoints.get(3));
                     break;
                 }
             }

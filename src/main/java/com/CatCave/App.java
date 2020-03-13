@@ -32,7 +32,7 @@ public class App {
             System.out.println("Tura gracza: " + player1.getPlayerName() + ".");
             player1.fire(playerTwoBoard);
             if (!playerTwoBoard.areThereStillShips()) {
-                System.out.println("Wygrywa gracz:" + player1.getPlayerName() + "!");
+                System.out.println("Wygrywa gracz (☞ﾟ∀ﾟ)☞ " + player1.getPlayerName() + "!");
                 break;
             }
 
@@ -40,13 +40,13 @@ public class App {
             System.out.println("Tura gracza: " + player2.getPlayerName() + ".");
             player2.fire(playerOneBoard);
             if (!playerOneBoard.areThereStillShips()) {
-                System.out.println("Wygrywa gracz:" + player2.getPlayerName() + "!");
+                System.out.println("Wygrywa gracz (☞ﾟ∀ﾟ)☞ " + player2.getPlayerName() + "!");
                 break;
             }
 
         }
 
-        System.out.println("Dzieki za gre!");
+        System.out.println("Dzieki za gre!  (~￣▽￣)~ ");
 
 
     }
