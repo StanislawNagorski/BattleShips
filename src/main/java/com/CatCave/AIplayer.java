@@ -38,7 +38,7 @@ public class AIplayer implements Player {
 
             while (true) {
                 Integer navPoint = getRandomNavPointFromListOfStillNotUsed();
-                if (board.setOneFlagShip(getRandomNavPointFromListOfStillNotUsed())){
+                if (board.setOneFlagShip(navPoint)){
                     avaliableNavPoints.remove(navPoint);
                     break;
                 }
@@ -64,7 +64,9 @@ public class AIplayer implements Player {
                     listOfNewShipNavPoints.add(navPoint + 10);
                 }
 
-                if (board.setTwoFlagShip(listOfNewShipNavPoints.get(0), listOfNewShipNavPoints.get(1))){
+                if (board.setTwoFlagShip(
+                        listOfNewShipNavPoints.get(0),
+                        listOfNewShipNavPoints.get(1))){
                     avaliableNavPoints.remove(listOfNewShipNavPoints.get(0));
                     avaliableNavPoints.remove(listOfNewShipNavPoints.get(1));
                     break;
@@ -96,7 +98,9 @@ public class AIplayer implements Player {
 
                 }
 
-                if(board.setThreeFlagShip(listOfNewShipNavPoints.get(0), listOfNewShipNavPoints.get(1),
+                if(board.setThreeFlagShip(
+                        listOfNewShipNavPoints.get(0),
+                        listOfNewShipNavPoints.get(1),
                         listOfNewShipNavPoints.get(2))){
                     avaliableNavPoints.remove(listOfNewShipNavPoints.get(0));
                     avaliableNavPoints.remove(listOfNewShipNavPoints.get(1));
@@ -129,12 +133,14 @@ public class AIplayer implements Player {
                     listOfNewShipNavPoints.add(navPoint + 10);
                     listOfNewShipNavPoints.add(navPoint + 20);
                     listOfNewShipNavPoints.add(navPoint + 30);
-
                 }
 
                 Collections.sort(listOfNewShipNavPoints);
-                if (board.setFourFlagShip(listOfNewShipNavPoints.get(0), listOfNewShipNavPoints.get(1),
-                        listOfNewShipNavPoints.get(2), listOfNewShipNavPoints.get(3))){
+                if (board.setFourFlagShip(
+                        listOfNewShipNavPoints.get(0),
+                        listOfNewShipNavPoints.get(1),
+                        listOfNewShipNavPoints.get(2),
+                        listOfNewShipNavPoints.get(3))){
                     avaliableNavPoints.remove(listOfNewShipNavPoints.get(0));
                     avaliableNavPoints.remove(listOfNewShipNavPoints.get(1));
                     avaliableNavPoints.remove(listOfNewShipNavPoints.get(2));

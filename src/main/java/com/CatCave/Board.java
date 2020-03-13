@@ -28,19 +28,18 @@ public class Board {
         }
     }
 
-    private boolean thereIsShipNearby(int nav, List<Integer> list) {
+    private boolean thereIsShipNearby(int nav, List<Integer> arenaAround) {
 
-        return list.stream()
+        return arenaAround.stream()
                 .filter(num -> (nav + num >= 0 && nav + num <= 99))
                 .filter(navAround -> {
-                    if ((nav + 1)%10==0){
+                    if ((nav + 1) % 10 == 0) {
                         return navAround != 11 && navAround != 1 && navAround != -9;
                     }
-                    if ((nav)%10==0){
+                    if (nav % 10 == 0) {
                         return navAround != -11 && navAround != -1 && navAround != 9;
                     }
                     return true;
-
                 })
                 .anyMatch(num -> (!board.get(nav + num).equals(BoardMark.EMPTY))
                 );
@@ -59,10 +58,10 @@ public class Board {
 
     }
 
-    private boolean setOneFlagShipOnBoard(int nav1, List<Integer> list) {
+    private boolean setOneFlagShipOnBoard(int nav1, List<Integer> areaAround) {
         if (nav1 < 0 || nav1 > 99
                 || !board.get(nav1).equals(BoardMark.EMPTY)
-                || thereIsShipNearby(nav1, list)) {
+                || thereIsShipNearby(nav1, areaAround)) {
             return false;
         }
         board.set(nav1, BoardMark.S);
@@ -78,19 +77,33 @@ public class Board {
         return false;
     }
 
+    private boolean isShipInStraightLine(int nav1, int nav2) {
+        return Math.abs(nav1 - nav2) == 10 || (Math.abs(nav1 - nav2) == 1 && (nav1 / 10 == nav2 / 10));
+    }
+
+    private boolean isItForbiddenToPutThoseNavNextToEachOther(int nav1, int nav2){
+        return     nav1 < 0 || nav1 > 99
+                || nav2 < 0 || nav2 > 99
+                || !board.get(nav1).equals(BoardMark.EMPTY)
+                || !board.get(nav2).equals(BoardMark.EMPTY)
+                || thereIsShipNearby(nav1, AREA_AROUND_NAV_POINT)
+                || thereIsShipNearby(nav2, AREA_AROUND_NAV_POINT);
+    }
+
     private boolean setTwoFlagShipOnBoard(int nav1, int nav2) {
         if (diagonalShip(nav1, nav2)) {
             return false;
         }
 
-        if (Math.abs(nav1 - nav2) == 10 || (Math.abs(nav1 - nav2) == 1 && (nav1 / 10 == nav2 / 10))) {
-            if (!setOneFlagShipOnBoard(nav1, AREA_AROUND_NAV_POINT)) {
+        if (isShipInStraightLine(nav1, nav2)) {
+            if (isItForbiddenToPutThoseNavNextToEachOther(nav1, nav2)) {
                 return false;
+            } else {
+                setOneFlagShipOnBoard(nav1, AREA_AROUND_NAV_POINT);
+                return setOneFlagShipOnBoard(nav2, AREA_AROUND_NAV_POINT.stream()
+                        .filter(num -> num != nav1 - nav2)
+                        .collect(Collectors.toList()));
             }
-
-            return setOneFlagShipOnBoard(nav2, AREA_AROUND_NAV_POINT.stream()
-                    .filter(num -> num != nav1 - nav2)
-                    .collect(Collectors.toList()));
         }
         return false;
     }
@@ -111,7 +124,7 @@ public class Board {
             return false;
         }
 
-        if (Math.abs(nav1 - nav2) == 10 || (Math.abs(nav1 - nav2) == 1 && (nav1 / 10 == nav2 / 10))) {
+        if (isShipInStraightLine(nav2, nav3)) {
             if (!setTwoFlagShipOnBoard(nav1, nav2)) {
                 return false;
             }
@@ -127,6 +140,7 @@ public class Board {
 
         if (setThreeFlagShipOnBoard(nav1, nav2, nav3)) {
             lisOfShips.add(new Ship(nav1, nav2, nav3));
+
             return true;
         }
         return false;
@@ -138,7 +152,7 @@ public class Board {
             return false;
         }
 
-        if (Math.abs(nav2 - nav3) == 10 || (Math.abs(nav2 - nav3) == 1 && (nav2 / 10 == nav3 / 10))) {
+        if (isShipInStraightLine(nav3, nav4)) {
             if (!setThreeFlagShipOnBoard(nav1, nav2, nav3)) {
                 return false;
             }
@@ -154,6 +168,7 @@ public class Board {
 
         if (setFourFlagShipOnBoard(nav1, nav2, nav3, nav4)) {
             lisOfShips.add(new Ship(nav1, nav2, nav3, nav4));
+
             return true;
         }
         return false;
@@ -196,10 +211,10 @@ public class Board {
                 .forEach(shipNavPoint -> AREA_AROUND_NAV_POINT.stream()
                         .filter(navAround -> (shipNavPoint + navAround >= 0 && shipNavPoint + navAround <= 99))
                         .filter(navAround -> {
-                            if ((shipNavPoint + 1)%10==0){
+                            if ((shipNavPoint + 1) % 10 == 0) {
                                 return navAround != 11 && navAround != 1 && navAround != -9;
                             }
-                            if ((shipNavPoint)%10==0){
+                            if ((shipNavPoint) % 10 == 0) {
                                 return navAround != -11 && navAround != -1 && navAround != 9;
                             }
                             return true;
@@ -257,21 +272,21 @@ public class Board {
 
             if (board.get(i).equals(BoardMark.EMPTY) || board.get(i).equals(BoardMark.S)) {
                 System.out.print("   |");
-            } else if(board.get(i).equals(BoardMark.O)){
+            } else if (board.get(i).equals(BoardMark.O)) {
                 System.out.print(" \u00d8 |");
-            }
-            else {
+            } else {
                 System.out.print(" " + board.get(i) + " |");
             }
         }
         System.out.println();
     }
+
     public static void clearScreen() {
         System.out.print("\033[H\033[2J");
         System.out.flush();
     }
 
-    public boolean areThereStillShips(){
+    public boolean areThereStillShips() {
         return lisOfShips.stream()
                 .anyMatch(ship -> !ship.isItSink());
     }

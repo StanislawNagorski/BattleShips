@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="04807bcd-94f2-4538-b2af-807d2dd0e988" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -83,21 +82,6 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="AIplayerTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="Statki" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.CatCave.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="com.CatCave" />
-      <option name="MAIN_CLASS_NAME" value="com.CatCave.AIplayerTest" />
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="AIplayerTest.shouldPutOneFlagShipOnBoard" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Statki" />
       <extension name="coverage">
@@ -129,6 +113,13 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="Scratch (1)" type="Java Scratch" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Scratch" />
+      <option name="SCRATCH_FILE_URL" value="file://$APPLICATION_CONFIG_DIR$/scratches/scratch_1.java" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="Scratch" type="Java Scratch" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Scratch" />
       <option name="SCRATCH_FILE_URL" value="file://$APPLICATION_CONFIG_DIR$/scratches/scratch_3.java" />
@@ -140,9 +131,9 @@
       <list>
         <item itemvalue="Application.App" />
         <item itemvalue="JUnit.BoardTest" />
+        <item itemvalue="Java Scratch.Scratch (1)" />
         <item itemvalue="Java Scratch.Scratch" />
         <item itemvalue="JUnit.AIplayerTest.shouldPutOneFlagShipOnBoard" />
-        <item itemvalue="JUnit.AIplayerTest" />
       </list>
     </recent_temporary>
   </component>
@@ -281,7 +272,35 @@
       <option name="project" value="LOCAL" />
       <updated>1584041763649</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="aktualizacja To Do">
+      <created>1584042474296</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1584042474296</updated>
+    </task>
+    <task id="LOCAL-00018" summary="aktualizacja To Do">
+      <created>1584042738764</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1584042738764</updated>
+    </task>
+    <task id="LOCAL-00019" summary="AI już nie oszukuje i stawia poprawną ilość statków">
+      <created>1584047645937</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1584047645937</updated>
+    </task>
+    <task id="LOCAL-00020" summary="refoktoryzacja klasy Board">
+      <created>1584125879512</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1584125879512</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -299,7 +318,10 @@
     <MESSAGE value="Interfejs Player, klasa AIplayer" />
     <MESSAGE value="Gracz AI stawia samodzielnie wszystkie statki.&#10;Niestety stawia ich za dużo..." />
     <MESSAGE value="poprawiłem czytelność pętli while&#10;wciąż za dużo statków..." />
-    <option name="LAST_COMMIT_MESSAGE" value="poprawiłem czytelność pętli while&#10;wciąż za dużo statków..." />
+    <MESSAGE value="aktualizacja To Do" />
+    <MESSAGE value="AI już nie oszukuje i stawia poprawną ilość statków" />
+    <MESSAGE value="refoktoryzacja klasy Board" />
+    <option name="LAST_COMMIT_MESSAGE" value="refoktoryzacja klasy Board" />
   </component>
   <component name="WindowStateProjectService">
     <state x="191" y="138" key="#Live_Templates" timestamp="1583520631711">
@@ -340,50 +362,50 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="707" y="366" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1/0.0.1920.1040@0.0.1920.1040" timestamp="1583445640978" />
-    <state x="614" y="114" key="CommitChangelistDialog2" timestamp="1584041761427">
+    <state x="614" y="114" key="CommitChangelistDialog2" timestamp="1584125877115">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="614" y="114" key="CommitChangelistDialog2/0.0.1919.1040@0.0.1919.1040" timestamp="1584047644034" />
+    <state x="614" y="114" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1584125877115" />
+    <state width="544" height="912" key="GridCell.Tab.0.bottom" timestamp="1584124599559">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="718" height="912" key="GridCell.Tab.0.bottom/0.0.1919.1040@0.0.1919.1040" timestamp="1584090722635" />
+    <state width="544" height="912" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1584124599559" />
+    <state width="544" height="912" key="GridCell.Tab.0.center" timestamp="1584124599559">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="718" height="912" key="GridCell.Tab.0.center/0.0.1919.1040@0.0.1919.1040" timestamp="1584090722635" />
+    <state width="544" height="912" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1584124599559" />
+    <state width="544" height="912" key="GridCell.Tab.0.left" timestamp="1584124599559">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="718" height="912" key="GridCell.Tab.0.left/0.0.1919.1040@0.0.1919.1040" timestamp="1584090722635" />
+    <state width="544" height="912" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1584124599559" />
+    <state width="544" height="912" key="GridCell.Tab.0.right" timestamp="1584124599559">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="718" height="912" key="GridCell.Tab.0.right/0.0.1919.1040@0.0.1919.1040" timestamp="1584090722635" />
+    <state width="544" height="912" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1584124599559" />
+    <state width="1876" height="348" key="GridCell.Tab.1.bottom" timestamp="1584047687077">
       <screen x="0" y="0" width="1919" height="1040" />
     </state>
-    <state x="614" y="114" key="CommitChangelistDialog2/0.0.1919.1040@0.0.1919.1040" timestamp="1584041761427" />
-    <state x="614" y="114" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1583489551161" />
-    <state width="808" height="912" key="GridCell.Tab.0.bottom" timestamp="1584041717708">
-      <screen x="0" y="0" width="1919" height="1040" />
-    </state>
-    <state width="808" height="912" key="GridCell.Tab.0.bottom/0.0.1919.1040@0.0.1919.1040" timestamp="1584041717708" />
-    <state width="565" height="912" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1583601056878" />
-    <state width="808" height="912" key="GridCell.Tab.0.center" timestamp="1584041717707">
-      <screen x="0" y="0" width="1919" height="1040" />
-    </state>
-    <state width="808" height="912" key="GridCell.Tab.0.center/0.0.1919.1040@0.0.1919.1040" timestamp="1584041717707" />
-    <state width="565" height="912" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1583601056878" />
-    <state width="808" height="912" key="GridCell.Tab.0.left" timestamp="1584041717706">
-      <screen x="0" y="0" width="1919" height="1040" />
-    </state>
-    <state width="808" height="912" key="GridCell.Tab.0.left/0.0.1919.1040@0.0.1919.1040" timestamp="1584041717706" />
-    <state width="565" height="912" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1583601056878" />
-    <state width="808" height="912" key="GridCell.Tab.0.right" timestamp="1584041717707">
-      <screen x="0" y="0" width="1919" height="1040" />
-    </state>
-    <state width="808" height="912" key="GridCell.Tab.0.right/0.0.1919.1040@0.0.1919.1040" timestamp="1584041717707" />
-    <state width="565" height="912" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1583601056878" />
-    <state width="1876" height="348" key="GridCell.Tab.1.bottom" timestamp="1584036255838">
-      <screen x="0" y="0" width="1919" height="1040" />
-    </state>
-    <state width="1876" height="348" key="GridCell.Tab.1.bottom/0.0.1919.1040@0.0.1919.1040" timestamp="1584036255838" />
+    <state width="1876" height="348" key="GridCell.Tab.1.bottom/0.0.1919.1040@0.0.1919.1040" timestamp="1584047687077" />
     <state width="1877" height="348" key="GridCell.Tab.1.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1583442403538" />
-    <state width="1876" height="348" key="GridCell.Tab.1.center" timestamp="1584036255837">
+    <state width="1876" height="348" key="GridCell.Tab.1.center" timestamp="1584047687077">
       <screen x="0" y="0" width="1919" height="1040" />
     </state>
-    <state width="1876" height="348" key="GridCell.Tab.1.center/0.0.1919.1040@0.0.1919.1040" timestamp="1584036255837" />
+    <state width="1876" height="348" key="GridCell.Tab.1.center/0.0.1919.1040@0.0.1919.1040" timestamp="1584047687077" />
     <state width="1877" height="348" key="GridCell.Tab.1.center/0.0.1920.1040@0.0.1920.1040" timestamp="1583442403538" />
-    <state width="1876" height="348" key="GridCell.Tab.1.left" timestamp="1584036255837">
+    <state width="1876" height="348" key="GridCell.Tab.1.left" timestamp="1584047687076">
       <screen x="0" y="0" width="1919" height="1040" />
     </state>
-    <state width="1876" height="348" key="GridCell.Tab.1.left/0.0.1919.1040@0.0.1919.1040" timestamp="1584036255837" />
+    <state width="1876" height="348" key="GridCell.Tab.1.left/0.0.1919.1040@0.0.1919.1040" timestamp="1584047687076" />
     <state width="1877" height="348" key="GridCell.Tab.1.left/0.0.1920.1040@0.0.1920.1040" timestamp="1583442403538" />
-    <state width="1876" height="348" key="GridCell.Tab.1.right" timestamp="1584036255837">
+    <state width="1876" height="348" key="GridCell.Tab.1.right" timestamp="1584047687077">
       <screen x="0" y="0" width="1919" height="1040" />
     </state>
-    <state width="1876" height="348" key="GridCell.Tab.1.right/0.0.1919.1040@0.0.1919.1040" timestamp="1584036255837" />
+    <state width="1876" height="348" key="GridCell.Tab.1.right/0.0.1919.1040@0.0.1919.1040" timestamp="1584047687077" />
     <state width="1877" height="348" key="GridCell.Tab.1.right/0.0.1920.1040@0.0.1920.1040" timestamp="1583442403538" />
     <state x="489" y="174" key="Maven.ArtifactSearchDialog" timestamp="1584012462150">
       <screen x="0" y="0" width="1919" height="1040" />
@@ -393,20 +415,20 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="461" y="162" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1583445532783" />
-    <state x="552" y="252" key="Vcs.Push.Dialog.v2" timestamp="1584041778028">
+    <state x="552" y="252" key="Vcs.Push.Dialog.v2" timestamp="1584047650507">
       <screen x="0" y="0" width="1919" height="1040" />
     </state>
-    <state x="552" y="252" key="Vcs.Push.Dialog.v2/0.0.1919.1040@0.0.1919.1040" timestamp="1584041778028" />
+    <state x="552" y="252" key="Vcs.Push.Dialog.v2/0.0.1919.1040@0.0.1919.1040" timestamp="1584047650507" />
     <state x="552" y="252" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1583489560736" />
-    <state x="656" y="343" key="com.intellij.ide.util.TipDialog" timestamp="1584002552988">
+    <state x="656" y="343" key="com.intellij.ide.util.TipDialog" timestamp="1584116890537">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="656" y="343" key="com.intellij.ide.util.TipDialog/0.0.1919.1040@0.0.1919.1040" timestamp="1584089929399" />
+    <state x="656" y="343" key="com.intellij.ide.util.TipDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1584116890537" />
+    <state x="769" y="436" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1584042961035">
       <screen x="0" y="0" width="1919" height="1040" />
     </state>
-    <state x="656" y="343" key="com.intellij.ide.util.TipDialog/0.0.1919.1040@0.0.1919.1040" timestamp="1584002552988" />
-    <state x="656" y="343" key="com.intellij.ide.util.TipDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1583612576526" />
-    <state x="769" y="436" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1584041730360">
-      <screen x="0" y="0" width="1919" height="1040" />
-    </state>
-    <state x="769" y="436" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1919.1040@0.0.1919.1040" timestamp="1584041730360" />
+    <state x="769" y="436" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1919.1040@0.0.1919.1040" timestamp="1584042961035" />
     <state x="769" y="436" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1920.1040@0.0.1920.1040" timestamp="1583398606976" />
     <state x="731" y="222" key="com.intellij.testIntegration.createTest.CreateTestDialog" timestamp="1584014660008">
       <screen x="0" y="0" width="1919" height="1040" />
@@ -418,6 +440,14 @@
     </state>
     <state x="655" y="311" key="git4idea.merge.GitPullDialog/0.0.1919.1040@0.0.1919.1040" timestamp="1583684382307" />
     <state x="655" y="311" key="git4idea.merge.GitPullDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1583400673084" />
+    <state x="758" y="384" key="git4idea.rebase.GitRebaseDialog" timestamp="1584042772588">
+      <screen x="0" y="0" width="1919" height="1040" />
+    </state>
+    <state x="758" y="384" key="git4idea.rebase.GitRebaseDialog/0.0.1919.1040@0.0.1919.1040" timestamp="1584042772588" />
+    <state width="600" height="424" key="javadoc.popup" timestamp="1584090480332">
+      <screen x="0" y="0" width="1919" height="1040" />
+    </state>
+    <state width="600" height="424" key="javadoc.popup/0.0.1919.1040@0.0.1919.1040" timestamp="1584090480332" />
     <state x="666" y="138" key="refactoring.ChangeSignatureDialog" timestamp="1583255909306">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
