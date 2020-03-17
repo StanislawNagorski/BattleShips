@@ -16,7 +16,8 @@ Właściwości gry:
 
 To Do:
 -
-
+- dodaj zabezpieczenie przed pustym imputem badź /n
+- zrefaktoryzować kod przy stawianiu statków przez gracz i AI,
 - zaimplementować  metodę fire dlaAI,
 - stworzyć edycję zasad z pliku.
 

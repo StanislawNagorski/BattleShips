@@ -8,6 +8,7 @@ public class App {
 
         Board playerTwoBoard = new Board();
         Player player2;
+        Player lazyTester = new AIplayer();
 
         if (Game.NUMBER_OF_PLAYERS == 2) {
             player2 = new HumanPlayer(Game.PLAYER_TWO_NAME);
@@ -15,23 +16,33 @@ public class App {
             player2 = new AIplayer();
         }
 
-        System.out.println("Tura gracza: " + player2.getPlayerName() + ". Ustaw statki");
-        player2.putShipsOnBoard(playerTwoBoard);
-        playerTwoBoard.printBoard();
-        //Board.clearScreen();
-
-
+        playerOneBoard.printBoard();
         System.out.println("Zaczyna gracz " + player1.getPlayerName() + ". Ustaw statki");
-        player1.putShipsOnBoard(playerOneBoard);
-
-
+        //player1.putShipsOnBoards(playerOneBoard);
+        //na potrzeby testu
+        //player2.putShipsOnBoards(playerOneBoard);
+        lazyTester.putShipsOnBoards(playerOneBoard);
+        playerOneBoard.printBoard();
         Board.clearScreen();
+
+//        if (Game.NUMBER_OF_PLAYERS == 2){
+//            playerTwoBoard.printBoard();
+//        }
+        System.out.println("Tura gracza: " + player2.getPlayerName() + ". Ustaw statki");
+       // player2.putShipsOnBoards(playerTwoBoard);
+        lazyTester.putShipsOnBoards(playerTwoBoard);
+        playerTwoBoard.printBoard();
+        Board.clearScreen();
+
+
 
         while (playerOneBoard.areThereStillShips() || playerTwoBoard.areThereStillShips()) {
 
+
             System.out.println("Tura gracza: " + player1.getPlayerName() + ".");
             player1.fire(playerTwoBoard);
-            if (!playerTwoBoard.areThereStillShips()) {
+
+            if (!playerOneBoard.areThereStillShips()) {
                 System.out.println("Wygrywa gracz (☞ﾟ∀ﾟ)☞ " + player1.getPlayerName() + "!");
                 break;
             }
@@ -43,6 +54,7 @@ public class App {
                 System.out.println("Wygrywa gracz (☞ﾟ∀ﾟ)☞ " + player2.getPlayerName() + "!");
                 break;
             }
+
 
         }
 

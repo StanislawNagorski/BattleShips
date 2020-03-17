@@ -347,7 +347,7 @@ public class BoardTest {
         board.hit(hit1);
 
         //then
-        assertThat(board.getLisOfShips().get(0).isItSink()).isTrue();
+        assertThat(board.getListOfShips().get(0).isItSink()).isTrue();
     }
 
     @Test
@@ -360,7 +360,7 @@ public class BoardTest {
         board.hit(hit1);
 
         //then
-        assertThat(board.getLisOfShips().get(0).isItSink()).isFalse();
+        assertThat(board.getListOfShips().get(0).isItSink()).isFalse();
     }
 
     @Test
@@ -374,7 +374,7 @@ public class BoardTest {
         board.hit(hit2);
 
         //then
-        assertThat(board.getLisOfShips().get(0).isItSink()).isTrue();
+        assertThat(board.getListOfShips().get(0).isItSink()).isTrue();
     }
 
     @Test
@@ -388,7 +388,7 @@ public class BoardTest {
         board.hit(hit2);
 
         //then
-        assertThat(board.getLisOfShips().get(0).isItSink()).isFalse();
+        assertThat(board.getListOfShips().get(0).isItSink()).isFalse();
     }
 
     @Test
@@ -403,7 +403,7 @@ public class BoardTest {
         board.hit(hit3);
 
         //then
-        assertThat(board.getLisOfShips().get(0).isItSink()).isTrue();
+        assertThat(board.getListOfShips().get(0).isItSink()).isTrue();
     }
 
     @Test
@@ -418,7 +418,7 @@ public class BoardTest {
         board.hit(hit3);
 
         //then
-        assertThat(board.getLisOfShips().get(0).isItSink()).isFalse();
+        assertThat(board.getListOfShips().get(0).isItSink()).isFalse();
     }
 
     @Test
@@ -435,7 +435,7 @@ public class BoardTest {
         board.hit(hit4);
 
         //then
-        assertThat(board.getLisOfShips().get(0).isItSink()).isTrue();
+        assertThat(board.getListOfShips().get(0).isItSink()).isTrue();
     }
 
     @Test
@@ -452,7 +452,7 @@ public class BoardTest {
         board.hit(hit4);
 
         //then
-        assertThat(board.getLisOfShips().get(0).isItSink()).isFalse();
+        assertThat(board.getListOfShips().get(0).isItSink()).isFalse();
     }
 
     @Test
@@ -464,7 +464,7 @@ public class BoardTest {
         //when
         board.hit(hit1);
         board.hit(hit2);
-        board.markXAllAroundSinkedShip(board.getLisOfShips().get(0));
+        board.markXAllAroundSinkedShip(board.getListOfShips().get(0));
 
 
         //then
@@ -486,7 +486,7 @@ public class BoardTest {
         //when
         board.hit(hit1);
         board.hit(hit2);
-        board.markXAllAroundSinkedShip(board.getLisOfShips().get(0));
+        board.markXAllAroundSinkedShip(board.getListOfShips().get(0));
 
 
         //then
@@ -509,7 +509,7 @@ public class BoardTest {
         //when
         board.hit(hit1);
         board.hit(hit2);
-        board.markXAllAroundSinkedShip(board.getLisOfShips().get(0));
+        board.markXAllAroundSinkedShip(board.getListOfShips().get(0));
 
 
         //then

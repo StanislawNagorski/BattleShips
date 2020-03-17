@@ -18,29 +18,49 @@ public class AIplayerTest {
 
     Board board;
     List<BoardMark> boardList;
-
-    @Mock
     AIplayer aIplayer;
 
+    @Mock
+    RandomNav randomNav;
+
     @Before
-    public void setUp(){
+    public void setUp() {
+        aIplayer = new AIplayer();
         board = new Board();
-        boardList= board.getBoard();
+        boardList = board.getBoard();
     }
 
     @Test
-    public void shouldPutOneFlagShipOnBoard() {
+    public void shouldPut4OneFlagShipsOnBoard() {
 
         //given
-        //Mockito.when(aIplayer.generateNavPoint()).thenReturn(5);
+
+        aIplayer.putOneFlagShips(board);
+        int shipCounter = 0;
 
         //when
-        aIplayer.putOneFlagShip(board);
+        for (BoardMark boardMark : boardList) {
+            if (boardMark.equals(BoardMark.S)) {
+                shipCounter++;
+            }
+        }
 
         //then
-
-        System.out.println(boardList);
-        Assertions.assertThat(boardList.get(5)).isEqualTo(BoardMark.S);
-
+        Assertions.assertThat(shipCounter).isEqualTo(4);
     }
+
+    @Test
+    public void shouldFireOnBoard() {
+        //given
+        Mockito.when(randomNav.getNavPointToFire(board)).thenReturn(5);
+        board.setOneFlagShip(5);
+
+        //when
+        board.hit(randomNav.getNavPointToFire(board));
+
+        //then
+        Assertions.assertThat(boardList.get(5)).isEqualTo(BoardMark.O);
+    }
+
+
 }

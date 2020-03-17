@@ -14,14 +14,14 @@ import java.util.stream.Collectors;
 @Setter
 public class Board {
 
-    private List<Ship> lisOfShips;
+    private List<Ship> listOfShips;
     private List<BoardMark> board;
     private static final List<Integer> AREA_AROUND_NAV_POINT = Arrays.asList(-11, -10, -9, -1, 1, 9, 10, 11);
     private static final int BOARD_SIZE = 100;
 
 
     public Board() {
-        lisOfShips = new ArrayList<>();
+        listOfShips = new ArrayList<>();
         board = new ArrayList<>();
         for (int i = 0; i < BOARD_SIZE; i++) {
             board.add(BoardMark.EMPTY);
@@ -71,7 +71,7 @@ public class Board {
 
     public boolean setOneFlagShip(int nav1) {
         if (setOneFlagShipOnBoard(nav1, AREA_AROUND_NAV_POINT)) {
-            lisOfShips.add(new Ship(nav1));
+            listOfShips.add(new Ship(nav1));
             return true;
         }
         return false;
@@ -111,7 +111,7 @@ public class Board {
     public boolean setTwoFlagShip(int nav1, int nav2) {
 
         if (setTwoFlagShipOnBoard(nav1, nav2)) {
-            lisOfShips.add(new Ship(nav1, nav2));
+            listOfShips.add(new Ship(nav1, nav2));
             return true;
         }
         return false;
@@ -139,7 +139,7 @@ public class Board {
     public boolean setThreeFlagShip(int nav1, int nav2, int nav3) {
 
         if (setThreeFlagShipOnBoard(nav1, nav2, nav3)) {
-            lisOfShips.add(new Ship(nav1, nav2, nav3));
+            listOfShips.add(new Ship(nav1, nav2, nav3));
 
             return true;
         }
@@ -167,7 +167,7 @@ public class Board {
     public boolean setFourFlagShip(int nav1, int nav2, int nav3, int nav4) {
 
         if (setFourFlagShipOnBoard(nav1, nav2, nav3, nav4)) {
-            lisOfShips.add(new Ship(nav1, nav2, nav3, nav4));
+            listOfShips.add(new Ship(nav1, nav2, nav3, nav4));
 
             return true;
         }
@@ -188,7 +188,7 @@ public class Board {
         }
 
         if (board.get(nav).equals(BoardMark.S)) {
-            lisOfShips.stream()
+            listOfShips.stream()
                     .filter(ship -> ship.getListofShipNavPoints().contains(nav))
                     .forEach(ship -> {
                         ship.reduceHealthPointsByOne();
@@ -287,7 +287,7 @@ public class Board {
     }
 
     public boolean areThereStillShips() {
-        return lisOfShips.stream()
+        return listOfShips.stream()
                 .anyMatch(ship -> !ship.isItSink());
     }
 
