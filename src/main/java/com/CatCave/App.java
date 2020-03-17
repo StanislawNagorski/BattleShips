@@ -4,8 +4,8 @@ public class App {
     public static void main(String[] args) {
 
         Board playerOneBoard = new Board();
-        Player player1 = new HumanPlayer(Game.PLAYER_ONE_NAME);
-
+       // Player player1 = new HumanPlayer(Game.PLAYER_ONE_NAME);
+        Player player1 = new AIplayer();
         Board playerTwoBoard = new Board();
         Player player2;
         Player lazyTester = new AIplayer();

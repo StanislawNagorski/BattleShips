@@ -13,17 +13,16 @@ public class RandomNav {
         return listOfAvaliableNavPoints.get(random.nextInt(listOfAvaliableNavPoints.size()));
     }
 
-    public Integer getNavPointToFire(Board board){
+    public Integer getNavPointToFire(Board board) {
         List<Integer> navPointsToFire = new ArrayList<>();
         for (int i = 0; i < board.getBoard().size(); i++) {
-            if (board.getBoard().get(i).equals(BoardMark.EMPTY)){
+            if (board.getBoard().get(i).equals(BoardMark.EMPTY)
+                    || board.getBoard().get(i).equals(BoardMark.S)) {
                 navPointsToFire.add(i);
             }
         }
         return generateNavFromList(navPointsToFire);
     }
-
-
 
 
 }

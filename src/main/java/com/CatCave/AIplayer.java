@@ -162,9 +162,11 @@ public class AIplayer implements Player {
     @Override
     public boolean fire(Board board) {
 
-        while (true) {
-
-            board.hit(randomNav.getNavPointToFire(board));
+        Integer navPointToFire = randomNav.getNavPointToFire(board);
+        boolean hit = true;
+        while (hit) {
+            System.out.println(getPlayerName() + "strzela w pole: " + navPointToFire );
+            hit = board.hit(navPointToFire);
             board.printBoardOfHits();
             //jeśli trafione to do KOLEJKI dodaj +1 -1 +10 - 10
             //jeśli ponownie trafione to dodaj kierunek statku
@@ -172,8 +174,9 @@ public class AIplayer implements Player {
             if (!board.areThereStillShips()) {
                 return false;
             }
+            navPointToFire = randomNav.getNavPointToFire(board);
         }
-
+        return false;
 
 
     }

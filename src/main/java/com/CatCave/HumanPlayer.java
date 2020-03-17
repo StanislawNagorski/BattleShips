@@ -180,16 +180,17 @@ public class HumanPlayer implements Player {
     @Override
     public boolean fire(Board board) {
         Scanner scan = new Scanner(System.in);
-        board.printBoardOfHits();
-        while (board.hit(playerInputToNavPoints(scan.nextLine()))) {
-            System.out.println("Oddaj STRZAL! podaj pole");
+        boolean hit = true;
+        while (hit) {
+            System.out.println("Graczu: "+ playerName +" Oddaj STRZAL! podaj pole");
             board.printBoardOfHits();
+            hit = board.hit(playerInputToNavPoints(scan.nextLine()));
 
             if (!board.areThereStillShips()) {
                 return false;
             }
         }
-
+        board.printBoardOfHits();
         return false;
     }
 }
