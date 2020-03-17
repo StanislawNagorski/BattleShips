@@ -16,6 +16,8 @@ Właściwości gry:
 
 To Do:
 -
+- sprawić żeby komputer nie strzelał już w poprzednie pudła po trafieniu
+- dodać plansze do konsturktorów graczy
 - dodaj zabezpieczenie przed pustym imputem badź /n
 - zrefaktoryzować kod przy stawianiu statków przez gracz i AI,
 - zaimplementować  metodę fire dlaAI,

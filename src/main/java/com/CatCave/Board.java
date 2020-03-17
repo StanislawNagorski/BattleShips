@@ -187,6 +187,8 @@ public class Board {
             return false;
         }
 
+
+        //wydziel, może do playerów?
         if (board.get(nav).equals(BoardMark.S)) {
             listOfShips.stream()
                     .filter(ship -> ship.getListofShipNavPoints().contains(nav))
