@@ -3,9 +3,14 @@
   <component name="ChangeListManager">
     <list default="true" id="04807bcd-94f2-4538-b2af-807d2dd0e988" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/CatCave/AIplayer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/CatCave/AIplayer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/CatCave/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/CatCave/App.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/CatCave/RandomNav.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/CatCave/RandomNav.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/CatCave/Board.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/CatCave/Board.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/CatCave/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/CatCave/Game.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/CatCave/HumanPlayer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/CatCave/HumanPlayer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/CatCave/App.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/CatCave/App.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/CatCave/Board.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/CatCave/Board.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/CatCave/Game.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/CatCave/Game.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -348,7 +353,14 @@
       <option name="project" value="LOCAL" />
       <updated>1584476736939</updated>
     </task>
-    <option name="localTasksCounter" value="25" />
+    <task id="LOCAL-00025" summary="Dodano metody pozwalające graczowi AI, na pobliski ostrzał po trafieniu.">
+      <created>1584558066374</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1584558066374</updated>
+    </task>
+    <option name="localTasksCounter" value="26" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -373,7 +385,8 @@
     <MESSAGE value="Tury HumanPlayers zmieniają sie poprawnie" />
     <MESSAGE value="Gracz AI jest już wstanie trafić w statek" />
     <MESSAGE value="Gracz AI jest już wstanie trafić w statek, ale nie kuma że mogą być w lini" />
-    <option name="LAST_COMMIT_MESSAGE" value="Gracz AI jest już wstanie trafić w statek, ale nie kuma że mogą być w lini" />
+    <MESSAGE value="Dodano metody pozwalające graczowi AI, na pobliski ostrzał po trafieniu." />
+    <option name="LAST_COMMIT_MESSAGE" value="Dodano metody pozwalające graczowi AI, na pobliski ostrzał po trafieniu." />
   </component>
   <component name="WindowStateProjectService">
     <state x="191" y="138" key="#Live_Templates" timestamp="1583520631711">
@@ -414,31 +427,31 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="707" y="366" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1/0.0.1920.1040@0.0.1920.1040" timestamp="1583445640978" />
-    <state x="614" y="114" key="CommitChangelistDialog2" timestamp="1584476735192">
+    <state x="614" y="114" key="CommitChangelistDialog2" timestamp="1584558082739">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="614" y="114" key="CommitChangelistDialog2/0.0.1919.1040@0.0.1919.1040" timestamp="1584047644034" />
-    <state x="614" y="114" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1584476735192" />
-    <state width="540" height="912" key="GridCell.Tab.0.bottom" timestamp="1584557910933">
+    <state x="614" y="114" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1584558082739" />
+    <state width="669" height="912" key="GridCell.Tab.0.bottom" timestamp="1584559573231">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="718" height="912" key="GridCell.Tab.0.bottom/0.0.1919.1040@0.0.1919.1040" timestamp="1584090722635" />
-    <state width="540" height="912" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1584557910933" />
-    <state width="540" height="912" key="GridCell.Tab.0.center" timestamp="1584557910933">
+    <state width="669" height="912" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1584559573231" />
+    <state width="669" height="912" key="GridCell.Tab.0.center" timestamp="1584559573231">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="718" height="912" key="GridCell.Tab.0.center/0.0.1919.1040@0.0.1919.1040" timestamp="1584090722635" />
-    <state width="540" height="912" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1584557910933" />
-    <state width="540" height="912" key="GridCell.Tab.0.left" timestamp="1584557910933">
+    <state width="669" height="912" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1584559573231" />
+    <state width="669" height="912" key="GridCell.Tab.0.left" timestamp="1584559573231">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="718" height="912" key="GridCell.Tab.0.left/0.0.1919.1040@0.0.1919.1040" timestamp="1584090722635" />
-    <state width="540" height="912" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1584557910933" />
-    <state width="540" height="912" key="GridCell.Tab.0.right" timestamp="1584557910933">
+    <state width="669" height="912" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1584559573231" />
+    <state width="669" height="912" key="GridCell.Tab.0.right" timestamp="1584559573231">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="718" height="912" key="GridCell.Tab.0.right/0.0.1919.1040@0.0.1919.1040" timestamp="1584090722635" />
-    <state width="540" height="912" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1584557910933" />
+    <state width="669" height="912" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1584559573231" />
     <state width="1876" height="348" key="GridCell.Tab.1.bottom" timestamp="1584047687077">
       <screen x="0" y="0" width="1919" height="1040" />
     </state>
@@ -467,11 +480,11 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="461" y="162" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1583445532783" />
-    <state x="552" y="252" key="Vcs.Push.Dialog.v2" timestamp="1584476779098">
+    <state x="552" y="252" key="Vcs.Push.Dialog.v2" timestamp="1584558089619">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="552" y="252" key="Vcs.Push.Dialog.v2/0.0.1919.1040@0.0.1919.1040" timestamp="1584047650507" />
-    <state x="552" y="252" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1584476779098" />
+    <state x="552" y="252" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1584558089619" />
     <state x="656" y="343" key="com.intellij.ide.util.TipDialog" timestamp="1584552295704">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
