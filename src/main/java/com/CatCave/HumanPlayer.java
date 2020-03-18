@@ -53,6 +53,7 @@ public class HumanPlayer implements Player {
 
     @Override
     public void putOneFlagShips(Board board) {
+        Board.clearScreen();
         for (int i = 0; i < Game.NUMBER_OF_ONE_FLAG_SHIPS; i++) {
             System.out.println("Do postawienia zostalo " + (Game.NUMBER_OF_ONE_FLAG_SHIPS - i)
                     + " statkow jedno-masztowych");
@@ -73,6 +74,7 @@ public class HumanPlayer implements Player {
 
     @Override
     public void putTwoFlagShips(Board board) {
+        Board.clearScreen();
         for (int i = 0; i < Game.NUMBER_OF_TWO_FLAG_SHIPS; i++) {
             System.out.println("Do postawienia zostalo " + (Game.NUMBER_OF_TWO_FLAG_SHIPS - i)
                     + " statkow dwu-masztowych");
@@ -103,6 +105,7 @@ public class HumanPlayer implements Player {
 
     @Override
     public void putThreeFlagShips(Board board) {
+        Board.clearScreen();
         for (int i = 0; i < Game.NUMBER_OF_THREE_FLAG_SHIPS; i++) {
             System.out.println("Do postawienia zostalo " + (Game.NUMBER_OF_THREE_FLAG_SHIPS - i)
                     + " statkow trzy-masztowych");
@@ -134,6 +137,7 @@ public class HumanPlayer implements Player {
 
     @Override
     public void putFourFlagShips(Board board) {
+        Board.clearScreen();
         for (int i = 0; i < Game.NUMBER_OF_FOUR_FLAG_SHIPS; i++) {
             System.out.println("Do postawienia został " + (Game.NUMBER_OF_FOUR_FLAG_SHIPS - i)
                     + " statek cztero-masztowy");
@@ -182,8 +186,10 @@ public class HumanPlayer implements Player {
         Scanner scan = new Scanner(System.in);
         boolean hit = true;
         while (hit) {
+            Board.clearScreen();
             System.out.println("Graczu: "+ playerName +" Oddaj STRZAL! podaj pole");
             board.printBoardOfHits();
+
             hit = board.hit(playerInputToNavPoints(scan.nextLine()));
 
             if (!board.areThereStillShips()) {

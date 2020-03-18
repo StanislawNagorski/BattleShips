@@ -176,6 +176,10 @@ public class Board {
 
 
     public boolean hit(int nav) {
+        if (nav < 0 || nav > 99){
+            System.out.println("Nie właściwe koordynanty");
+            return false;
+        }
 
         if (board.get(nav).equals(BoardMark.EMPTY)) {
             board.set(nav, BoardMark.X);
