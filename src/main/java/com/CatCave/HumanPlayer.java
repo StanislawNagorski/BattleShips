@@ -52,7 +52,7 @@ public class HumanPlayer implements Player {
     }
 
     @Override
-    public void putOneFlagShip(Board board) {
+    public void putOneFlagShips(Board board) {
         for (int i = 0; i < Game.NUMBER_OF_ONE_FLAG_SHIPS; i++) {
             System.out.println("Do postawienia zostalo " + (Game.NUMBER_OF_ONE_FLAG_SHIPS - i)
                     + " statkow jedno-masztowych");
@@ -72,7 +72,7 @@ public class HumanPlayer implements Player {
     }
 
     @Override
-    public void putTwoFlagShip(Board board) {
+    public void putTwoFlagShips(Board board) {
         for (int i = 0; i < Game.NUMBER_OF_TWO_FLAG_SHIPS; i++) {
             System.out.println("Do postawienia zostalo " + (Game.NUMBER_OF_TWO_FLAG_SHIPS - i)
                     + " statkow dwu-masztowych");
@@ -102,7 +102,7 @@ public class HumanPlayer implements Player {
     }
 
     @Override
-    public void putThreeFlagShip(Board board) {
+    public void putThreeFlagShips(Board board) {
         for (int i = 0; i < Game.NUMBER_OF_THREE_FLAG_SHIPS; i++) {
             System.out.println("Do postawienia zostalo " + (Game.NUMBER_OF_THREE_FLAG_SHIPS - i)
                     + " statkow trzy-masztowych");
@@ -133,7 +133,7 @@ public class HumanPlayer implements Player {
     }
 
     @Override
-    public void putFourFlagShip(Board board) {
+    public void putFourFlagShips(Board board) {
         for (int i = 0; i < Game.NUMBER_OF_FOUR_FLAG_SHIPS; i++) {
             System.out.println("Do postawienia został " + (Game.NUMBER_OF_FOUR_FLAG_SHIPS - i)
                     + " statek cztero-masztowy");
@@ -166,25 +166,31 @@ public class HumanPlayer implements Player {
     }
 
     @Override
-    public void putShipsOnBoard(Board board) {
-        putFourFlagShip(board);
-        putThreeFlagShip(board);
-        putTwoFlagShip(board);
-        putOneFlagShip(board);
+    public void putShipsOnBoards(Board board) {
+        putFourFlagShips(board);
+        putThreeFlagShips(board);
+        putTwoFlagShips(board);
+        putOneFlagShips(board);
     }
 
+
+
+
+
     @Override
-    public void fire(Board board) {
+    public boolean fire(Board board) {
         Scanner scan = new Scanner(System.in);
-        //boolean flag = true;
-        while (true) {
-            System.out.println("Oddaj STRZAL! podaj pole");
+        boolean hit = true;
+        while (hit) {
+            System.out.println("Graczu: "+ playerName +" Oddaj STRZAL! podaj pole");
             board.printBoardOfHits();
-            board.hit(playerInputToNavPoints(scan.nextLine()));
+            hit = board.hit(playerInputToNavPoints(scan.nextLine()));
 
             if (!board.areThereStillShips()) {
-                return;
+                return false;
             }
         }
+        board.printBoardOfHits();
+        return false;
     }
 }

@@ -4,16 +4,22 @@ import java.util.*;
 
 public class AIplayer implements Player {
 
-    private List<Integer> avaliableNavPoints;
+    private List<Integer> avaliableNavPointsToSetShip;
     private Random random;
+    private RandomNav randomNav;
+    private LinkedList<Integer> hitStack;
+    private LinkedList<Integer> stackOfSuccesfullFires;
 
     public AIplayer() {
         random = new Random();
-        avaliableNavPoints = new ArrayList<>();
+        randomNav = new RandomNav();
+        avaliableNavPointsToSetShip = new ArrayList<>();
         int NUMBER_OF_NAV_POINTS = 100;
         for (int i = 0; i < NUMBER_OF_NAV_POINTS; i++) {
-            avaliableNavPoints.add(i);
+            avaliableNavPointsToSetShip.add(i);
         }
+        hitStack = new LinkedList<>();
+        stackOfSuccesfullFires = new LinkedList<>();
     }
 
 
@@ -22,24 +28,19 @@ public class AIplayer implements Player {
         return "Admirał PC";
     }
 
-    private Integer getRandomNavPointFromListOfStillNotUsed() {
-
-        return avaliableNavPoints.get(random.nextInt(avaliableNavPoints.size()));
-    }
-
-    public int buildRightOrDown() {
+    private int buildRightOrDown() {
         return random.nextInt(2);
     }
 
     @Override
-    public void putOneFlagShip(Board board) {
+    public void putOneFlagShips(Board board) {
 
         for (int i = 0; i < Game.NUMBER_OF_ONE_FLAG_SHIPS; i++) {
 
             while (true) {
-                Integer navPoint = getRandomNavPointFromListOfStillNotUsed();
-                if (board.setOneFlagShip(navPoint)){
-                    avaliableNavPoints.remove(navPoint);
+                Integer navPoint = randomNav.generateNavFromList(avaliableNavPointsToSetShip);
+                if (board.setOneFlagShip(navPoint)) {
+                    avaliableNavPointsToSetShip.remove(navPoint);
                     break;
                 }
 
@@ -48,27 +49,27 @@ public class AIplayer implements Player {
     }
 
     @Override
-    public void putTwoFlagShip(Board board) {
+    public void putTwoFlagShips(Board board) {
         for (int i = 0; i < Game.NUMBER_OF_TWO_FLAG_SHIPS; i++) {
 
             while (true) {
 
                 List<Integer> listOfNewShipNavPoints = new ArrayList<>();
 
-                Integer navPoint = getRandomNavPointFromListOfStillNotUsed();
+                Integer navPoint = randomNav.generateNavFromList(avaliableNavPointsToSetShip);
                 listOfNewShipNavPoints.add(navPoint);
 
                 if (buildRightOrDown() == 0) {
-                    listOfNewShipNavPoints.add( navPoint + 1);
+                    listOfNewShipNavPoints.add(navPoint + 1);
                 } else {
                     listOfNewShipNavPoints.add(navPoint + 10);
                 }
 
                 if (board.setTwoFlagShip(
                         listOfNewShipNavPoints.get(0),
-                        listOfNewShipNavPoints.get(1))){
-                    avaliableNavPoints.remove(listOfNewShipNavPoints.get(0));
-                    avaliableNavPoints.remove(listOfNewShipNavPoints.get(1));
+                        listOfNewShipNavPoints.get(1))) {
+                    avaliableNavPointsToSetShip.remove(listOfNewShipNavPoints.get(0));
+                    avaliableNavPointsToSetShip.remove(listOfNewShipNavPoints.get(1));
                     break;
                 }
 
@@ -78,14 +79,14 @@ public class AIplayer implements Player {
     }
 
     @Override
-    public void putThreeFlagShip(Board board) {
+    public void putThreeFlagShips(Board board) {
         for (int i = 0; i < Game.NUMBER_OF_THREE_FLAG_SHIPS; i++) {
 
             while (true) {
 
                 List<Integer> listOfNewShipNavPoints = new ArrayList<>();
 
-                Integer navPoint = getRandomNavPointFromListOfStillNotUsed();
+                Integer navPoint = randomNav.generateNavFromList(avaliableNavPointsToSetShip);
                 listOfNewShipNavPoints.add(navPoint);
 
                 if (buildRightOrDown() == 0) {
@@ -98,13 +99,13 @@ public class AIplayer implements Player {
 
                 }
 
-                if(board.setThreeFlagShip(
+                if (board.setThreeFlagShip(
                         listOfNewShipNavPoints.get(0),
                         listOfNewShipNavPoints.get(1),
-                        listOfNewShipNavPoints.get(2))){
-                    avaliableNavPoints.remove(listOfNewShipNavPoints.get(0));
-                    avaliableNavPoints.remove(listOfNewShipNavPoints.get(1));
-                    avaliableNavPoints.remove(listOfNewShipNavPoints.get(2));
+                        listOfNewShipNavPoints.get(2))) {
+                    avaliableNavPointsToSetShip.remove(listOfNewShipNavPoints.get(0));
+                    avaliableNavPointsToSetShip.remove(listOfNewShipNavPoints.get(1));
+                    avaliableNavPointsToSetShip.remove(listOfNewShipNavPoints.get(2));
                     break;
                 }
 
@@ -114,14 +115,14 @@ public class AIplayer implements Player {
     }
 
     @Override
-    public void putFourFlagShip(Board board) {
+    public void putFourFlagShips(Board board) {
 
         for (int i = 0; i < Game.NUMBER_OF_FOUR_FLAG_SHIPS; i++) {
 
             while (true) {
                 List<Integer> listOfNewShipNavPoints = new ArrayList<>();
 
-                Integer navPoint = getRandomNavPointFromListOfStillNotUsed();
+                Integer navPoint = randomNav.generateNavFromList(avaliableNavPointsToSetShip);
                 listOfNewShipNavPoints.add(navPoint);
 
                 if (buildRightOrDown() == 0) {
@@ -140,11 +141,11 @@ public class AIplayer implements Player {
                         listOfNewShipNavPoints.get(0),
                         listOfNewShipNavPoints.get(1),
                         listOfNewShipNavPoints.get(2),
-                        listOfNewShipNavPoints.get(3))){
-                    avaliableNavPoints.remove(listOfNewShipNavPoints.get(0));
-                    avaliableNavPoints.remove(listOfNewShipNavPoints.get(1));
-                    avaliableNavPoints.remove(listOfNewShipNavPoints.get(2));
-                    avaliableNavPoints.remove(listOfNewShipNavPoints.get(3));
+                        listOfNewShipNavPoints.get(3))) {
+                    avaliableNavPointsToSetShip.remove(listOfNewShipNavPoints.get(0));
+                    avaliableNavPointsToSetShip.remove(listOfNewShipNavPoints.get(1));
+                    avaliableNavPointsToSetShip.remove(listOfNewShipNavPoints.get(2));
+                    avaliableNavPointsToSetShip.remove(listOfNewShipNavPoints.get(3));
                     break;
                 }
             }
@@ -153,15 +154,105 @@ public class AIplayer implements Player {
     }
 
     @Override
-    public void putShipsOnBoard(Board board) {
-        putFourFlagShip(board);
-        putThreeFlagShip(board);
-        putTwoFlagShip(board);
-        putOneFlagShip(board);
+    public void putShipsOnBoards(Board board) {
+        putFourFlagShips(board);
+        putThreeFlagShips(board);
+        putTwoFlagShips(board);
+        putOneFlagShips(board);
     }
 
-    @Override
-    public void fire(Board board) {
-        // użyj stosu aby przechowywać okoliczne punkty do strzelenia
+
+
+    private Integer navToFire(Board board) {
+        Integer navPointToFire;
+
+        if (!hitStack.isEmpty()) {
+
+            while (!hitStack.isEmpty()) {
+                navPointToFire = hitStack.pop();
+                if (board.getBoard().get(navPointToFire).equals(BoardMark.S)
+                        || board.getBoard().get(navPointToFire).equals(BoardMark.EMPTY)) {
+                    return navPointToFire;
+                }
+            }
+        }
+
+        return randomNav.getNavPointToFire(board);
     }
+
+
+    private void addPossibleHitNavs(Integer nav, Board board) {
+        List<Integer> verticalAndHorizontal = Arrays.asList(-1, 1, -10, 10);
+        for (Integer possibleHit : verticalAndHorizontal) {
+            if ((nav + possibleHit >= 0 && nav + possibleHit <= 99)
+                    && (board.getBoard().get(nav + possibleHit).equals(BoardMark.S)
+                    || board.getBoard().get(nav + possibleHit).equals(BoardMark.EMPTY))) {
+
+                hitStack.push(nav + possibleHit);
+            }
+        }
+    }
+
+    private void addPossibleHitsVerticalOrHorizontal(Integer nav, Board board) {
+        if (!Game.ARE_BENDED_SHIP_ALLOWED){
+            return;
+        }
+
+        Integer lastSuccessfulFire = stackOfSuccesfullFires.pop();
+
+        if (Math.abs(nav-lastSuccessfulFire)==10){
+            List<Integer> horizontal = Arrays.asList(-10, 10);
+            for (Integer possibleHit : horizontal) {
+                if ((nav + possibleHit >= 0 && nav + possibleHit <= 99)
+                        && (board.getBoard().get(nav + possibleHit).equals(BoardMark.S)
+                        || board.getBoard().get(nav + possibleHit).equals(BoardMark.EMPTY))) {
+
+                    hitStack.push(nav + possibleHit);
+                }
+            }
+        }
+
+        if (Math.abs(nav-lastSuccessfulFire)==1){
+            List<Integer> horizontal = Arrays.asList(-1, 1);
+            for (Integer possibleHit : horizontal) {
+                if ((nav + possibleHit >= 0 && nav + possibleHit <= 99)
+                        && (board.getBoard().get(nav + possibleHit).equals(BoardMark.S)
+                        || board.getBoard().get(nav + possibleHit).equals(BoardMark.EMPTY))) {
+
+                    hitStack.push(nav + possibleHit);
+                }
+            }
+        }
+    }
+
+
+    @Override
+    public boolean fire(Board board) {
+
+        Integer navPointToFire;
+
+        boolean hit = true;
+        while (hit) {
+            navPointToFire = navToFire(board);
+            System.out.println(getPlayerName() + "strzela w pole: " + navPointToFire);
+            hit = board.hit(navPointToFire);
+            board.printBoardOfHits();
+
+            if (hit) {
+                if (!stackOfSuccesfullFires.isEmpty()){
+                    addPossibleHitsVerticalOrHorizontal(navPointToFire, board);
+                } else {
+                    addPossibleHitNavs(navPointToFire, board);
+                    stackOfSuccesfullFires.push(navPointToFire);
+                }
+
+            }
+
+            if (!board.areThereStillShips()) {
+                return false;
+            }
+        }
+        return false;
+    }
+
 }

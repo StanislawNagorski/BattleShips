@@ -4,16 +4,16 @@ public interface Player {
 
     String getPlayerName();
 
-    void putOneFlagShip(Board board);
+    void putOneFlagShips(Board board);
 
-    void putTwoFlagShip(Board board);
+    void putTwoFlagShips(Board board);
 
-    void putThreeFlagShip(Board board);
+    void putThreeFlagShips(Board board);
 
-    void putFourFlagShip(Board board);
+    void putFourFlagShips(Board board);
 
-    void putShipsOnBoard(Board board);
+    void putShipsOnBoards(Board board);
 
-    void fire(Board board);
+    boolean fire(Board board);
 
 }
