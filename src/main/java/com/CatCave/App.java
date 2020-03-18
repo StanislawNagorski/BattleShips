@@ -42,7 +42,7 @@ public class App {
             System.out.println("Tura gracza: " + player1.getPlayerName() + ".");
             player1.fire(playerTwoBoard);
 
-            if (!playerOneBoard.areThereStillShips()) {
+            if (!playerTwoBoard.areThereStillShips()) {
                 System.out.println("Wygrywa gracz (☞ﾟ∀ﾟ)☞ " + player1.getPlayerName() + "!");
                 break;
             }
