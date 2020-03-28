@@ -1,6 +1,7 @@
 package com.CatCave;
 
 import java.util.*;
+import java.util.concurrent.TimeUnit;
 
 public class AIplayer implements Player {
 
@@ -183,14 +184,7 @@ public class AIplayer implements Player {
 
     private void addPossibleHitNavs(Integer nav, Board board) {
         List<Integer> verticalAndHorizontal = Arrays.asList(-1, 1, -10, 10);
-        for (Integer possibleHit : verticalAndHorizontal) {
-            if ((nav + possibleHit >= 0 && nav + possibleHit <= 99)
-                    && (board.getBoard().get(nav + possibleHit).equals(BoardMark.S)
-                    || board.getBoard().get(nav + possibleHit).equals(BoardMark.EMPTY))) {
-
-                hitStack.push(nav + possibleHit);
-            }
-        }
+        surrondingTest(nav, board, verticalAndHorizontal);
     }
 
     private void addPossibleHitsVerticalOrHorizontal(Integer nav, Board board) {
@@ -201,30 +195,31 @@ public class AIplayer implements Player {
         Integer lastSuccessfulFire = stackOfSuccesfullFires.pop();
 
         if (Math.abs(nav-lastSuccessfulFire)==10){
-            List<Integer> horizontal = Arrays.asList(-10, 10);
-            for (Integer possibleHit : horizontal) {
-                if ((nav + possibleHit >= 0 && nav + possibleHit <= 99)
-                        && (board.getBoard().get(nav + possibleHit).equals(BoardMark.S)
-                        || board.getBoard().get(nav + possibleHit).equals(BoardMark.EMPTY))) {
-
-                    hitStack.push(nav + possibleHit);
-                }
-            }
+            List<Integer> vertical = Arrays.asList(-10, 10);
+            surrondingTest(nav, board, vertical);
         }
 
         if (Math.abs(nav-lastSuccessfulFire)==1){
             List<Integer> horizontal = Arrays.asList(-1, 1);
-            for (Integer possibleHit : horizontal) {
-                if ((nav + possibleHit >= 0 && nav + possibleHit <= 99)
-                        && (board.getBoard().get(nav + possibleHit).equals(BoardMark.S)
-                        || board.getBoard().get(nav + possibleHit).equals(BoardMark.EMPTY))) {
+            surrondingTest(nav, board, horizontal);
+        }
+    }
 
-                    hitStack.push(nav + possibleHit);
-                }
+    private void surrondingTest(Integer nav, Board board, List<Integer> horizontalOrVerticals) {
+        for (Integer possibleHit : horizontalOrVerticals) {
+            if ((nav + possibleHit >= 0 && nav + possibleHit <= 99)
+                    && (board.getBoard().get(nav + possibleHit).equals(BoardMark.S)
+                    || board.getBoard().get(nav + possibleHit).equals(BoardMark.EMPTY))) {
+
+                hitStack.push(nav + possibleHit);
             }
         }
     }
 
+    private String computerInputToCoordinators (Integer aIinput) {
+        char tens = (char) ((aIinput/10) + 'a');
+        return tens + String.valueOf((aIinput%10)+1);
+    }
 
     @Override
     public boolean fire(Board board) {
@@ -234,9 +229,15 @@ public class AIplayer implements Player {
         boolean hit = true;
         while (hit) {
             navPointToFire = navToFire(board);
-            System.out.println(getPlayerName() + "strzela w pole: " + navPointToFire);
+            System.out.println(getPlayerName() + "strzela w pole: "
+                    + computerInputToCoordinators(navPointToFire));
             hit = board.hit(navPointToFire);
-            board.printBoardOfHits();
+            board.printBoardOfHitsWithHumanPlayerShipsVisiable();
+            try {
+                TimeUnit.MILLISECONDS.sleep(2000);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
 
             if (hit) {
                 if (!stackOfSuccesfullFires.isEmpty()){

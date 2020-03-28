@@ -1,5 +1,7 @@
 package com.CatCave;
 
+import java.util.concurrent.TimeUnit;
+
 public class App {
     public static void main(String[] args) {
 
@@ -8,7 +10,7 @@ public class App {
         //Player player1 = new AIplayer();
         Board playerTwoBoard = new Board();
         Player player2;
-        //Player lazyTester = new AIplayer();
+        Player lazyTester = new AIplayer();
 
         if (Game.NUMBER_OF_PLAYERS == 2) {
             player2 = new HumanPlayer(Game.PLAYER_TWO_NAME);
@@ -18,9 +20,9 @@ public class App {
 
         playerOneBoard.printBoard();
         System.out.println("Zaczyna gracz " + player1.getPlayerName() + ". Ustaw statki");
-        player1.putShipsOnBoards(playerOneBoard);
+        //player1.putShipsOnBoards(playerOneBoard);
 
-        //lazyTester.putShipsOnBoards(playerOneBoard);
+        lazyTester.putShipsOnBoards(playerOneBoard);
         playerOneBoard.printBoard();
         Board.clearScreen();
 
@@ -44,6 +46,10 @@ public class App {
 
             System.out.println("Tura gracza: " + player2.getPlayerName() + ".");
             player2.fire(playerOneBoard);
+
+
+
+
             if (!playerOneBoard.areThereStillShips()) {
                 System.out.println("Wygrywa gracz (☞ﾟ∀ﾟ)☞ " + player2.getPlayerName() + "!");
                 break;

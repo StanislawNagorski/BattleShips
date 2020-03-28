@@ -61,7 +61,7 @@ public class HumanPlayer implements Player {
             Scanner scan = new Scanner(System.in);
 
             while (true) {
-                System.out.println("Gdzie postawic statek? Podaj punkt");
+                System.out.println("Gdzie postawic statek? Podaj współrzędne");
                 if (board.setOneFlagShip(playerInputToNavPoints(scan.nextLine()))) {
                     break;
                 } else {
@@ -86,7 +86,7 @@ public class HumanPlayer implements Player {
                 List<Integer> listOfUserNavPoints = new ArrayList<>();
                 int numberOfShipFlags = 2;
                 for (int j = 0; j < numberOfShipFlags; j++) {
-                    System.out.println("Gdzie postawic statek? Podaj punkt");
+                    System.out.println("Gdzie postawic statek? Podaj współrzędne");
                     listOfUserNavPoints.add(playerInputToNavPoints(scan.nextLine()));
                 }
 
@@ -116,7 +116,7 @@ public class HumanPlayer implements Player {
                 int numberOfShipFlags = 3;
                 List<Integer> listOfUserNavPoints = new ArrayList<>();
                 for (int j = 0; j < numberOfShipFlags; j++) {
-                    System.out.println("Gdzie postawic statek? Podaj punkt");
+                    System.out.println("Gdzie postawic statek? Podaj współrzędne");
                     listOfUserNavPoints.add(playerInputToNavPoints(scan.nextLine()));
                 }
 
@@ -149,7 +149,7 @@ public class HumanPlayer implements Player {
                 int numberOfShipFlags = 4;
                 List<Integer> listOfUserNavPoints = new ArrayList<>();
                 for (int j = 0; j < numberOfShipFlags; j++) {
-                    System.out.println("Gdzie postawic statek? Podaj punkt");
+                    System.out.println("Gdzie postawic statek? Podaj współrzędne");
                     listOfUserNavPoints.add(playerInputToNavPoints(scan.nextLine()));
                 }
 
@@ -178,16 +178,13 @@ public class HumanPlayer implements Player {
     }
 
 
-
-
-
     @Override
     public boolean fire(Board board) {
         Scanner scan = new Scanner(System.in);
         boolean hit = true;
         while (hit) {
             Board.clearScreen();
-            System.out.println("Graczu: "+ playerName +" Oddaj STRZAL! podaj pole");
+            System.out.println("Graczu: "+ playerName +" Oddaj STRZAL! podaj współrzędne");
             board.printBoardOfHits();
 
             hit = board.hit(playerInputToNavPoints(scan.nextLine()));

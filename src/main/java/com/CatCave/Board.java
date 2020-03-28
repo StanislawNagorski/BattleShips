@@ -7,6 +7,7 @@ import lombok.Setter;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.concurrent.TimeUnit;
 import java.util.stream.Collectors;
 
 
@@ -176,8 +177,13 @@ public class Board {
 
 
     public boolean hit(int nav) {
+        try {
+            TimeUnit.MILLISECONDS.sleep(1000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
         if (nav < 0 || nav > 99){
-            System.out.println("Nie właściwe koordynanty");
+            System.out.println("Nie właściwe współrzedne");
             return false;
         }
 
@@ -239,16 +245,7 @@ public class Board {
         System.out.println(" | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10|");
 
         for (int i = 0; i < board.size(); i++) {
-            if (i == 0) {
-                System.out.print(c + "|");
-                c++;
-            }
-
-            if (i != 0 && (i) % 10 == 0 && i < 99) {
-                System.out.println();
-                System.out.print(c + "|");
-                c++;
-            }
+            c = boardPrintSetUp(c, i);
 
             if (board.get(i).equals(BoardMark.EMPTY)) {
                 System.out.print("   |");
@@ -259,24 +256,48 @@ public class Board {
         System.out.println();
     }
 
+    private char boardPrintSetUp(char c, int i) {
+        if (i == 0) {
+            System.out.print(c + "|");
+            c++;
+        }
+
+        if (i != 0 && (i) % 10 == 0 && i < 99) {
+            System.out.println();
+            System.out.print(c + "|");
+            c++;
+        }
+        return c;
+    }
+
     public void printBoardOfHits() {
 
         char c = 'a';
         System.out.println(" | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10|");
 
         for (int i = 0; i < board.size(); i++) {
-            if (i == 0) {
-                System.out.print(c + "|");
-                c++;
-            }
-
-            if (i != 0 && (i) % 10 == 0 && i < 99) {
-                System.out.println();
-                System.out.print(c + "|");
-                c++;
-            }
+            c = boardPrintSetUp(c, i);
 
             if (board.get(i).equals(BoardMark.EMPTY) || board.get(i).equals(BoardMark.S)) {
+                System.out.print("   |");
+            } else if (board.get(i).equals(BoardMark.O)) {
+                System.out.print(" \u00d8 |");
+            } else {
+                System.out.print(" " + board.get(i) + " |");
+            }
+        }
+        System.out.println();
+    }
+
+    public void printBoardOfHitsWithHumanPlayerShipsVisiable() {
+
+        char c = 'a';
+        System.out.println(" | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10|");
+
+        for (int i = 0; i < board.size(); i++) {
+            c = boardPrintSetUp(c, i);
+
+            if (board.get(i).equals(BoardMark.EMPTY)) {
                 System.out.print("   |");
             } else if (board.get(i).equals(BoardMark.O)) {
                 System.out.print(" \u00d8 |");
