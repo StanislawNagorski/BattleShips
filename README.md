@@ -13,10 +13,16 @@ Właściwości gry:
         -  1 czteromasztowy, 2 trzymasztowe,
            3 dwumasztowe, 4 jednomasztowe (personalizacja ustawień -> todo),
         - statki muszą być w jednej linii (można wyłączyć),
-        - statki diagonalne są zakazane.
+        - statki diagonalne są zakazane,
+        - statki nie mogą stykać się narożnikami.
 
 To Do:
 -
+- ~~do gry jednooosbowej dodać drukowanie tablicy
+ ze strzałami AI i statkami gracza~~
+- ~~dodać opóźnienie do strzałów AI~~
+- ~~przetłumaczyć strzały na współrzędne~~
+- po pewnym czasie w grze AI przestaje strzelać na około
 - dodać plansze do konsturktorów graczy
 - sparwić aby podanie płędnych współrzędnych przy strzale nie wiązało się ze stratą tury
 - zrefaktoryzować kod przy stawianiu statków przez gracz i AI,

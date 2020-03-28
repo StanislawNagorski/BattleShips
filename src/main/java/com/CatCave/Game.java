@@ -12,7 +12,4 @@ public class Game {
     public static String PLAYER_TWO_NAME = "Werka";
 
 
-
-
-
 }

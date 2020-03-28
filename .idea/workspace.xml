@@ -2,15 +2,38 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="04807bcd-94f2-4538-b2af-807d2dd0e988" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/target/classes/com/CatCave/AIplayer.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/CatCave/HumanPlayer.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/CatCave/RandomNav.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/test-classes/com/CatCave/AIplayerTest.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/test-classes/com/CatCave/HumanPlayerTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/(☞ﾟ∀ﾟ)☞  UstawieniaGry  (• ε •).txt" beforeDir="false" afterPath="$PROJECT_DIR$/(☞ﾟ∀ﾟ)☞  UstawieniaGry  (• ε •).txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/uiDesigner.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/LICENSE" beforeDir="false" afterPath="$PROJECT_DIR$/LICENSE" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Statki.iml" beforeDir="false" afterPath="$PROJECT_DIR$/Statki.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/CatCave/AIplayer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/CatCave/AIplayer.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/CatCave/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/CatCave/App.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/CatCave/Board.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/CatCave/Board.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/CatCave/BoardMark.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/CatCave/BoardMark.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/CatCave/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/CatCave/Game.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/CatCave/HumanPlayer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/CatCave/HumanPlayer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/CatCave/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/CatCave/Player.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/CatCave/RandomNav.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/CatCave/RandomNav.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/CatCave/AIplayerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/CatCave/AIplayerTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/CatCave/AppTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/CatCave/AppTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/CatCave/BoardTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/CatCave/BoardTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/CatCave/HumanPlayerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/CatCave/HumanPlayerTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/META-INF/Statki.kotlin_module" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/CatCave/App.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/CatCave/App.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/CatCave/Board.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/CatCave/Board.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/CatCave/Game.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/CatCave/Game.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/META-INF/Statki.kotlin_module" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -54,16 +77,25 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit5" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit4" value="" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5" value="" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../EgzaminSDA" />
-    <property name="project.structure.last.edited" value="Modules" />
-    <property name="project.structure.proportion" value="0.0" />
-    <property name="project.structure.side.proportion" value="0.0" />
+    <property name="extract.method.default.visibility" value="private" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.tslint" value="true" />
+    <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.path.for.package.tslint" value="project" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
+    <property name="project.structure.last.edited" value="SDKs" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.side.proportion" value="0.2" />
     <property name="restartRequiresConfirmation" value="false" />
     <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
-    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
   </component>
   <component name="RecentsManager">
     <key name="CreateTestDialog.RecentsKey">
@@ -86,38 +118,6 @@
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="AIplayerTest.shouldFireOnBoard" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="Statki" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.CatCave.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="com.CatCave" />
-      <option name="MAIN_CLASS_NAME" value="com.CatCave.AIplayerTest" />
-      <option name="METHOD_NAME" value="shouldFireOnBoard" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="AIplayerTest.shouldPut4OneFlagShipsOnBoard" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="Statki" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.CatCave.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="com.CatCave" />
-      <option name="MAIN_CLASS_NAME" value="com.CatCave.AIplayerTest" />
-      <option name="METHOD_NAME" value="shouldPut4OneFlagShipsOnBoard" />
-      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -152,13 +152,27 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="Scratch (1)" type="Java Scratch" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Scratch" />
+      <option name="SCRATCH_FILE_URL" value="file://$APPLICATION_CONFIG_DIR$/scratches/scratch.java" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Scratch" type="Java Scratch" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Scratch" />
+      <option name="SCRATCH_FILE_URL" value="file://$APPLICATION_CONFIG_DIR$/scratches/scratch_3.java" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
         <item itemvalue="Application.App" />
+        <item itemvalue="Java Scratch.Scratch (1)" />
+        <item itemvalue="Java Scratch.Scratch" />
         <item itemvalue="JUnit.HumanPlayerTest" />
         <item itemvalue="JUnit.BoardTest" />
-        <item itemvalue="JUnit.AIplayerTest.shouldFireOnBoard" />
-        <item itemvalue="JUnit.AIplayerTest.shouldPut4OneFlagShipsOnBoard" />
       </list>
     </recent_temporary>
   </component>
@@ -184,6 +198,8 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1583241464103</updated>
+      <workItem from="1585342289460" duration="180000" />
+      <workItem from="1585399088460" duration="5157000" />
     </task>
     <task id="LOCAL-00001" summary="skończona implemetacja 3 masztowego statku,&#10; + 2 testy, + aktualizacja To Do">
       <created>1583400630173</created>
@@ -360,8 +376,18 @@
       <option name="project" value="LOCAL" />
       <updated>1584558066374</updated>
     </task>
-    <option name="localTasksCounter" value="26" />
+    <task id="LOCAL-00026" summary="poprawiona struktura w main">
+      <created>1584559886236</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1584559886236</updated>
+    </task>
+    <option name="localTasksCounter" value="27" />
     <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="skończona implemetacja 3 masztowego statku,&#10; + 2 testy, + aktualizacja To Do" />
@@ -386,7 +412,8 @@
     <MESSAGE value="Gracz AI jest już wstanie trafić w statek" />
     <MESSAGE value="Gracz AI jest już wstanie trafić w statek, ale nie kuma że mogą być w lini" />
     <MESSAGE value="Dodano metody pozwalające graczowi AI, na pobliski ostrzał po trafieniu." />
-    <option name="LAST_COMMIT_MESSAGE" value="Dodano metody pozwalające graczowi AI, na pobliski ostrzał po trafieniu." />
+    <MESSAGE value="poprawiona struktura w main" />
+    <option name="LAST_COMMIT_MESSAGE" value="poprawiona struktura w main" />
   </component>
   <component name="WindowStateProjectService">
     <state x="191" y="138" key="#Live_Templates" timestamp="1583520631711">
@@ -411,6 +438,16 @@
     </state>
     <state x="765" y="229" key="#com.intellij.ide.util.MemberChooser/0.0.1919.1040@0.0.1919.1040" timestamp="1583967001777" />
     <state x="765" y="229" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1040@0.0.1920.1040" timestamp="1583618727222" />
+    <state x="847" y="441" width="308" height="216" key="#com.intellij.ide.util.projectWizard.JdkChooserPanel.MyDialog" timestamp="1585342426282">
+      <screen x="67" y="27" width="1853" height="1053" />
+    </state>
+    <state x="808" y="409" key="#com.intellij.ide.util.projectWizard.JdkChooserPanel.MyDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1584895451303" />
+    <state x="847" y="441" width="308" height="216" key="#com.intellij.ide.util.projectWizard.JdkChooserPanel.MyDialog/67.27.1853.1053@67.27.1853.1053" timestamp="1585342426282" />
+    <state x="588" y="204" width="824" height="684" key="#com.intellij.openapi.projectRoots.ui.ProjectJdksEditor" timestamp="1585342423949">
+      <screen x="67" y="27" width="1853" height="1053" />
+    </state>
+    <state x="540" y="175" key="#com.intellij.openapi.projectRoots.ui.ProjectJdksEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1584895447689" />
+    <state x="588" y="204" width="824" height="684" key="#com.intellij.openapi.projectRoots.ui.ProjectJdksEditor/67.27.1853.1053@67.27.1853.1053" timestamp="1585342423949" />
     <state x="755" y="379" width="408" height="291" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes" timestamp="1583961133031">
       <screen x="0" y="0" width="1919" height="1040" />
     </state>
@@ -427,31 +464,40 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="707" y="366" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1/0.0.1920.1040@0.0.1920.1040" timestamp="1583445640978" />
-    <state x="614" y="114" key="CommitChangelistDialog2" timestamp="1584558082739">
+    <state x="614" y="114" key="CommitChangelistDialog2" timestamp="1584559883884">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="614" y="114" key="CommitChangelistDialog2/0.0.1919.1040@0.0.1919.1040" timestamp="1584047644034" />
-    <state x="614" y="114" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1584558082739" />
-    <state width="669" height="912" key="GridCell.Tab.0.bottom" timestamp="1584559573231">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state x="614" y="114" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1584559883884" />
+    <state x="781" y="305" width="424" height="484" key="FileChooserDialogImpl" timestamp="1585342382642">
+      <screen x="67" y="27" width="1853" height="1053" />
+    </state>
+    <state x="740" y="275" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1584895929118" />
+    <state x="781" y="305" width="424" height="484" key="FileChooserDialogImpl/67.27.1853.1053@67.27.1853.1053" timestamp="1585342382642" />
+    <state width="687" height="902" key="GridCell.Tab.0.bottom" timestamp="1585403872477">
+      <screen x="67" y="27" width="1853" height="1053" />
     </state>
     <state width="718" height="912" key="GridCell.Tab.0.bottom/0.0.1919.1040@0.0.1919.1040" timestamp="1584090722635" />
-    <state width="669" height="912" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1584559573231" />
-    <state width="669" height="912" key="GridCell.Tab.0.center" timestamp="1584559573231">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state width="742" height="912" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1584620777125" />
+    <state width="687" height="902" key="GridCell.Tab.0.bottom/67.27.1853.1053@67.27.1853.1053" timestamp="1585403872477" />
+    <state width="687" height="902" key="GridCell.Tab.0.center" timestamp="1585403872476">
+      <screen x="67" y="27" width="1853" height="1053" />
     </state>
     <state width="718" height="912" key="GridCell.Tab.0.center/0.0.1919.1040@0.0.1919.1040" timestamp="1584090722635" />
-    <state width="669" height="912" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1584559573231" />
-    <state width="669" height="912" key="GridCell.Tab.0.left" timestamp="1584559573231">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state width="742" height="912" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1584620777124" />
+    <state width="687" height="902" key="GridCell.Tab.0.center/67.27.1853.1053@67.27.1853.1053" timestamp="1585403872476" />
+    <state width="687" height="902" key="GridCell.Tab.0.left" timestamp="1585403872475">
+      <screen x="67" y="27" width="1853" height="1053" />
     </state>
     <state width="718" height="912" key="GridCell.Tab.0.left/0.0.1919.1040@0.0.1919.1040" timestamp="1584090722635" />
-    <state width="669" height="912" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1584559573231" />
-    <state width="669" height="912" key="GridCell.Tab.0.right" timestamp="1584559573231">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state width="742" height="912" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1584620777124" />
+    <state width="687" height="902" key="GridCell.Tab.0.left/67.27.1853.1053@67.27.1853.1053" timestamp="1585403872475" />
+    <state width="687" height="902" key="GridCell.Tab.0.right" timestamp="1585403872477">
+      <screen x="67" y="27" width="1853" height="1053" />
     </state>
     <state width="718" height="912" key="GridCell.Tab.0.right/0.0.1919.1040@0.0.1919.1040" timestamp="1584090722635" />
-    <state width="669" height="912" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1584559573231" />
+    <state width="742" height="912" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1584620777125" />
+    <state width="687" height="902" key="GridCell.Tab.0.right/67.27.1853.1053@67.27.1853.1053" timestamp="1585403872477" />
     <state width="1876" height="348" key="GridCell.Tab.1.bottom" timestamp="1584047687077">
       <screen x="0" y="0" width="1919" height="1040" />
     </state>
@@ -472,34 +518,42 @@
     </state>
     <state width="1876" height="348" key="GridCell.Tab.1.right/0.0.1919.1040@0.0.1919.1040" timestamp="1584047687077" />
     <state width="1877" height="348" key="GridCell.Tab.1.right/0.0.1920.1040@0.0.1920.1040" timestamp="1583442403538" />
-    <state x="489" y="174" key="Maven.ArtifactSearchDialog" timestamp="1584012462150">
-      <screen x="0" y="0" width="1919" height="1040" />
-    </state>
-    <state x="489" y="174" key="Maven.ArtifactSearchDialog/0.0.1919.1040@0.0.1919.1040" timestamp="1584012462150" />
-    <state x="461" y="162" key="SettingsEditor" timestamp="1583445532783">
+    <state x="489" y="174" key="Maven.ArtifactSearchDialog" timestamp="1584895029474">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="461" y="162" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1583445532783" />
-    <state x="552" y="252" key="Vcs.Push.Dialog.v2" timestamp="1584558089619">
+    <state x="489" y="174" key="Maven.ArtifactSearchDialog/0.0.1919.1040@0.0.1919.1040" timestamp="1584012462150" />
+    <state x="489" y="174" key="Maven.ArtifactSearchDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1584895029474" />
+    <state x="242" y="92" width="1024" height="845" key="SettingsEditor" timestamp="1585342406246">
+      <screen x="67" y="27" width="1853" height="1053" />
+    </state>
+    <state x="795" y="115" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1585066589922" />
+    <state x="242" y="92" width="1024" height="845" key="SettingsEditor/67.27.1853.1053@67.27.1853.1053" timestamp="1585342406246" />
+    <state x="552" y="252" key="Vcs.Push.Dialog.v2" timestamp="1584559889829">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="552" y="252" key="Vcs.Push.Dialog.v2/0.0.1919.1040@0.0.1919.1040" timestamp="1584047650507" />
-    <state x="552" y="252" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1584558089619" />
-    <state x="656" y="343" key="com.intellij.ide.util.TipDialog" timestamp="1584552295704">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state x="552" y="252" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1584559889829" />
+    <state x="700" y="374" key="com.intellij.ide.util.TipDialog" timestamp="1585399179874">
+      <screen x="67" y="27" width="1853" height="1053" />
     </state>
     <state x="656" y="343" key="com.intellij.ide.util.TipDialog/0.0.1919.1040@0.0.1919.1040" timestamp="1584089929399" />
-    <state x="656" y="343" key="com.intellij.ide.util.TipDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1584552295704" />
-    <state x="769" y="436" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1584042961035">
-      <screen x="0" y="0" width="1919" height="1040" />
+    <state x="656" y="343" key="com.intellij.ide.util.TipDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1585066562239" />
+    <state x="700" y="374" key="com.intellij.ide.util.TipDialog/67.27.1853.1053@67.27.1853.1053" timestamp="1585399179874" />
+    <state x="810" y="468" width="454" height="160" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1585399790019">
+      <screen x="67" y="27" width="1853" height="1053" />
     </state>
     <state x="769" y="436" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1919.1040@0.0.1919.1040" timestamp="1584042961035" />
     <state x="769" y="436" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1920.1040@0.0.1920.1040" timestamp="1583398606976" />
+    <state x="810" y="468" width="454" height="160" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/67.27.1853.1053@67.27.1853.1053" timestamp="1585399790019" />
     <state x="731" y="222" key="com.intellij.testIntegration.createTest.CreateTestDialog" timestamp="1584014660008">
       <screen x="0" y="0" width="1919" height="1040" />
     </state>
     <state x="731" y="222" key="com.intellij.testIntegration.createTest.CreateTestDialog/0.0.1919.1040@0.0.1919.1040" timestamp="1584014660008" />
     <state x="731" y="222" key="com.intellij.testIntegration.createTest.CreateTestDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1583485641049" />
+    <state x="726" y="323" width="524" height="458" key="extract.method.dialog" timestamp="1585403936896">
+      <screen x="67" y="27" width="1853" height="1053" />
+    </state>
+    <state x="726" y="323" width="524" height="458" key="extract.method.dialog/67.27.1853.1053@67.27.1853.1053" timestamp="1585403936896" />
     <state x="655" y="311" key="git4idea.merge.GitPullDialog" timestamp="1583684382307">
       <screen x="0" y="0" width="1919" height="1040" />
     </state>
@@ -522,9 +576,9 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="616" y="240" key="run.anything.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1584459493425" />
-    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1583520611486">
+    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1584894440218">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1583520611486" />
+    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1584894440218" />
   </component>
 </project>
